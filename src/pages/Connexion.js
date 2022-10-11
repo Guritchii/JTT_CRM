@@ -5,8 +5,8 @@ const Connexion = () => {
     return (
         <div>
             {/* Create a connexion page */}
-            <img src="./LogoApp.png"></img>
-            <div>
+            <img  srcset="./LogoApp.svg"></img>
+            <div className="connexion">
                 <form action="">
                     <input type="text" placeholder="Pseudo" />
                     <input type="password" placeholder="Mot de passe" />
