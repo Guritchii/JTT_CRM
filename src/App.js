@@ -1,10 +1,14 @@
 import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Connexion from './pages/Connexion';
 
 const App = () => {
   return (
-    <div>
-      <h1>Hello World!</h1>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="*" element={<Connexion/>} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

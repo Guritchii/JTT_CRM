@@ -1,18 +1,21 @@
 import React from 'react';
 
+
 const Connexion = () => {
     return (
         <div>
             {/* Create a connexion page */}
-            <h1>Connexion</h1>
-
-            {/* Create a form */}
-            <form className="connexionBox" onSubmit={e => e.preventDefault()}>
-                <input type="text" placeholder="Pseudo" required />
-                <button type="submit">GO</button>
-                
-            </form>
-            
+            <img src="./LogoApp.png"></img>
+            <div>
+                <form action="">
+                    <input type="text" placeholder="Pseudo" />
+                    <input type="password" placeholder="Mot de passe" />
+                    <button type="submit">Se connecter</button>
+                    <input type="checkbox"/>
+                    <label htmlFor="checkbox">Se souvenir de moi</label>
+                </form>
+            </div>
+            <a href="http://localhost">Mot de passe oublié ?</a>
         </div>
     );
 };
