@@ -1,0 +1,14 @@
+.page_admin {
+    display: flex;
+    flex-direction: row;
+
+    .nav_bar_verticale {
+        display: flex;
+        flex-direction: column;
+        
+        .logo {
+            width: 100px;
+            height: 100px;
+        }
+    }
+}
