@@ -4,11 +4,145 @@
 
     .nav_bar_verticale {
         display: flex;
-        width: 150px;
+        flex-direction: column;
+        width: 200px;
         height: 753px;
-        background-color: pink;
+        border: 5px white inset;
+
+        .create_user{
+            padding: 30px;
+            align-self: center;
+        }
+
+        .modify_user{
+            padding: 30px;
+            align-self: center;
+        }
+
+        .delete_user{
+            padding: 30px;
+            align-self: center;
+        }
+
+        
+        .bouton{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            width: 180px;
+            height: 100px;
+            border-radius: 30px;
+            font-size: 13.5px;
+            font-weight: bold;
+            transition: 1s box-shadow;
+            cursor: pointer;
+            border: none;
+            box-shadow: 0 0 5px rgba(0,0,0,0.5);
+            background-color: white;
+        }
+
+
+        .bouton:hover{
+            box-shadow: 0, 5px, 35px, 0 rgba(0,0,0,1);
+            color: white;
+            background-color: black;
+        }
+
+        .bouton:hover::before, .bouton:hover::after{
+            content: '';
+            display: block;
+            position: absolute;
+            z-index: -1;
+            width: 100%;
+            height: 100%;
+            background: black;
+            border-radius: 30px;
+            animation: 0.5s jiggle infinite;
+        }
+
+        .bouton:hover::after{
+            background: black;
+            animation: 1s jiggle infinite;
+        }
+
+        @keyframes jiggle {
+            0% {
+                transform: translate(-5px, -5px);
+            }
+            14% {
+                transform: translate(0px, -5px);
+            }
+            28% {
+                transform: translate(5px, -5px);
+            }
+            42% {
+                transform: translate(5px, 0px);
+            }
+            57% {
+                transform: translate(5px, 5px);
+            }
+            71% {
+                transform: translate(0, 5px);
+            }
+            85% {
+                transform: translate(-5px, 5px);
+            }
+            100% {
+                transform: translate(-5px, 0);
+            }
+        }
     }
 
+    .Titre{
+        display: flex;
+        font-weight: bold;
+        font-size: 80px;
+        margin: 20px;
+    }
 
+    .Formulaire{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
 
+    .form{
+        align-self: center;
+        flex-direction: row;
+        font-size: 30px;
+    }
+
+    .texte{
+        align-self: center;
+        font-weight: bold;
+        padding: 10px;
+    }
+
+    .texte_zone{
+        width: 600px;
+        height: 50px;
+        font-size: 30px;
+    }
+    
+    .bouton_val_ann{
+        width: 150px;
+        height: 40px;
+        border-radius: 10px;
+        border: 0.5px solid;
+        color: $white;
+        border: 0;
+        background-color: black;
+        border: 1px solid rgba(255,255,255,0.1);
+        backdrop-filter: blur(30px);
+        color: rgb(255, 255, 255);
+        cursor: pointer;
+        font-size: 15px;
+        &:hover{
+            background-color: rgba(114, 114, 114, 0.371);   
+        }
+        &:active{
+            background-color:rgba(68, 68, 68, 0.972);   
+        }
+    }
 }
