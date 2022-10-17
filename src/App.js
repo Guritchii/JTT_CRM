@@ -5,11 +5,13 @@ import Admin from './pages/Admin.js';
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="*" element={<Admin/>} />
-      </Routes>
-    </BrowserRouter>
+    //<BrowserRouter>
+    //  <Routes>
+    //    <Route path="*" element={<Connexion />} />
+    //  </Routes>
+    //</BrowserRouter>
+
+    <Connexion />
   );
 }
 
