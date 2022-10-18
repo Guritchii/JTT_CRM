@@ -26,8 +26,8 @@ body {
             -webkit-backdrop-filter: blur(15px);
 
             .titre {
-                                font-size: 40px;
-                                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                font-size: 40px;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
             }
             
             .rechLogo {
@@ -35,9 +35,47 @@ body {
                 flex-direction: row;
                 justify-content: space-between;
 
-                .search {
+                .input_box {
                     display: flex;
-                    background-color: lightgrey;
+                    justify-content: center;
+                    align-items: center;
+                    position: relative;
+                    height: 40px;
+                    max-width: 350px;
+                    width: 100%;
+                    margin: 30px 30px;
+                    border-radius: 25px;
+                    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+
+                    input {
+                        position: relative;
+                        width: 100%;
+                        height: 100%;
+                        padding: 0 15px 0 65px;
+                        outline: none;
+                        border: none;
+                        border-radius: 25px;
+                        font-size: 16px;
+                        font-weight: 400;
+                        color: #333;
+                    }
+
+                    .search {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        height: 100%;
+                        width: 60px;
+                        border-radius: 25px 0 0 25px;
+
+                        .search-icon {
+                            font-size: 30px;
+                            color: black;
+                        }
+                    }
                 }
 
                 .logo {
@@ -58,8 +96,7 @@ body {
             .nav_bar_verticale {
                 display: flex;
                 flex-direction: column;
-                background-color: blueviolet;
-                width: 7%;
+                width: 5%;
                 height: auto;
 
                 background: rgba(255, 255, 255, 0.3);
@@ -72,8 +109,7 @@ body {
             .Compte {
                 display: flex;
                 flex-direction: column;
-                background-color: lightblue;
-                width: 92%;
+                width: 94.3%;
                 height: auto;
 
                 background: rgba(255, 255, 255, 0.3);
