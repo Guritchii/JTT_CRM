@@ -17,7 +17,7 @@ const Admin = () => {
                     <button id="user" className="bouton" type="button" value="Supprimer un utilisateur" onClick={Delete_user}>Supprimer un utilisateur</button>
                 </div>
             </div>
-            <p className="Titre">Admin</p>
+            <p className="Titre">Admin
             <div className="Formulaire">
                 <form className="form">
                     <table className="Formulaire_de_connexion">
@@ -42,12 +42,15 @@ const Admin = () => {
                             <input id="password" className="texte_zone" type="text"/>
                         </tr>
                         <tr>
-                            <button className="bouton_val_ann" type="submit">Valider</button>
-                            <button className="bouton_val_ann" type="submit">Annuler</button>
+                            <div className='bouton_submit'>
+                                <button className="bouton_val_ann" type="submit">Valider</button>
+                                <button className="bouton_val_ann" type="submit">Annuler</button>
+                            </div>
                         </tr>
                     </table>
                 </form>
             </div>
+            </p>
         </div>
     );
 };

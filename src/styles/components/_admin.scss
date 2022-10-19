@@ -100,67 +100,79 @@
     }*/
 
 
-    .Formulaire{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-    }
+    
 
     .formulaire{
         display: flex;
         flex-direction: column;
+        border-radius: 30px;
         margin: 100px;
         padding: 30px;
         align-items: center;
     }
 
-
     .Titre{
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
+        flex-basis: 100%;
+        border: 5px white inset;
         font-weight: bold;
         font-size: 80px;
-        margin: 20px;
-    }
 
-    .texte{
-        align-self: center;
-        font-weight: bold;
-        padding: 10px;
-    }
+        .Formulaire{
+            display: flex;
+            flex-direction: column;
+            border: 5px white inset;
+            align-items: center;
+            font-size: 30px;
+            width: 100%;
+        }
 
-    .texte_zone{
-        width: 600px;
-        height: 50px;
-        font-size: 30px;
-    }
+        .texte{
+            display: flex;
+            flex-direction: row;
+            align-self: center;
+            font-weight: bold;
+            padding: 10px;
+        }
     
-    .bouton_val_ann{
-        width: 150px;
-        height: 40px;
-        border-radius: 10px;
-        border: 0.5px solid;
-        color: $white;
-        border: 0;
-        background-color: black;
-        border: 1px solid rgba(255,255,255,0.1);
-        backdrop-filter: blur(30px);
-        color: rgb(255, 255, 255);
-        cursor: pointer;
-        font-size: 15px;
-        &:hover{
-            background-color: rgba(114, 114, 114, 0.371);   
+        .texte_zone{
+            width: 600px;
+            height: 50px;
+            font-size: 30px;
         }
-        &:active{
-            background-color:rgba(68, 68, 68, 0.972);   
+        
+        .bouton_val_ann{
+            width: 150px;
+            height: 40px;
+            border-radius: 10px;
+            border: 0.5px solid;
+            color: $white;
+            border: 0;
+            background-color: black;
+            border: 1px solid rgba(255,255,255,0.1);
+            backdrop-filter: blur(30px);
+            color: rgb(255, 255, 255);
+            cursor: pointer;
+            font-size: 15px;
+            &:hover{
+                background-color: rgba(114, 114, 114, 0.371);   
+            }
+            &:active{
+                background-color:rgba(68, 68, 68, 0.972);   
+            }
         }
-    }
+    
+        .texte_barre{
+            display: flex;
+            width: 400px;
+        }
 
-    .texte_barre{
-        display: flex;
-        width: 400px;
-    }
+        .bouton_submit{
+            display: flex;
+            flex-direction: row;
+        }
+    }  
 }
 
     
