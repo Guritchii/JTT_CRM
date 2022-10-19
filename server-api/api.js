@@ -22,7 +22,7 @@ const app = express();
 app.use(bodyparser.json());
 
 const corsOptions = {
-    origin:'', 
+    origin:'*', 
     credentials:true,
     optionSuccessStatus:200,
  }
