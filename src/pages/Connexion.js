@@ -64,7 +64,7 @@ function Connexion() {
                         Connexion
                     </label>
                     <label>
-                        <input id="pseudo" className="text_zone" type="text" value={login} onChange={changeLogin} placeholder="Pseudo"/>
+                        <input id="pseudo" className="text_zone" type="text" value={login} onChange={changeLogin} placeholder="Identifiant "/>
                     </label>
                     <label>
                         <input id="password" className="text_zone" type="password" value={password} onChange={changePassword} placeholder="Mot de passe"/>
