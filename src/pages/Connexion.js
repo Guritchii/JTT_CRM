@@ -1,5 +1,6 @@
 import axios from 'axios'
 import React, { useState } from 'react';
+import CryptoJS from 'crypto-js';
 
 const api = axios.create({
     baseURL: 'http://localhost:8080'
@@ -33,9 +34,12 @@ function Connexion() {
             setAuth("Failed");
             return;
         }
-        const apiString = '/User/Auth/' + login + "/" + password;
+        
+        const apiString = '/User/Auth/' + login + "/" + CryptoJS.SHA256(password).toString(CryptoJS.enc.Hex);
         api.get(apiString).then((response) => {
             const users = response.data;
+            console.log(response.data.length);
+            console.log(users.length);
             if (users.length > 0)
                 if (users[0].result === 1)
                     setAuth("Succeed");
@@ -60,19 +64,20 @@ function Connexion() {
                         Connexion
                     </label>
                     <label>
-                        <input id="pseudo" className="text_zone" type="text" value={login} onChange={changeLogin} placeholder="Pseudo"/>
+                        <input id="pseudo" className="text_zone" type="text" value={login} onChange={changeLogin} placeholder="Identifiant "/>
                     </label>
                     <label>
-                        <input id="password" className="text_zone" type="text" value={password} onChange={changePassword} placeholder="Mot de passe"/>
+                        <input id="password" className="text_zone" type="password" value={password} onChange={changePassword} placeholder="Mot de passe"/>
                     </label>
                     <label className="envoyer">
                         <div className="memory_me">
                             <label htmlFor="checkbox">Se souvenir de moi</label>
                             <input type="checkbox" />
                         </div>
+                        <button type="submit">Se connecter</button>
                     </label>
-                    <button type="submit">Se connecter</button>
-                    <p>{auth === ""?'':auth === "Failed"?'Authentification Failed':'User Unknown'}</p>
+                    <a className="forgot_pw" href="http://localhost">Mot de passe oublié ?</a>
+                    <p>{auth === ""?'':auth === "Failed"?'Authentification Echoué':'Utilisateur inconnu'}</p>
                 </form>
             </div>
         );
