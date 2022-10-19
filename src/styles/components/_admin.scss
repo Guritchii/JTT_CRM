@@ -9,7 +9,6 @@
         display: flex;
         flex-direction: column;
         width: 200px;
-        height: 735px;
         background: rgba(255, 255, 255, 0.143);
         box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
         backdrop-filter: blur(3px);
@@ -73,66 +72,76 @@
         font-size: 30px;
     }*/
 
-
-    .Formulaire {
+    .Titre {
         display: flex;
         flex-direction: column;
-        align-items: center;
-        width: 100%;
-    }
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 15px;
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        backdrop-filter: blur(3px);
+        -webkit-backdrop-filter: blur(15px);
+        margin: 10px;
 
-    .Formulaire{
-        display: flex;
-        flex-direction: column;
-        border-radius: 30px;
-        margin: 100px;
-        padding: 30px;
-        align-items: center;
-    }
-
-    .texte {
-        align-self: center;
-        font-weight: bold;
-        padding: 10px;
-    }
-
-    .texte_zone {
-        width: 600px;
-        height: 50px;
-        background-color: transparent;
-        border-radius: 5px;
-        border: 0.5px solid;
-        padding-left: 10px;
-        padding-right: 10px;
-    }
-
-    .bouton_val_ann {
-        width: 150px;
-        height: 40px;
-        border-radius: 10px;
-        border: 0.5px solid;
-        color: $white;
-        border: 0;
-        background-color: black;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(30px);
-        color: rgb(255, 255, 255);
-        cursor: pointer;
-        font-size: 15px;
-
-        &:hover {
-            background-color: rgba(114, 114, 114, 0.371);
-        }
-
-        &:active {
-            background-color: rgba(68, 68, 68, 0.972);
-        }
-
-        .bouton_submit{
+        .Formulaire {
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
         }
-    }  
+
+        .Formulaire{
+            display: flex;
+            flex-direction: column;
+            border-radius: 30px;
+            margin: 100px;
+            padding: 30px;
+            align-items: center;
+        }
+
+        .texte {
+            align-self: center;
+            font-weight: bold;
+            padding: 10px;
+        }
+
+        .texte_zone {
+            width: 600px;
+            height: 50px;
+            background-color: transparent;
+            border-radius: 5px;
+            border: 0.5px solid;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        .bouton_val_ann {
+            width: 150px;
+            height: 40px;
+            border-radius: 10px;
+            border: 0.5px solid;
+            color: $white;
+            border: 0;
+            background-color: black;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(30px);
+            color: rgb(255, 255, 255);
+            cursor: pointer;
+            font-size: 15px;
+
+            &:hover {
+                background-color: rgba(114, 114, 114, 0.371);
+            }
+
+            &:active {
+                background-color: rgba(68, 68, 68, 0.972);
+            }
+
+            .bouton_submit{
+                display: flex;
+                flex-direction: row;
+            }
+        }
+    }
 }
 
     

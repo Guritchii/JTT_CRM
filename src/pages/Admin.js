@@ -14,7 +14,7 @@ const Admin = () => {
                     <button id="user" className="bouton" type="button" value="Modifier un utilisateur" onClick={Modify_user}>Modifier utilisateur</button>
                 </div>
                 <div className="delete_user">
-                    <button id="user" className="bouton" type="button" value="Supprimer un utilisateur" onClick={Delete_user}>Supprimer utilisateur</button>
+                    <button id="user" className="bouton" type="button" value="Supprimer un utilisateur" /*onClick={Delete_user}*/>Supprimer utilisateur</button>
                 </div>
             </div>
             <p className="Titre">Admin
@@ -65,10 +65,10 @@ function Modify_user(){
     document.location.href = "http://localhost:3000/";
 }
 
-function Delete_user(){
+/*function Delete_user(){
     //document.getElementById("user").onclick = function() {Delete_user()};
     document.location = './pages/Admin_supp';
     console.log(document.location);
-}
+}*/
 
 export default Admin;
