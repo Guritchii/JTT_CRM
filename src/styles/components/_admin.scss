@@ -68,23 +68,33 @@
         }
     }
 
-    .Titre {
-        display: flex;
-        font-weight: bold;
-        font-size: 80px;
-        margin: 20px;
-    }
+    /*.form{
+        align-self: center;
+        font-size: 30px;
+    }*/
+
 
     .Formulaire {
         display: flex;
         flex-direction: column;
+        align-items: center;
         width: 100%;
     }
 
-    .form {
+    .Formulaire{
+        display: flex;
+        flex-direction: column;
+        margin: 100px;
+        padding: 30px;
+        align-items: center;
+    }
+
+    .form{
         align-self: center;
         flex-direction: row;
-        font-size: 30px;
+        font-weight: bold;
+        font-size: 80px;
+        margin: 20px;
     }
 
     .texte {
@@ -125,4 +135,13 @@
             background-color: rgba(68, 68, 68, 0.972);
         }
     }
+
+    .texte_barre{
+        display: flex;
+        width: 400px;
+    }
 }
+
+    
+
+    
