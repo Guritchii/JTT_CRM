@@ -13,7 +13,7 @@ const Compte = () => {
                     <h2 className="titre">Mon Compte</h2>
                     <div className="rechLogo">
                         <div className="input_box">
-                            <input type="text" placeholder="Rechercher..."/>
+                            <input type="search" placeholder="Rechercher..."/>
                             <span className="search">
                                 <i class="uil uil-search search-icon"></i>
                             </span>
@@ -23,15 +23,43 @@ const Compte = () => {
                 </div>
                 <div className="bas_de_page">
                     <div className="nav_bar_verticale">
-                        <img className="logo" srcSet="./logo_person.png"/>
-                        <img className="logo" srcSet="./logo_stats.png"/>                        
-                        <img className="logo" srcSet="./logo_graphique.png"/>                                            
-                        <img className="logo" srcSet="./logo_calendrier.png"/>
-                        <img className="logo" srcSet="./logo_groupe.png"/>
-                        <img className="logo" srcSet="./logo_parametre.png"/>
+                        <div className="parti_one">
+                            <button className="button" type="submit">
+                                <img className="logo_nav_bar" srcSet="./logo_person.svg"/>                        
+                            </button>
+                        </div>  
+                        <div className="parti_two">
+                            <button className="button" type="submit">
+                                <img className="logo_nav_bar" srcSet="./logo_speed.svg"/> 
+                            </button>
+                            <button className="button" type="submit">
+                                <img className="logo_nav_bar" srcSet="./logo_graph.svg"/>
+                            </button>
+                            <button className="button" type="submit">
+                                <img className="logo_nav_bar" srcSet="./logo_calendrier.svg"/>
+                            </button>
+                        </div>
+                        <div className="parti_three">
+                            <button className="button" type="submit">
+                                <img className="logo_nav_bar" srcSet="./logo_group.svg"/>
+                            </button>
+                        </div>   
+                        <div className="parti_four">
+                            <button className="button" type="submit">
+                                <img className="logo_nav_bar" srcSet="./logo_parametre.svg"/>
+                            </button>
+                        </div>                                    
                     </div>
                     <div className="Compte">
-                        <p>Compte</p>
+                        <div className="name_picture">
+                            <p>name_picture</p>
+                        </div>
+                        <div className="infoPerso">
+                            <p>infoPerso</p>
+                        </div>
+                        <div className="infoEntreprise">
+                            <p>infoEntreprise</p>
+                        </div>
                     </div>
                 </div>
             </div>
