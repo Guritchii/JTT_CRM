@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Connexion from './pages/Connexion';
+import Compte from './pages/Compte';
+//import Connexion from './pages/Connexion';
 // import Admin from './pages/Admin.js';
 
 const App = () => {
@@ -11,7 +12,7 @@ const App = () => {
     //  </Routes>
     //</BrowserRouter>
 
-    <Connexion />
+    <Compte />
   );
 }
 
