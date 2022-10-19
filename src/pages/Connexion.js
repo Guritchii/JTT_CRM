@@ -13,7 +13,7 @@ const Connexion = () => {
                         Connexion
                     </tr>
                     <tr>
-                        <input id="pseudo" className="text_zone" type="text" placeholder="Pseudo" />
+                        <input id="pseudo" className="text_zone" type="text" placeholder="Identifiant" />
                     </tr>
                     <tr>
                         <input id="password" className="text_zone" type="password" placeholder="Mot de passe" />
