@@ -1,9 +1,9 @@
 kind: pipeline
 name: JTT_CRM_Pipeline
 
-trigger:
-  event:
-    - push
+#trigger:
+#  event:
+#    - push
 
 steps:
 - name: start
