@@ -1,5 +1,6 @@
 import axios from 'axios'
 import React, { useState } from 'react';
+import CryptoJS from 'crypto-js';
 
 const api = axios.create({
     baseURL: 'http://localhost:8080'
@@ -16,7 +17,7 @@ function Connexion() {
     }
 
     function changePassword(event) {
-        setPassword(event.target.value);
+        setPassword(CryptoJS.SHA256(event.target.value).toString(CryptoJS.enc.Hex));
     }
      
     function chechAuth(event) {
