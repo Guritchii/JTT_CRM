@@ -23,23 +23,23 @@ const Admin = () => {
                     <table className="Formulaire_de_connexion">
                         <tr>
                             <p className="texte">Nom :</p>
-                            <input id="nom" className="texte_zone" type="text"/>
+                            <input id="nom" className="texte_zone" type="text" placeholder="Nom"/>
                         </tr>
                         <tr>
                             <p className="texte">Prénom :</p>
-                            <input id="prénom" className="texte_zone" type="text"/>
+                            <input id="prénom" className="texte_zone" type="text" placeholder="Prénom"/>
                         </tr>
                         <tr>
                             <p className="texte">Rôle dans l'entreprise :</p>
-                            <input id="rôle" className="texte_zone" type="text"/>
+                            <input id="rôle" className="texte_zone" type="text" placeholder="Rôle"/>
                         </tr>
                         <tr>
                             <p className="texte">Identifiant :</p>
-                            <input id="identifiant" className="texte_zone" type="text"/>
+                            <input id="identifiant" className="texte_zone" type="text" placeholder="Identifiant"/>
                         </tr>
                         <tr>
                             <p className="texte">Mot de passe (par défaut) :</p>
-                            <input id="password" className="texte_zone" type="text"/>
+                            <input id="password" className="texte_zone" type="password" placeholder="Mot de passe (par default)"/>
                         </tr>
                         <tr>
                             <div className='bouton_submit'>
