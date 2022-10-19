@@ -17,7 +17,7 @@ function Connexion() {
     }
 
     function changePassword(event) {
-        setPassword(CryptoJS.SHA256(event.target.value).toString(CryptoJS.enc.Hex));
+        setPassword(event.target.value);
     }
      
     function chechAuth(event) {
@@ -34,9 +34,12 @@ function Connexion() {
             setAuth("Failed");
             return;
         }
-        const apiString = '/User/Auth/' + login + "/" + password;
+        
+        const apiString = '/User/Auth/' + login + "/" + CryptoJS.SHA256(password).toString(CryptoJS.enc.Hex);
         api.get(apiString).then((response) => {
             const users = response.data;
+            console.log(response.data.length);
+            console.log(users.length);
             if (users.length > 0)
                 if (users[0].result === 1)
                     setAuth("Succeed");
@@ -73,9 +76,9 @@ function Connexion() {
                         </div>
                         <button type="submit">Se connecter</button>
                     </label>
-                    <p>{auth === ""?'':auth === "Failed"?'Authentification Failed':'User Unknown'}</p>
+                    <a className="forgot_pw" href="http://localhost">Mot de passe oublié ?</a>
+                    <p>{auth === ""?'':auth === "Failed"?'Authentification Echoué':'Utilisateur inconnu'}</p>
                 </form>
-                <a className="forgot_pw" href="http://localhost">Mot de passe oublié ?</a>
             </div>
         );
     }
