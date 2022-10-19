@@ -1,63 +1,82 @@
-import React from 'react';
-import CryptoJS from 'crypto-js';
+import axios from 'axios'
+import React, { useState } from 'react';
 
+const api = axios.create({
+    baseURL: 'http://localhost:8080'
+  })
+  
+function Connexion() {
 
-const Connexion = () => {
-    return (
-        <div className="page_connexion">
-            {/* Create a connexion page */}
-            <img className="logo" srcSet="./LogoApp.svg"></img>
-            <form>
-                <table className="formulaire_de_connexion">
-                    <tr className="connexion_text">
+    const [auth, setAuth] = useState("");
+    const [login, setLogin] = useState("");
+    const [password, setPassword] = useState("");
+    
+    function changeLogin(event) {
+        setLogin(event.target.value);
+    }
+
+    function changePassword(event) {
+        setPassword(event.target.value);
+    }
+     
+    function chechAuth(event) {
+        
+        // No refresh on Click
+        event.preventDefault();
+        
+        if (login === "") {
+            setAuth("Unknown");
+            return;
+        }
+
+        if (password === "") {
+            setAuth("Failed");
+            return;
+        }
+        const apiString = '/User/Auth/' + login + "/" + password;
+        api.get(apiString).then((response) => {
+            const users = response.data;
+            if (users.length > 0)
+                if (users[0].result === 1)
+                    setAuth("Succeed");
+                else
+                    setAuth("Failed");
+            else
+                setAuth("Unknown");
+        });
+    }
+
+    if (auth === "Succeed") {
+        return(
+            <div>My CRM</div>
+        );
+    }
+    else {
+        return (
+            <div className="page_connexion">
+                <img className="logo" srcSet="./LogoApp.svg"></img>
+                <form onSubmit={chechAuth} className="formulaire_de_connexion">
+                    <label className="connexion_text">
                         Connexion
-                    </tr>
-                    <tr>
-                        <input id="pseudo" className="text_zone" type="text" placeholder="Identifiant" />
-                    </tr>
-                    <tr>
-                        <input id="password" className="text_zone" type="password" placeholder="Mot de passe" />
-                    </tr>
-                    <tr className="envoyer">
+                    </label>
+                    <label>
+                        <input id="pseudo" className="text_zone" type="text" value={login} onChange={changeLogin} placeholder="Pseudo"/>
+                    </label>
+                    <label>
+                        <input id="password" className="text_zone" type="text" value={password} onChange={changePassword} placeholder="Mot de passe"/>
+                    </label>
+                    <label className="envoyer">
                         <div className="memory_me">
                             <label htmlFor="checkbox">Se souvenir de moi</label>
                             <input type="checkbox" />
                         </div>
-                        <button type="submit" onClick={sendPseudo}>Se connecter</button>
-                    </tr>
-                </table>
-            </form>
-
-
-            <a className="forgot_pw" href="http://localhost">Mot de passe oublié ?</a>
-        </div>
-    );
-};
-
-/* Envoyer le pseudo et le mot de passe */
-function sendPseudo() {
-    var pseudo = document.getElementById("pseudo").value;
-    var password = document.getElementById("password").value;
-    // transforme le pseudo en son format sha256
-    console.log(password);
-    var password = CryptoJS.SHA256(password).toString(CryptoJS.enc.Hex);
-    console.log(password);
-    var data = {
-        pseudo: pseudo,
-        password: password
-    };
-    console.log(data);
-    // var xhr = new XMLHttpRequest();
-    // xhr.open("POST", "http://localhost:3000/api/auth/login", true);
-    // xhr.setRequestHeader('Content-Type', 'application/json');
-    // xhr.send(JSON.stringify(data));
-    // xhr.onreadystatechange = function () {
-    //     if (xhr.readyState === 4 && xhr.status === 200) {
-    //         var json = JSON.parse(xhr.responseText);
-    //         console.log(json);
-    //     }
-    // }
+                    </label>
+                    <button type="submit">Se connecter</button>
+                    <p>{auth === ""?'':auth === "Failed"?'Authentification Failed':'User Unknown'}</p>
+                </form>
+            </div>
+        );
+    }
 }
-
 
 export default Connexion;
