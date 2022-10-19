@@ -1,24 +1,23 @@
 import React from 'react';
 
-
-const Admin = () => {
+const Admin_modif = () => {
     return (
         <div className="page_admin">
-            {/* Create a admin page */}
+            {/* Create a page to delete an user in the admin page*/}
             <div className="nav_bar_verticale">
                 <img className="logo" srcSet="./LogoApp.svg"></img>
                 <div className="create_user">
-                    <button id="user" className="bouton" type="button" value="Créer un utilisateur" onClick={Create_user}>Créer un nouvel utilisateur</button>
+                    <button id="user" className="bouton" type="button" value="Créer un utilisateur" onClick="Create_user()">Créer un nouvel utilisateur</button>
                 </div>
                 <div className="modify_user">
-                    <button id="user" className="bouton" type="button" value="Modifier un utilisateur" onClick={Modify_user}>Modifier un utilisateur</button>
+                    <button id="user" className="bouton" type="button" value="Modifier un utilisateur" /*onClick="Modify_user()"*/>Modifier un utilisateur</button>
                 </div>
                 <div className="delete_user">
-                    <button id="user" className="bouton" type="button" value="Supprimer un utilisateur" onClick={Delete_user}>Supprimer un utilisateur</button>
+                    <button id="user" className="bouton" type="button" value="Supprimer un utilisateur" /*onClick="Delete_user()"*/>Supprimer un utilisateur</button>
                 </div>
             </div>
-            <p className="Titre">Admin</p>
             <div className="Formulaire">
+                <p className="Titre">Admin</p>
                 <form className="form">
                     <table className="Formulaire_de_connexion">
                         <tr>
@@ -52,20 +51,4 @@ const Admin = () => {
     );
 };
 
-function Create_user() {
-    document.getElementById("user").onclick = function() {Create_user()};
-    document.location.href = "http://localhost:3000/";
-}
-
-function Modify_user(){
-    document.getElementById("user").onclick = function() {Modify_user()};
-    document.location.href = "http://localhost:3000/";
-}
-
-function Delete_user(){
-    //document.getElementById("user").onclick = function() {Delete_user()};
-    document.location = './pages/Admin_supp';
-    console.log(document.location);
-}
-
-export default Admin;
+export default Admin_modif;

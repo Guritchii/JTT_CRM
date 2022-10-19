@@ -1,7 +1,9 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Connexion from './pages/Connexion';
-// import Admin from './pages/Admin.js';
+//import Connexion from './pages/Connexion';
+import Admin from './pages/Admin.js';
+import Admin_supp from './pages/Admin_supp.js';
+import Admin_modif from './pages/Admin_modif.js';
 
 const App = () => {
   return (
@@ -11,7 +13,7 @@ const App = () => {
     //  </Routes>
     //</BrowserRouter>
 
-    <Connexion />
+    <Admin_modif/>
   );
 }
 
