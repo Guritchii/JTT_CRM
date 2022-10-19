@@ -26,7 +26,6 @@ body {
 
             .titre {
                 font-size: 40px;
-                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
             }
             
             .rechLogo {
@@ -138,6 +137,7 @@ body {
                 .name_picture {
                     display: flex;
                     flex-direction: column;
+                    justify-content: space-evenly;
                     margin: 30px;
                     width: auto;
                     height: 30%;
@@ -147,6 +147,56 @@ body {
                     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
                     backdrop-filter: blur(3px);
                     -webkit-backdrop-filter: blur(15px);
+
+                    .picture {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: left;
+                        margin-left: 25px;
+
+                        .photo_profil {
+                            display: flex;
+                            height: 150px;
+                            width: 150px;
+                        }
+
+                        .bouton_submit {
+                            display: flex;
+                            margin-left: 30px;
+                            align-items: center;
+
+                            .bouton_ajoutPhoto {
+                                height: 40px;
+                                width: 150px;
+                                background-color: grey;
+                                border-radius: 5px;
+                                border: 1px solid black;
+                                box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+                    
+                                &:hover{
+                                    background-color: lightgrey;   
+                                }
+                            }
+                        }
+                    }
+
+                    .name {
+                        display: flex;
+                        flex-direction: row;
+
+                        .def {
+                            display: flex;
+                        }
+
+                        .nom {
+                            display: flex;
+                        }
+
+                        .bouton_submit {
+                            display: flex;
+                            justify-content: right;
+                        }
+                    }
                 }
 
                 .infoPerso {

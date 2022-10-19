@@ -52,7 +52,19 @@ const Compte = () => {
                     </div>
                     <div className="Compte">
                         <div className="name_picture">
-                            <p>name_picture</p>
+                            <div className="picture">
+                                <img className="photo_profil" srcSet="./logo_personEntouré.svg"/>
+                                <div className='bouton_submit'>
+                                    <button className="bouton_ajoutPhoto" type="submit">Ajouter une photo</button>
+                                </div>
+                            </div>
+                            <div className="name">
+                                <p className="def">Nom Complet :</p>
+                                <p className="nom">Mateo Centeno</p>
+                                <div className='bouton_submit'>
+                                    <button className="bouton_modifierNom" type="submit">Modifier le nom</button>
+                                </div>
+                            </div>
                         </div>
                         <div className="infoPerso">
                             <p>infoPerso</p>
