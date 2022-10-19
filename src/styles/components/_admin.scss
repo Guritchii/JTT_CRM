@@ -1,15 +1,12 @@
 .page_admin {
     display: flex;
     flex-direction: row;
-    flex-basis: 100%;
     height: 100vh;
-    position:fixed;
 
     .nav_bar_verticale {
         display: flex;
         flex-direction: column;
         width: 200px;
-        height: 100%;
         background: rgba(255, 255, 255, 0.143);
         box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
         backdrop-filter: blur(3px);
@@ -21,16 +18,19 @@
 
         .create_user {
             padding: 5px;
+            text-decoration: none;
             align-self: center;
         }
 
         .modify_user {
             padding: 5px;
+            text-decoration: none;
             align-self: center;
         }
 
         .delete_user {
             padding: 5px;
+            text-decoration: none;
             align-self: center;
         }
 
@@ -46,7 +46,6 @@
             font-size: 13.5px;
             font-weight: bold;
             transition: 1s box-shadow;
-            cursor: pointer;
             border: none;
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
             background-color: rgba(163, 163, 163, 0.371);
@@ -73,36 +72,49 @@
         font-size: 30px;
     }*/
 
-    .Titre {
+    .Titre_Formulaire{
         display: flex;
         flex-direction: column;
+        flex-basis: 100%;
         background: rgba(255, 255, 255, 0.3);
         border-radius: 15px;
         box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
         backdrop-filter: blur(3px);
         -webkit-backdrop-filter: blur(15px);
         margin: 10px;
+        padding: 10px;
 
-        .Formulaire {
+        .Titre {
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 100%;
+            /*background: rgba(255, 255, 255, 0.3);
+            border-radius: 15px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(3px);
+            -webkit-backdrop-filter: blur(15px);*/
+            margin: 10px;
+            font-size: 70px;
+            font-weight: bold;
         }
+        
 
         .Formulaire{
             display: flex;
             flex-direction: column;
-            border-radius: 30px;
-            margin: 100px;
-            padding: 30px;
             align-items: center;
+            /*background: rgba(255, 255, 255, 0.3);
+            border-radius: 15px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(3px);
+            -webkit-backdrop-filter: blur(15px);*/
+            margin-left: 10px;
+            margin-right: 10px;
         }
 
         .texte {
             align-self: center;
             font-weight: bold;
-            padding: 10px;
+            font-size: 30px;
+            padding: 10px 10px 10px 0;
         }
 
         .texte_zone {
@@ -111,35 +123,64 @@
             background-color: transparent;
             border-radius: 5px;
             border: 0.5px solid;
-            padding-left: 10px;
-            padding-right: 10px;
+            //padding-left: 10px;
+            //padding-right: 10px;
         }
 
-        .bouton_val_ann {
-            width: 150px;
-            height: 40px;
-            border-radius: 10px;
-            border: 0.5px solid;
-            color: $white;
-            border: 0;
-            background-color: black;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(30px);
-            color: rgb(255, 255, 255);
-            cursor: pointer;
-            font-size: 15px;
+        .bouton_submit {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 600px;
+            height: 30px;
+            margin: 5px 5px 5px 0;
 
-            &:hover {
-                background-color: rgba(114, 114, 114, 0.371);
-            }
-
-            &:active {
-                background-color: rgba(68, 68, 68, 0.972);
-            }
-
-            .bouton_submit{
+            .bouton_val{
                 display: flex;
-                flex-direction: row;
+                background-color: grey;
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                backdrop-filter: blur(30px);
+                color: rgb(255, 255, 255);
+                cursor: pointer;
+                font-size: 15px;
+                border-radius: 15px;
+                width: 20%;
+                align-items: center;
+                justify-content: center;
+
+                &:hover {
+                    box-shadow: 0, 5px, 35px, 0 rgba(0, 0, 0, 1);
+                    color: white;
+                    background-color: rgba(114, 114, 114, 0.371);
+                }
+    
+                &:active {
+                    background-color: rgba(68, 68, 68, 0.972);
+                }
+            }
+
+            .bouton_ann{
+                display: flex;
+                background-color: grey;
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                backdrop-filter: blur(30px);
+                color: rgb(255, 255, 255);
+                cursor: pointer;
+                font-size: 15px;
+                border-radius: 15px;
+                width: 20%;
+                align-items: center;
+                justify-content: center;
+
+                &:hover {
+                    box-shadow: 0, 5px, 35px, 0 rgba(0, 0, 0, 1);
+                    color: white;
+                    background-color: rgba(114, 114, 114, 0.371);
+                }
+    
+                &:active {
+                    background-color: rgba(68, 68, 68, 0.972);
+                }
             }
         }
     }
