@@ -69,7 +69,7 @@ const Compte = () => {
                             </div>
                         </div>
                         <div className="infoPerso">
-                            <p className="description">Informations personnels</p>
+                            <p className="description">Informations personnel</p>
                             <div className="parti_mail">   
                                 <p className="def">Mail :</p>
                                 <p className="mail">coucou@gmail.com</p>
@@ -84,7 +84,19 @@ const Compte = () => {
                             </div>
                         </div>
                         <div className="infoEntreprise">
-                            <p>infoEntreprise</p>
+                            <p className="description">Informations entreprise</p>
+                            <div className="parti_name">   
+                                <p className="def">Nom de l'entreprise</p>
+                                <p className="name">entreprise name</p>
+                            </div>
+                            <div className="parti_secteurAct">                                
+                                <p className="def">Secteur d'activité :</p>
+                                <p className="secteurAct">Coiffure</p>
+                            </div>
+                            <div className="parti_nbClient">                       
+                                <p className="def">Nombre clients :</p>
+                                <p className="nbClient">200</p>
+                            </div>
                         </div>
                     </div>
                 </div>

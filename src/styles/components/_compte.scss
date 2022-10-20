@@ -289,7 +289,8 @@ body {
 
                 .infoEntreprise {
                     display: flex;
-                    flex-direction: column;    
+                    flex-direction: column;
+                    justify-content: space-evenly;    
                     margin: 13px;
                     width: auto;
                     height: 30%;
@@ -299,6 +300,66 @@ body {
                     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
                     backdrop-filter: blur(3px);
                     -webkit-backdrop-filter: blur(15px);
+
+                    .description {
+                        display: flex;
+                        margin: 0 25px;
+                        border-bottom: 1px solid grey;
+                        padding: 0 0 10px 0;
+                        font-weight: bold;
+                    }
+
+                    .parti_name {
+                        display: flex;
+                        flex-direction: row;
+                        margin: 0 25px;                        
+                        border-bottom: 1px solid grey;
+                        padding: 0 0 15px 0;
+
+                        .def {
+                            display: flex;
+                            font-weight: bold;
+                        }
+
+                        .name {
+                            display: flex;
+                            margin-left: 92px;
+                        }
+                    }
+
+                    .parti_secteurAct{
+                        display: flex;
+                        flex-direction: row;
+                        margin: 0 25px;                        
+                        border-bottom: 1px solid grey;
+                        padding: 0 0 15px 0;
+
+                        .def {
+                            display: flex;
+                            font-weight: bold;
+                        }
+
+                        .secteurAct {
+                            display: flex;
+                            margin-left: 98px;
+                        }
+                    }
+
+                    .parti_nbClient {
+                        display: flex;
+                        flex-direction: row;
+                        margin: 0 25px;
+
+                        .def {
+                            display: flex;
+                            font-weight: bold;
+                        }
+
+                        .nbClient {
+                            display: flex;
+                            margin-left: 115px;
+                        }
+                    }
                 }
             }
         }
