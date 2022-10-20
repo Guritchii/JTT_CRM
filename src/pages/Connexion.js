@@ -76,9 +76,10 @@ function Connexion() {
                         </div>
                         <button type="submit">Se connecter</button>
                     </label>
-                    <a className="forgot_pw" href="http://localhost">Mot de passe oublié ?</a>
+                    
                     <p>{auth === ""?'':auth === "Failed"?'Authentification Echoué':'Utilisateur inconnu'}</p>
                 </form>
+                <a className="forgot_pw" href="http://localhost">Mot de passe oublié ?</a>
             </div>
         );
     }
