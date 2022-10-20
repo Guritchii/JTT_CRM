@@ -196,11 +196,12 @@ body {
 
                             .def {
                                 display: flex;
+                                font-weight: bold;
                             }
 
                             .nom {
                                 display: flex;
-                                margin-left: 125px;
+                                margin-left: 125px;;
                             }
                         }
 
@@ -213,6 +214,7 @@ body {
                 .infoPerso {
                     display: flex;
                     flex-direction: column;
+                    justify-content: space-evenly;
                     margin-left: 13px;
                     margin-right: 13px;
                     width: auto;
@@ -223,6 +225,66 @@ body {
                     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
                     backdrop-filter: blur(3px);
                     -webkit-backdrop-filter: blur(15px);
+
+                    .description {
+                        display: flex;
+                        margin: 0 25px;
+                        border-bottom: 1px solid grey;
+                        padding: 0 0 10px 0;
+                        font-weight: bold;
+                    }
+
+                    .parti_mail {
+                        display: flex;
+                        flex-direction: row;
+                        margin: 0 25px;                        
+                        border-bottom: 1px solid grey;
+                        padding: 0 0 15px 0;
+
+                        .def {
+                            display: flex;
+                            font-weight: bold;
+                        }
+
+                        .mail {
+                            display: flex;
+                            margin-left: 199px;
+                        }
+                    }
+
+                    .parti_pays {
+                        display: flex;
+                        flex-direction: row;
+                        margin: 0 25px;                        
+                        border-bottom: 1px solid grey;
+                        padding: 0 0 15px 0;
+
+                        .def {
+                            display: flex;
+                            font-weight: bold;
+                        }
+
+                        .pays_region {
+                            display: flex;
+                            margin-left: 110px;
+                        }
+                    }
+
+                    .parti_tel {
+                        display: flex;
+                        flex-direction: row;
+                        margin: 0 25px;
+
+                        .def {
+                            display: flex;
+                            font-weight: bold;
+                        }
+
+                        .tel {
+                            display: flex;
+                            margin-left: 207px;
+                        }
+                    }
                 }
 
                 .infoEntreprise {

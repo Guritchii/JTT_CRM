@@ -69,7 +69,19 @@ const Compte = () => {
                             </div>
                         </div>
                         <div className="infoPerso">
-                            <p>infoPerso</p>
+                            <p className="description">Informations personnels</p>
+                            <div className="parti_mail">   
+                                <p className="def">Mail :</p>
+                                <p className="mail">coucou@gmail.com</p>
+                            </div>
+                            <div className="parti_pays">                                
+                                <p className="def">Pays ou Région :</p>
+                                <p className="pays_region">France</p>
+                            </div>
+                            <div className="parti_tel">                       
+                                <p className="def">Tel :</p>
+                                <p className="tel">0745632114</p>
+                            </div>
                         </div>
                         <div className="infoEntreprise">
                             <p>infoEntreprise</p>
