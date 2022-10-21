@@ -59,18 +59,44 @@ const Compte = () => {
                                 </div>
                             </div>
                             <div className="name">
-                                <p className="def">Nom Complet :</p>
-                                <p className="nom">Mateo Centeno</p>
+                                <div className="presentationNom">
+                                    <p className="def">Nom Complet :</p>
+                                    <p className="nom">Mateo Centeno</p>
+                                </div>
                                 <div className='bouton_submit'>
                                     <button className="bouton_modifierNom" type="submit">Modifier le nom</button>
                                 </div>
                             </div>
                         </div>
                         <div className="infoPerso">
-                            <p>infoPerso</p>
+                            <p className="description">Informations personnel</p>
+                            <div className="parti_mail">   
+                                <p className="def">Mail :</p>
+                                <p className="mail">coucou@gmail.com</p>
+                            </div>
+                            <div className="parti_pays">                                
+                                <p className="def">Pays ou Région :</p>
+                                <p className="pays_region">France</p>
+                            </div>
+                            <div className="parti_tel">                       
+                                <p className="def">Tel :</p>
+                                <p className="tel">0745632114</p>
+                            </div>
                         </div>
                         <div className="infoEntreprise">
-                            <p>infoEntreprise</p>
+                            <p className="description">Informations entreprise</p>
+                            <div className="parti_name">   
+                                <p className="def">Nom de l'entreprise</p>
+                                <p className="name">entreprise name</p>
+                            </div>
+                            <div className="parti_secteurAct">                                
+                                <p className="def">Secteur d'activité :</p>
+                                <p className="secteurAct">Coiffure</p>
+                            </div>
+                            <div className="parti_nbClient">                       
+                                <p className="def">Nombre clients :</p>
+                                <p className="nbClient">200</p>
+                            </div>
                         </div>
                     </div>
                 </div>

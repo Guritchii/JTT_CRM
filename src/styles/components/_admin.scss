@@ -76,11 +76,11 @@
         display: flex;
         flex-direction: column;
         flex-basis: 100%;
-        /*background: rgba(255, 255, 255, 0.3);
+        background: rgba(255, 255, 255, 0.3);
         border-radius: 15px;
         box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
         backdrop-filter: blur(3px);
-        -webkit-backdrop-filter: blur(15px);*/
+        -webkit-backdrop-filter: blur(15px);
         margin: 10px;
         padding: 10px;
 
@@ -110,10 +110,48 @@
             margin-right: 10px;
         }
 
+        .Formulaire_de_connexion {
+
+            display: flex;
+            flex-direction: row;
+            margin-top: 10%;
+            /*background: rgba(255, 255, 255, 0.3);
+            border-radius: 15px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(3px);
+            -webkit-backdrop-filter: blur(15px);*/
+
+            .texte_côté {
+                display:flex;
+                flex-direction: column;
+                justify-content: space-around;
+                height: 100%;
+            }
+
+            input {
+                display: flex;
+                flex-direction: column;
+                margin: 10px;
+            }
+
+            .button_submit {
+                display: flex;
+                margin-top: 150%;
+                margin-bottom: 2%;
+                padding-left: 10px;
+                
+                .bouton_réini{
+                background-color: rgb(190, 189, 189);
+                border-radius: 5px;
+                border: 1px solid black;
+                box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+                }
+            }
+        }
+
         .texte {
             align-self: center;
-            font-weight: bold;
-            font-size: 30px;
+            font-size: 15px;
             padding: 10px 10px 10px 0;
         }
 
@@ -123,21 +161,23 @@
             background-color: transparent;
             border-radius: 5px;
             border: 0.5px solid;
+            justify-content: center;
             padding: 0 10px 0 15px;
-            //padding-left: 10px;
-            //padding-right: 10px;
+            padding-left: 10px;
+            padding-right: 10px;
         }
 
         .bouton_submit {
             display: flex;
             flex-direction: row;
-            justify-content: space-between;
+            justify-content: space-around;
+            align-self: center;
             width: 600px;
             height: 30px;
-            margin: 5px 5px 5px 0;
+            margin-top: 5%;
 
             .bouton_val{
-                display: flex;
+                //display: flex;
                 background-color: grey;
                 border: 1px solid rgba(255, 255, 255, 0.1);
                 backdrop-filter: blur(30px);
@@ -161,7 +201,7 @@
             }
 
             .bouton_ann{
-                display: flex;
+                //display: flex;
                 background-color: grey;
                 border: 1px solid rgba(255, 255, 255, 0.1);
                 backdrop-filter: blur(30px);
@@ -196,7 +236,6 @@
         backdrop-filter: blur(3px);
         -webkit-backdrop-filter: blur(15px);*/
         margin: 10px;
-        padding: 10px;
 
         .Titre {
             display: flex;
@@ -205,7 +244,7 @@
             box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
             backdrop-filter: blur(3px);
             -webkit-backdrop-filter: blur(15px);
-            margin: 10px;
+            //margin: 10px;
             font-size: 70px;
             font-weight: bold;
         }
@@ -219,8 +258,8 @@
             box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
             backdrop-filter: blur(3px);
             -webkit-backdrop-filter: blur(15px);
-            margin: 10px;
-            padding: 10px;
+            //margin: 10px;
+            //padding: 10px;
             align-items: center;
 
             .input_box {
