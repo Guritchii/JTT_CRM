@@ -1,6 +1,8 @@
 import axios from 'axios'
 import React, { useState } from 'react';
 import CryptoJS from 'crypto-js';
+import { NavLink } from 'react-router-dom';
+import Admin from './Admin.js'
 
 const api = axios.create({
     baseURL: 'http://localhost:8080'
@@ -52,7 +54,7 @@ function Connexion() {
 
     if (auth === "Succeed") {
         return(
-            <div>My CRM</div>
+            <Admin/>
         );
     }
     else {

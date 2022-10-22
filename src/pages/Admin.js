@@ -40,20 +40,4 @@ const Admin = () => {
     );
 };
 
-function Create_user() {
-    document.getElementById("user").onclick = function() {Create_user()};
-    document.location.href = "http://localhost:3000/";
-}
-
-function Modify_user(){
-    document.getElementById("user").onclick = function() {Modify_user()};
-    document.location.href = "http://localhost:3000/";
-}
-
-/*function Delete_user(){
-    //document.getElementById("user").onclick = function() {Delete_user()};
-    document.location = './pages/Admin_supp';
-    console.log(document.location);
-}*/
-
 export default Admin;
