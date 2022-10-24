@@ -10,4 +10,4 @@ steps:
   image: node
   commands:
   - npm install
-  - npm test
+  - find -name "*.js" | xargs node -c
