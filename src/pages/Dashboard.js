@@ -3,11 +3,11 @@ import React from 'react';
 
 const Dashboard = () => {
     return (
-        <body className='corps_page_dashboard'>
+        <body className="corps_page_dashboard">
 
             <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"></link>
 
-            <div className='page_principale'>
+            <div className="page_principale">
                 {/* Create a principal page */}
                 <div className="haut_de_page">
                     <h2 className="titre">Dashboard</h2>

@@ -42,5 +42,4 @@ const Admin_supp = () => {
     );
 };
 
-
 export default Admin_supp;
