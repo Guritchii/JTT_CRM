@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import CryptoJS from 'crypto-js';
 import { NavLink } from 'react-router-dom';
 import Admin from './Admin.js'
+import Dashboard from './Dashboard.js'
 
 const api = axios.create({
     baseURL: 'http://localhost:8080'
@@ -53,9 +54,10 @@ function Connexion() {
     }
 
     if (auth === "Succeed") {
-        return(
-            <Admin/>
-        );
+        if (login === "admin")
+            return <Admin />
+        else
+            return <Dashboard />
     }
     else {
         return (
