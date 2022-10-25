@@ -22,16 +22,16 @@ const Admin_modif = () => {
                                 </div>
                             </tr>
                             <tr>
-                                <div className="button_submit">
-                                    <button className="bouton_réini">Réinitialiser le mot de passe</button>
-                                </div>
-                            </tr>
-                            <tr>
                                 <input id="nom" className="texte_zone" type="text" placeholder="Nom..."/>
                                 <input id="prénom" className="texte_zone" type="text" placeholder="Prénom..."/>
                                 <input id="rôle" className="texte_zone" type="text" placeholder="Rôle..."/>
                                 <input id="identifiant" className="texte_zone" type="text" placeholder="Identifiant..."/>
                                 <input id="password" className="texte_zone" type="password" placeholder="Mot de passe (par default)..."/>
+                            </tr>
+                            <tr>
+                                <div className="button_submit">
+                                    <button className="bouton_réini">Réinitialiser le mot de passe</button>
+                                </div>
                             </tr>
                         </table>
                     </form>

@@ -48,7 +48,7 @@
             transition: 1s box-shadow;
             border: none;
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-            background-color: rgba(163, 163, 163, 0.371);
+            background-color: rgb(163, 163, 163, 0.371);
             border: 1px solid rgba(255,255,255,0.1);
             backdrop-filter: blur(30px);
             color: rgb(255, 255, 255);
@@ -145,6 +145,7 @@
                 border-radius: 5px;
                 border: 1px solid black;
                 box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+                cursor: pointer;
                 }
             }
         }
