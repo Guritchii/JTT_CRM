@@ -110,6 +110,7 @@ body {
                     object-fit: cover;
                     background-color: transparent;
                     border: none;
+                    cursor: pointer;
 
                     .logo_nav_bar{
                         display: flex;
@@ -167,6 +168,7 @@ body {
                             display: flex;
                             margin-left: 30px;
                             align-items: center;
+                            cursor: pointer;
 
                             .bouton_ajoutPhoto {
                                 height: 40px;
@@ -175,6 +177,7 @@ body {
                                 border-radius: 5px;
                                 border: 1px solid black;
                                 box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+                                cursor: pointer;
                     
                                 &:hover{
                                     background-color: lightgrey;   
@@ -215,6 +218,7 @@ body {
                                 border-radius: 5px;
                                 border-radius: 5px;
                                 box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+                                cursor: pointer;
     
                                 &:hover{
                                     background-color: lightgrey; 
