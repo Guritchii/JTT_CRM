@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios'
 import Chart from 'chart.js/auto'
+import NavigationDashboard from '../components/NavigationDashboard';
 window.Chart = Chart
 
 const api = axios.create({
@@ -26,34 +27,7 @@ const Analyse = () => {
             </div>
 
             <div className="bas_de_page">
-                <div className="nav_bar_verticale">
-                    <div className="parti_one">
-                        <button className="button" type="submit">
-                            <img className="logo_nav_bar" srcSet="./logo_person.svg"/>                        
-                        </button>
-                    </div>  
-                    <div className="parti_two">
-                        <button className="button" type="submit">
-                            <img className="logo_nav_bar" srcSet="./logo_speed.svg"/> 
-                        </button>
-                        <button className="button" type="submit">
-                            <img className="logo_nav_bar" srcSet="./logo_graph.svg"/>
-                        </button>
-                        <button className="button" type="submit">
-                            <img className="logo_nav_bar" srcSet="./logo_calendrier.svg"/>
-                        </button>
-                    </div>
-                    <div className="parti_three">
-                        <button className="button" type="submit">
-                            <img className="logo_nav_bar" srcSet="./logo_group.svg"/>
-                        </button>
-                    </div>   
-                    <div className="parti_four">
-                        <button className="button" type="submit">
-                            <img className="logo_nav_bar" srcSet="./logo_parametre.svg"/>
-                        </button>
-                    </div>                                    
-                </div>
+                <NavigationDashboard />                          
                 <div className="Analyse">
                     <div className="statistiques_1">
                         
