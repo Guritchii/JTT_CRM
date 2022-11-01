@@ -72,6 +72,19 @@ app.get('/User/Auth/:login/:pwd', (req, res) => {
     });
 });
 
+app.get('/User/role/:login', (req, res) => {
+    
+        const login = req.params.login;
+        let sql = 'SELECT idRole FROM users WHERE login = ?';
+    
+        db.query(sql, [login], (err, result) => {
+            if (err) throw err;
+    
+            console.log(result);
+            res.send(result);
+        });
+});
+
 app.post('/User/Add', (req, res) => {
     
     let form = req.body;
