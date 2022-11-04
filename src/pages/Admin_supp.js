@@ -9,6 +9,7 @@ const Admin_supp = () => {
             <NavigationAdmin />
             <div className="Titre_Formulaire_Rech">
                 <p className="Titre">Admin</p>
+                <p className="Sous-titre">Supression d'utilisateur</p>
                 <div className="rechLogo">
                     <div className="input_box">
                     <input type="search" placeholder="Rechercher..."/>

@@ -9,6 +9,7 @@ const Admin_modif = () => {
             {/* Create a admin page */}
             <div className="Titre_Formulaire">
                 <p className="Titre">Admin</p>
+                <p className="Sous-titre">Modification d'utilisateur</p>
                 <div className="Formulaire">
                     <form className="form">
                         <table className="Formulaire_de_connexion">
