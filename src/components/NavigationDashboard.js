@@ -33,14 +33,14 @@ const NavigationDashboard = () => {
                     </NavLink>
                 </div>
             </NavLink>
-            <NavLink className="répertoire" to="/Répertoire">
+            <NavLink className="repertoire" to="/Repertoire">
                 <div className="parti_three">
                     <button className="button" type="submit">
                         <img className="logo_nav_bar" srcSet="./logo_group.svg"/>
                     </button>
                 </div>
             </NavLink>
-            <NavLink className="paramètres" to="/Paramètres">
+            <NavLink className="parametres" to="/Parametres">
                 <div className="parti_four">
                     <button className="button" type="submit">
                         <img className="logo_nav_bar" srcSet="./logo_parametre.svg"/>
