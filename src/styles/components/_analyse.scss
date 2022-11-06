@@ -1,16 +1,13 @@
-.page_analyse {
-    display: flex;
-    flex-direction: column;
-    //justify-content: space-evenly;
-    width: auto;
-    height: 100vh;
+body {
+    background-image: url("../../../public/fond_page_connexion.png");
 
-    background: rgba(255, 255, 255, 0.143);
-    border-radius: 15px;
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    backdrop-filter: blur(3px);
-    -webkit-backdrop-filter: blur(15px);
-
+    .page_analyse {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        width: auto;
+        height: 100vh;
+    
         .haut_de_page {
             display: flex;
             flex-direction: row;
@@ -20,8 +17,8 @@
             height: 10%;
             align-items: center;
             margin: 10px 10px 5px 10px;
-                
-            background: rgba(255, 255, 255, 0.143);
+            
+            background: rgba(255, 255, 255, 0.3);
             border-radius: 15px;
             box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
             backdrop-filter: blur(3px);
@@ -30,7 +27,7 @@
             .titre {
                 font-size: 40px;
             }
-
+            
             .rechLogo {
                 display: flex;
                 flex-direction: row;
@@ -86,11 +83,11 @@
                 }
             }            
         }
-
+    
         .bas_de_page {
             display: flex;
             flex-direction: row;
-            //justify-content: space-between;
+            justify-content: space-between;
             width: auto;
             height: 86%;
     
@@ -102,7 +99,7 @@
                 width: 5%;
                 margin: 5px 5px 10px 10px;
 
-                background: rgba(255, 255, 255, 0.143);
+                background: rgba(255, 255, 255, 0.3);
                 border-radius: 15px;
                 box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
                 backdrop-filter: blur(3px);
@@ -124,20 +121,40 @@
                 }
             }
 
-            .statistiques_1 {
+            .Analyse {
                 display: flex;
                 flex-direction: column;
                 justify-content: space-evenly;
-                padding: 50px;
-                width: 1423px;
-                height: 627px;
-                margin: 5px 5px 10px 10px;
-                    
-                background: rgba(255, 255, 255, 0.143);
-                border-radius: 15px;
-                box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-                backdrop-filter: blur(3px);
-                -webkit-backdrop-filter: blur(15px);
+                height: auto;
+                width: 93%;
+                margin: 5px 10px 10px 5px;
+
+                .Stat_1 {
+                    display: flex;
+                    width: auto;
+                    height: 50%;
+                    margin: 50px 50px 8px 50px;
+
+                    background: rgba(255, 255, 255, 0.3);
+                    border-radius: 15px;
+                    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+                    backdrop-filter: blur(3px);
+                    -webkit-backdrop-filter: blur(15px);
+                }
+
+                .Stat_2 {
+                    display: flex;
+                    width: auto;
+                    height: 50%;
+                    margin: 8px 50px 50px 50px;
+
+                    background: rgba(255, 255, 255, 0.3);
+                    border-radius: 15px;
+                    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+                    backdrop-filter: blur(3px);
+                    -webkit-backdrop-filter: blur(15px);
+                }
             }
         }
+    }
 }
