@@ -58,6 +58,20 @@ app.get('/Customer/Id/:id', (req, res) => {
     });
 }); 
 
+app.get('/User/Id/:id', (req, res) => {
+
+    const id = req.params.id;
+    let sql = 'SELECT lastname,firstname,phone,mail,login,idrole FROM users WHERE iduser = ?';
+
+    db.query(sql, [id], (err, result) => {
+        if (err) throw err;
+
+        console.log(result);
+        res.send(result);
+    });
+}); 
+
+
 app.get('/User/Auth/:login/:pwd', (req, res) => {
 
     const login = req.params.login;

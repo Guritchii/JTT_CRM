@@ -4,16 +4,21 @@ import NavigationAdmin from '../components/NavigationAdmin.js';
 import CryptoJS from 'crypto-js';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
+import { NavLink } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
+import { Button } from '@mui/material';
 
 const api = axios.create({
     baseURL: 'http://localhost:8080'
   })
 
-function Admin() {
+function Admin_create() {
 
     const [loginError, setLoginError] = useState(false);    
     const [roles, setRoles] = useState([]);
     const [selectedIdRole, setSelectedIdRole] = useState(1);
+
+    const navigate = useNavigate();
  
     useEffect(() =>{
         api.get('/Role/All/').then((response) => {
@@ -45,13 +50,15 @@ function Admin() {
                 api.post('/User/Add', values).then (function(response) {
                     console.log(response.data);
                 });
+
+                navigate("/Admin_list");
             }
         });
     };
 
     return (
         <div className="page_admin">
-            <NavigationAdmin />
+            {/*<NavigationAdmin />*/}
             {/* Create a admin page */}
             <div className="Titre_Formulaire">
                 <p className="Titre">Admin</p>
@@ -92,7 +99,9 @@ function Admin() {
                         <p>{loginError === true?"L'identifiant existe déja":''}</p>
                         <div className="bouton_submit">
                             <button className="bouton_val" type="submit">Valider</button>
-                            <button className="bouton_ann" type='reset'>Annuler</button>
+                            <NavLink className="bouton_ann" to="/Admin_list">
+                                <button className="bouton_ann" type="button">Retour</button>
+                            </NavLink>
                         </div>
                     </form>
                 </div>
@@ -101,4 +110,4 @@ function Admin() {
     );
 };
 
-export default Admin;
+export default Admin_create;

@@ -1,8 +1,9 @@
 import axios from 'axios'
 import React, { useState } from 'react';
 import CryptoJS from 'crypto-js';
-import Admin from './Admin.js'
+import Admin from './Admin_create.js'
 import Dashboard from './Dashboard.js';
+import Admin_list from './Admin_list.js';
 
 const api = axios.create({
     baseURL: 'http://localhost:8080'
@@ -67,7 +68,7 @@ function Connexion() {
         });
         console.log("RoleUser: " + roleUser);
         if (roleUser === 4)
-            return (<Admin />);
+            return (<Admin_list />);
         else if (roleUser === 1)
             return (<Dashboard />);
     }
