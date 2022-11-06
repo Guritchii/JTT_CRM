@@ -72,7 +72,7 @@ app.get('/User/Auth/:login/:pwd', (req, res) => {
     });
 });
 
-app.get('/User/role/:login', (req, res) => {
+app.get('/User/Role/:login', (req, res) => {
     
         const login = req.params.login;
         let sql = 'SELECT idRole FROM users WHERE login = ?';
@@ -83,6 +83,43 @@ app.get('/User/role/:login', (req, res) => {
             console.log(result);
             res.send(result);
         });
+});
+
+app.get('/Role/All/', (req, res) => {
+    
+    let sql = 'SELECT idRole,name FROM roles ORDER BY idRole';
+
+    db.query(sql, (err, result) => {
+        if (err) throw err;
+
+        console.log(result);
+        res.send(result);
+    });
+});
+
+app.get('/User/All', (req, res) => {
+
+    let sql = 'SELECT iduser,lastname,firstname,login,phone,mail,roles.name FROM users,roles where users.idrole = roles.idrole Order by roles.idrole,lastname,firstname;';
+
+    db.query(sql, (err, result) => {
+        if (err) throw err;
+
+        console.log(result);
+        res.send(result);
+    });
+});
+
+app.get('/User/Exist/:login', (req, res) => {
+    
+    const login = req.params.login;
+    let sql = 'SELECT idUser FROM users WHERE login = ?';
+
+    db.query(sql, [login], (err, result) => {
+        if (err) throw err;
+
+        console.log(result);
+        res.send(result);
+    });
 });
 
 app.post('/User/Add', (req, res) => {
