@@ -21,8 +21,7 @@ function Admin_modif() {
     useEffect(() =>{
         const apiString = '/User/Id/' + iduser;
         api.get(apiString).then((response) => {
-            console.log(response.data);
-            setCurrentUser(response.data);
+            setCurrentUser(response.data[0]);
             setSelectedIdRole(response.data[0].idrole);
         });
     });
@@ -53,17 +52,13 @@ function Admin_modif() {
                                     <p>Prénom :</p>
                                     <p>Rôle :</p>
                                     <p>Identifiant :</p>
+                                    <p>Identifiant :</p>
                                     <p>Mot de passe :</p>
                                 </div>
                             </tr>
                             <tr>
-                                <input id="nom" value={currentUser[0].lastname} name='lastname' className="texte_zone" type="text" placeholder="Nom..." required/>
-                                {/*
-                                <input id="prenom" value={selectedUser[0].firstname} name='firstname' className="texte_zone" type="text" placeholder="Prénom..." required/>
-                                <input id="phone" value={selectedUser[0].phone} name='phone' className="texte_zone" type="tel" 
-                                    placeholder="Téléphone..." pattern="[0-9]{10}" required/>
-                                <input id="email" value={selectedUser[0].mail} name='mail' className="texte_zone" type="email" placeholder="Email..." required/>
-                                */}
+                                <input id="nom" value={currentUser.lastname} name='lastname' className="texte_zone" type="text" placeholder="Nom..." required/>
+                                <input id="prenom" value={currentUser.firstname} name="firstname" className="texte_zone" type="text" placeholder="Prénom..." required/>
                                 <Select
                                     name='idrole'
                                     value={selectedIdRole}
@@ -73,9 +68,10 @@ function Admin_modif() {
                                         <MenuItem value={role.idRole}>{role.name}</MenuItem>    
                                     ))}
                                 </Select>
-                                {/*
-                                <input id="identifiant" value={selectedUser[0].login} name='login' className="texte_zone" type="text" placeholder="Identifiant..." required/>
-                                    */}
+                                <input id="phone" value={currentUser.phone} name="phone" className="texte_zone" type="tel" 
+                                    placeholder="Téléphone..." pattern="[0-9]{10}" required/>
+                                <input id="email" value={currentUser.mail} name="mail" className="texte_zone" type="email" placeholder="Email..." required/>
+                                <input id="identifiant" value={currentUser.login} name="login" className="texte_zone" type="text" placeholder="Identifiant..." required/>
                             </tr>
                             <tr>
                                 <div className="button_submit">
