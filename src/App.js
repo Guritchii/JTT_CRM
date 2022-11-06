@@ -8,6 +8,9 @@ import Dashboard from './pages/Dashboard';
 import Analyse from './pages/Analyse';
 import Admin_list from './pages/Admin_list';
 import Admin_create from './pages/Admin_create';
+import Calendrier from './pages/Calendrier';
+import Repertoire from './pages/Repertoire';
+import Parametres from './pages/Parametres';
 
 const App = () => {
   return (
@@ -21,6 +24,9 @@ const App = () => {
       <Route path="/Admin_supp" element={<Admin_supp />} />
       <Route path="/Dashboard" element={<Dashboard />} />
       <Route path="/Analyse" element={<Analyse />} />
+      <Route path="/Calendrier" element={<Calendrier />} />
+      <Route path="/Repertoire" element={<Repertoire />} />
+      <Route path="/Parametres" element={<Parametres />} />
      </Routes>
     </BrowserRouter>
   );
