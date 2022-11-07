@@ -124,7 +124,8 @@ body {
 
         .Calendrier {
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+            align-items: center;
             background: rgba(255, 255, 255, 0.3);
             border-radius: 15px;
             box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
@@ -132,6 +133,24 @@ body {
             -webkit-backdrop-filter: blur(15px);
             width: 100%;
             margin: 5px 5px 10px 10px;
+            text-align: center;
+
+            .mini_formulaire_evenement {
+                display: flex;
+                flex-direction: row;
+                margin-top: 10px;
+            }
+
+            .rbc-calendar {
+                margin-top: 200px;
+
+                .rbc-day-bg {
+                    border-radius: 5px;
+                }
+                .rbc-month-view {
+                    border-radius: 10px;
+                }
+            }
         }
     }
 }

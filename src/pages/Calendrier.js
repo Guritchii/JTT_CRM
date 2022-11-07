@@ -1,4 +1,5 @@
-import React, {Pages} from 'react';
+import React, { useState } from 'react';
+import "react-datepicker/dist/react-datepicker.css";
 import NavigationDashboard from '../components/NavigationDashboard';
 import format from "date-fns/format";
 import getDay from "date-fns/getDay";
@@ -7,7 +8,7 @@ import startOfWeek from "date-fns/startOfWeek";
 import { Calendar, dateFnsLocalizer } from "react-big-calendar";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
+
 
 const locales = {
     "en-US": require("date-fns/locale/en-US"),
@@ -39,7 +40,18 @@ const locales = {
     },
   ];
 
+    
+
+
 const Calendrier = () => {
+
+    const [newEvent, setNewEvent] = useState({Titre: "", Début: "", Fin:""});
+    const [allEvents, setAllEvents] = useState(events);
+
+    function handleAddEvent() {
+        setAllEvents([...allEvents, newEvent])
+    }
+
     return (
         <body>
 
@@ -64,8 +76,19 @@ const Calendrier = () => {
                 <div className="bas_de_page">
                     <NavigationDashboard />
                     <div className="Calendrier">
-                    <Calendar localizer={localizer} events={events} 
-                    startAccessor="start" endAccessor="end" style={{height: "100%", width:"95%"}}/>
+                    <h2>Ajouter un évènement</h2>
+                    <div className="mini_formulaire_evenement">
+                        <input type="text" placeholder="Ajoutez un titre" style={{height: "50%", width: "100%", marginRight: "10px"}} 
+                            value={newEvent.Titre} onChange={(e) => setNewEvent({...newEvent, Titre: e.target.value})}
+                        />
+                        <DatePicker placeholderText="Date de début" style={{marginRight: "10px"}}
+                        selected={newEvent.Début} onChange={(Début) => setNewEvent({...newEvent, Début})} />
+                        <DatePicker placeholderText="Date de fin"
+                        selected={newEvent.Fin} onChange={(Fin) => setNewEvent({...newEvent, Fin})} />
+                        <button onClick={handleAddEvent}>Ajouter l'évènement</button>
+                    </div>
+                    <Calendar localizer={localizer} events={allEvents} 
+                    startAccessor="start" endAccessor="end" style={{height: "100%", width:"99%"}}/>
                     </div>
                 </div>
             </div>
