@@ -8,7 +8,7 @@ const NavigationDashboard = () => {
             <NavLink className="mon_compte" to="/Account">
                 <div className="parti_one">
                     <button className="button" type="submit">
-                        <img className="logo_nav_bar" srcSet="./logo_person.svg"/>                        
+                        <img id='bigImage' className="logo_nav_bar" srcSet="./logo_person.svg"/>                       
                     </button>
                 </div>
             </NavLink>
@@ -50,5 +50,6 @@ const NavigationDashboard = () => {
         </div>
     );
 };
+
 
 export default NavigationDashboard;

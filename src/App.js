@@ -12,10 +12,13 @@ import Calendrier from './pages/Calendrier';
 import Repertoire from './pages/Repertoire';
 import Parametres from './pages/Parametres';
 
+
+
 const App = () => {
+
   return (
     <BrowserRouter>
-     <Routes>
+      <Routes>
       <Route path="/" element={<Connexion />} />
       <Route path="/Admin_create" element={<Admin_create />} />
       <Route path="/Account" element={<Compte />} />
@@ -27,9 +30,10 @@ const App = () => {
       <Route path="/Calendrier" element={<Calendrier />} />
       <Route path="/Repertoire" element={<Repertoire />} />
       <Route path="/Parametres" element={<Parametres />} />
-     </Routes>
+      </Routes>
     </BrowserRouter>
   );
 }
+
 
 export default App;
