@@ -24,18 +24,18 @@ const locales = {
     {
         title: "Big Meeting",
         allDay: true,
-        start: new Date(2021, 6, 0),
-        end: new Date(2021, 6, 0)
+        start: new Date(2022, 10, 0),
+        end: new Date(2022, 10, 2)
     },
     {
         title: "Vacation",
-        start: new Date(2021, 6, 7),
-        end: new Date(2021, 6, 10)
+        start: new Date(2022, 10, 7),
+        end: new Date(2022, 10, 9)
     },
     {
         title: "Conference",
-        start: new Date(2021, 6, 20),
-        end: new Date(2021, 6, 23)
+        start: new Date(2022, 10, 14),
+        end: new Date(2022, 10, 16)
     },
   ];
 
