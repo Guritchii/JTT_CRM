@@ -85,8 +85,10 @@ const Calendrier = () => {
                             selected={newEvent.Début} onChange={(Début) => setNewEvent({...newEvent, Début})} />
                             <DatePicker className="ajout_input" placeholderText="Date de fin"
                             selected={newEvent.Fin} onChange={(Fin) => setNewEvent({...newEvent, Fin})} />
-                            <button className="bouton_ajout" onClick={handleAddEvent}>Ajouter l'évènement</button>
                         </div>
+                        <button className="bouton_ajout" onClick={handleAddEvent}>
+                            <p>Ajouter l'évènement</p>
+                        </button>
                     </h2>
                     <Calendar localizer={localizer} events={allEvents} 
                     startAccessor="start" endAccessor="end" style={{height: "100%", width:"99%"}}/>
