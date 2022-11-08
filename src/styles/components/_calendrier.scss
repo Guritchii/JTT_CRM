@@ -125,41 +125,42 @@ body {
                 }
             }
 
-        .Calendrier {
-            display: flex;
-            flex-direction: row;
-            background: rgba(255, 255, 255, 0.3);
-            border-radius: 15px;
-            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-            backdrop-filter: blur(3px);
-            -webkit-backdrop-filter: blur(15px);
-            width: 100%;
-            margin: 5px 10px 10px 5px;
-            text-align: center;
-
-            .mini_formulaire_evenement {
+            .Calendrier {
                 display: flex;
                 flex-direction: row;
-                margin-top: 10px;
-                height: 100px;
+                background: rgba(255, 255, 255, 0.3);
+                border-radius: 15px;
+                box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+                backdrop-filter: blur(3px);
+                -webkit-backdrop-filter: blur(15px);
+                width: 100%;
+                margin: 5px 10px 10px 5px;
+                text-align: center;
 
-                .bouton_ajout {
-                    width: 300px;
-                    height: 50px;
-                    border-radius: 10px;
-                    border: 0.5px solid;
-                    border: 0;
-                    background-color: rgba(163, 163, 163, 0.371);
-                    border: 1px solid rgba(255,255,255,0.1);
-                    backdrop-filter: blur(30px);
-                    color: rgb(255, 255, 255);
-                    cursor: pointer;
-                    font-size: 15px;
-                    &:hover{
-                        background-color: rgba(114, 114, 114, 0.371);   
-                    }
-                    &:active{
-                        background-color:rgba(68, 68, 68, 0.972);   
+                .mini_formulaire_evenement {
+                    display: flex;
+                    flex-direction: column;
+                    margin-top: 10px;
+                    height: 100px;
+
+                    .bouton_ajout {
+                        width: 300px;
+                        height: 50px;
+                        border-radius: 10px;
+                        border: 0.5px solid;
+                        border: 0;
+                        background-color: rgba(163, 163, 163, 0.371);
+                        border: 1px solid rgba(255,255,255,0.1);
+                        backdrop-filter: blur(30px);
+                        color: rgb(255, 255, 255);
+                        cursor: pointer;
+                        font-size: 15px;
+                        &:hover{
+                            background-color: rgba(114, 114, 114, 0.371);   
+                        }
+                        &:active{
+                            background-color:rgba(68, 68, 68, 0.972);   
+                        }
                     }
                 }
             }

@@ -136,6 +136,8 @@ body {
 
                 .one {
                     display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
                     width: auto;
                     height: 28.5%;
 
@@ -144,6 +146,65 @@ body {
                     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
                     backdrop-filter: blur(3px);
                     -webkit-backdrop-filter: blur(15px);
+
+                    .one_haut {
+                        display: flex;
+                        width: auto;
+                        height: 50%;
+                        margin: 0 25px;                        
+                        border-bottom: 1px solid grey;
+                    }
+
+                    .one_milieu {
+                        display: flex;
+                        width: auto;
+                        height: 17.5%;
+                        margin: 0 25px;                        
+                        border-bottom: 1px solid grey;
+
+                        .bouton_submit {
+                            display: flex;
+                            
+                            .bouton_modifierNom {
+                                width: 100px;
+                                height: 25px;
+                                background-color: rgb(190, 189, 189);
+                                border-radius: 5px;
+                                border-radius: 5px;
+                                box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+                                cursor: pointer;
+    
+                                &:hover{
+                                    background-color: lightgrey; 
+                                }
+                            }
+                        }
+                    }
+
+                    .one_bas {
+                        display: flex;
+                        width: auto;
+                        height: 17.5%;
+                        background-color: red;
+
+                        .bouton_submit {
+                            display: flex;
+                            
+                            .bouton_modifierNom {
+                                width: 100px;
+                                height: 25px;
+                                background-color: rgb(190, 189, 189);
+                                border-radius: 5px;
+                                border-radius: 5px;
+                                box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+                                cursor: pointer;
+    
+                                &:hover{
+                                    background-color: lightgrey; 
+                                }
+                            }
+                        }
+                    }
                 }
 
                 .two {
@@ -156,6 +217,7 @@ body {
                     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
                     backdrop-filter: blur(3px);
                     -webkit-backdrop-filter: blur(15px);
+
                 }
 
                 .three {

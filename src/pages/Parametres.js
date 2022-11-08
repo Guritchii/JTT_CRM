@@ -27,13 +27,18 @@ const Parametre = () => {
                     <div className="Compte">
                         <div className="one">
                             <div className="one_haut">
-
+                                sécurité
                             </div>
                             <div className="one_milieu">
-
+                                <p className="text_one_milieu">Signaler un problème</p>
+                                <div className='bouton_submit'>
+                                    <button className="bouton_modifierMDP" type="submit">Modifier le nom</button>
+                                </div>
                             </div>
                             <div className="one_bas">
-
+                            <div className='bouton_submit'>
+                                    <button className="bouton_modifierMDP" type="submit">Modifier le nom</button>
+                                </div>
                             </div>
                         </div>
                         <div className="two">
