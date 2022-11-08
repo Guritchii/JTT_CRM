@@ -184,11 +184,29 @@ body {
             }
 
             .rbc-calendar {
+                border-radius: 15px;
+                border: 1px solid black;
+                
+                .rbc-toolbar {
+
+                    .rbc-btn-group {
+                        border-color: black;
+                        
+                        .button {
+                            border-color: black;
+                        }
+                    }
+                }
+
                 .rbc-day-bg {
                     border-radius: 5px;
+                    border-color: black;
                 }
                 .rbc-month-view {
                     border-radius: 10px;
+                    border-color: black;
+                    border-right: none;
+                    border-bottom: none;
                 }
             }
 
