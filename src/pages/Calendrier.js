@@ -78,14 +78,14 @@ const Calendrier = () => {
                     <div className="Calendrier">
                     <h2>Ajouter un évènement</h2>
                     <div className="mini_formulaire_evenement">
-                        <input type="text" placeholder="Ajoutez un titre" style={{height: "50%", width: "100%", marginRight: "10px"}} 
+                        <input className="ajout_titre" type="text" placeholder="Ajoutez un titre" style={{height: "20px", width: "100%", marginRight: "10px"}} 
                             value={newEvent.Titre} onChange={(e) => setNewEvent({...newEvent, Titre: e.target.value})}
                         />
                         <DatePicker placeholderText="Date de début" style={{marginRight: "10px"}}
                         selected={newEvent.Début} onChange={(Début) => setNewEvent({...newEvent, Début})} />
                         <DatePicker placeholderText="Date de fin"
                         selected={newEvent.Fin} onChange={(Fin) => setNewEvent({...newEvent, Fin})} />
-                        <button onClick={handleAddEvent}>Ajouter l'évènement</button>
+                        <button className="bouton_ajout" onClick={handleAddEvent}>Ajouter l'évènement</button>
                     </div>
                     <Calendar localizer={localizer} events={allEvents} 
                     startAccessor="start" endAccessor="end" style={{height: "100%", width:"99%"}}/>
