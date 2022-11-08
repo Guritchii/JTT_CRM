@@ -157,6 +157,8 @@ body {
 
                     .one_milieu {
                         display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
                         width: auto;
                         height: 17.5%;
                         margin: 0 25px;                        
