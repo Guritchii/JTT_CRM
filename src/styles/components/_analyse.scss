@@ -1,6 +1,10 @@
 body {
     background-image: url("../../../public/fond_page_connexion.png");
-
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    
     .page_analyse {
         display: flex;
         flex-direction: column;
@@ -126,7 +130,7 @@ body {
                 flex-direction: column;
                 justify-content: space-evenly;
                 height: auto;
-                width: 93%;
+                width: 93.4%;
                 margin: 5px 10px 10px 5px;
 
                 .Stat_1 {
