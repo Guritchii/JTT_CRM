@@ -1,7 +1,11 @@
 body {
     background-image: url("../../../public/fond_page_connexion.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
 
-    .page_compte {
+    .page_parametre {
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
@@ -122,20 +126,49 @@ body {
             }
             
     
-            .Parametre {
+            .Compte {
                 display: flex;
                 flex-direction: column;
-                justify-content: space-evenly;
+                justify-content: space-between;
                 width: 94.3%;
                 height: auto;
                 margin: 5px 10px 10px 5px;
 
-                background: rgba(255, 255, 255, 0.3);
-                border-radius: 15px;
-                box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-                backdrop-filter: blur(3px);
-                -webkit-backdrop-filter: blur(15px);
+                .one {
+                    display: flex;
+                    width: auto;
+                    height: 28.5%;
 
+                    background: rgba(255, 255, 255, 0.3);
+                    border-radius: 15px;
+                    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+                    backdrop-filter: blur(3px);
+                    -webkit-backdrop-filter: blur(15px);
+                }
+
+                .two {
+                    display: flex;
+                    width: auto;
+                    height: 28.5%;
+
+                    background: rgba(255, 255, 255, 0.3);
+                    border-radius: 15px;
+                    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+                    backdrop-filter: blur(3px);
+                    -webkit-backdrop-filter: blur(15px);
+                }
+
+                .three {
+                    display: flex;
+                    width: auto;
+                    height: 40%;
+
+                    background: rgba(255, 255, 255, 0.3);
+                    border-radius: 15px;
+                    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+                    backdrop-filter: blur(3px);
+                    -webkit-backdrop-filter: blur(15px);
+                }
             }
         }
     }

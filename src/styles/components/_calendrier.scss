@@ -1,175 +1,179 @@
 body {
     background-image: url("../../../public/fond_page_connexion.png");
-
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    
     .page_calendrier {
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
         width: auto;
         height: 100vh;
-    }
 
-    .haut_de_page {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        padding: 50px;
-        width: auto;
-        height: 10%;
-        align-items: center;
-        margin: 10px 10px 5px 10px;
-        
-        background: rgba(255, 255, 255, 0.3);
-        border-radius: 15px;
-        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-        backdrop-filter: blur(3px);
-        -webkit-backdrop-filter: blur(15px);
-
-        .titre {
-            font-size: 40px;
-        }
-        
-        .rechLogo {
+        .haut_de_page {
             display: flex;
             flex-direction: row;
             justify-content: space-between;
-
-            .input_box {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                position: relative;
-                height: 40px;
-                max-width: 350px;
-                width: 100%;
-                margin: 30px 30px;
-                border-radius: 25px;
-                box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-
-                input {
-                    position: relative;
-                    width: 100%;
-                    height: 100%;
-                    padding: 0 15px 0 65px;
-                    outline: none;
-                    border: none;
-                    border-radius: 25px;
-                    font-size: 16px;
-                    font-weight: 400;
-                    color: #333;
-                }
-
-                .search {
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    position: absolute;
-                    left: 0;
-                    top: 0;
-                    height: 100%;
-                    width: 60px;
-                    border-radius: 25px 0 0 25px;
-
-                    .search-icon {
-                        font-size: 30px;
-                        color: black;
-                    }
-                }
-            }
-
-            .logo {
-                display: flex;
-                width: 100px;
-                height: 100px;
-            }
-        }            
-    }
-
-    .bas_de_page {
-        display: flex;
-        flex-direction: row;
-        //justify-content: space-between;
-        width: auto;
-        height: 86%;
-
-        .nav_bar_verticale {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
+            padding: 50px;
+            width: auto;
+            height: 10%;
             align-items: center;
-            width: 5%;
-            margin: 5px 5px 10px 10px;
-
+            margin: 10px 10px 5px 10px;
+            
             background: rgba(255, 255, 255, 0.3);
             border-radius: 15px;
             box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
             backdrop-filter: blur(3px);
             -webkit-backdrop-filter: blur(15px);
 
-            .button {
-                display: flex;
-                object-fit: cover;
-                background-color: transparent;
-                border: none;
-                cursor: pointer;
-
-                .logo_nav_bar{
-                    display: flex;
-                    margin: 10px;
-                    height: 50px;
-                    width: 50px;
-                }
+            .titre {
+                font-size: 40px;
             }
-        }
-
-        .Calendrier {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            background: rgba(255, 255, 255, 0.3);
-            border-radius: 15px;
-            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-            backdrop-filter: blur(3px);
-            -webkit-backdrop-filter: blur(15px);
-            width: 100%;
-            margin: 5px 10px 10px 5px;
-            text-align: center;
-
-            .mini_formulaire_evenement {
+            
+            .rechLogo {
                 display: flex;
                 flex-direction: row;
-                margin-top: 10px;
-                height: 100px;
+                justify-content: space-between;
 
-                .bouton_ajout {
-                    width: 300px;
-                    height: 50px;
-                    border-radius: 10px;
-                    border: 0.5px solid;
-                    border: 0;
-                    background-color: rgba(163, 163, 163, 0.371);
-                    border: 1px solid rgba(255,255,255,0.1);
-                    backdrop-filter: blur(30px);
-                    color: rgb(255, 255, 255);
-                    cursor: pointer;
-                    font-size: 15px;
-                    &:hover{
-                        background-color: rgba(114, 114, 114, 0.371);   
+                .input_box {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    position: relative;
+                    height: 40px;
+                    max-width: 350px;
+                    width: 100%;
+                    margin: 30px 30px;
+                    border-radius: 25px;
+                    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+
+                    input {
+                        position: relative;
+                        width: 100%;
+                        height: 100%;
+                        padding: 0 15px 0 65px;
+                        outline: none;
+                        border: none;
+                        border-radius: 25px;
+                        font-size: 16px;
+                        font-weight: 400;
+                        color: #333;
                     }
-                    &:active{
-                        background-color:rgba(68, 68, 68, 0.972);   
+
+                    .search {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        height: 100%;
+                        width: 60px;
+                        border-radius: 25px 0 0 25px;
+
+                        .search-icon {
+                            font-size: 30px;
+                            color: black;
+                        }
+                    }
+                }
+
+                .logo {
+                    display: flex;
+                    width: 100px;
+                    height: 100px;
+                }
+            }            
+        }
+
+        .bas_de_page {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: auto;
+            height: 86%;
+
+            .nav_bar_verticale {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                align-items: center;
+                width: 5%;
+                margin: 5px 5px 10px 10px;
+
+                background: rgba(255, 255, 255, 0.3);
+                border-radius: 15px;
+                box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+                backdrop-filter: blur(3px);
+                -webkit-backdrop-filter: blur(15px);
+
+                .button {
+                    display: flex;
+                    object-fit: cover;
+                    background-color: transparent;
+                    border: none;
+                    cursor: pointer;
+
+                    .logo_nav_bar{
+                        display: flex;
+                        margin: 10px;
+                        height: 50px;
+                        width: 50px;
                     }
                 }
             }
 
-            .rbc-calendar {
-                margin-top: 200px;
+            .Calendrier {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                background: rgba(255, 255, 255, 0.3);
+                border-radius: 15px;
+                box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+                backdrop-filter: blur(3px);
+                -webkit-backdrop-filter: blur(15px);
+                width: 93.4%;
+                margin: 5px 10px 10px 5px;
+                text-align: center;
 
-                .rbc-day-bg {
-                    border-radius: 5px;
+                .mini_formulaire_evenement {
+                    display: flex;
+                    flex-direction: row;
+                    margin-top: 10px;
+                    height: 100px;
+
+                    .bouton_ajout {
+                        width: 300px;
+                        height: 50px;
+                        border-radius: 10px;
+                        border: 0.5px solid;
+                        border: 0;
+                        background-color: rgba(163, 163, 163, 0.371);
+                        border: 1px solid rgba(255,255,255,0.1);
+                        backdrop-filter: blur(30px);
+                        color: rgb(255, 255, 255);
+                        cursor: pointer;
+                        font-size: 15px;
+                        &:hover{
+                            background-color: rgba(114, 114, 114, 0.371);   
+                        }
+                        &:active{
+                            background-color:rgba(68, 68, 68, 0.972);   
+                        }
+                    }
                 }
-                .rbc-month-view {
-                    border-radius: 10px;
+
+                .rbc-calendar {
+                    margin-top: 200px;
+
+                    .rbc-day-bg {
+                        border-radius: 5px;
+                    }
+                    .rbc-month-view {
+                        border-radius: 10px;
+                    }
                 }
             }
         }

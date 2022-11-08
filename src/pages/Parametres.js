@@ -11,7 +11,7 @@ const Parametre = () => {
             <div className="page_parametre">
                 {/* Create an account page */}
                 <div className="haut_de_page">
-                    <h2 className="titre">Parametre</h2>
+                    <h2 className="titre">Paramètre</h2>
                     <div className="rechLogo">
                         <div className="input_box">
                             <input type="search" placeholder="Rechercher..."/>
@@ -24,8 +24,24 @@ const Parametre = () => {
                 </div>
                 <div className="bas_de_page">
                     <NavigationDashboard />                      
-                    <div className="Parametre">
-                        coucou
+                    <div className="Compte">
+                        <div className="one">
+                            <div className="one_haut">
+
+                            </div>
+                            <div className="one_milieu">
+
+                            </div>
+                            <div className="one_bas">
+
+                            </div>
+                        </div>
+                        <div className="two">
+                            coucou
+                        </div>
+                        <div className="three">
+                            coucou
+                        </div>
                     </div>
                 </div>
             </div>
