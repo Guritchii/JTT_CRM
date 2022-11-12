@@ -99,9 +99,7 @@ function Admin_create() {
                         <p>{loginError === true?"L'identifiant existe déja":''}</p>
                         <div className="bouton_submit">
                             <button className="bouton_val" type="submit">Valider</button>
-                            <NavLink className="bouton_ann" to="/Admin_list">
-                                <button className="bouton_ann" type="button">Retour</button>
-                            </NavLink>
+                            <NavLink className="bouton_ann" to="/Admin_list">Retour</NavLink>
                         </div>
                     </form>
                 </div>

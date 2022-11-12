@@ -22,22 +22,7 @@ const locales = {
   });
   
   const events = [
-    {
-        title: "Big Meeting",
-        allDay: true,
-        start: new Date(2022, 10, 0),
-        end: new Date(2022, 10, 2)
-    },
-    {
-        title: "Vacation",
-        start: new Date(2022, 10, 7),
-        end: new Date(2022, 10, 9)
-    },
-    {
-        title: "Conference",
-        start: new Date(2022, 10, 14),
-        end: new Date(2022, 10, 16)
-    },
+    
   ];
 
     
@@ -45,11 +30,11 @@ const locales = {
 
 const Calendrier = () => {
 
-    const [newEvent, setNewEvent] = useState({Titre: "", Début: "", Fin:""});
+    const [newEvent, setNewEvent] = useState({title: "", start: "", end:""});
     const [allEvents, setAllEvents] = useState(events);
 
     function handleAddEvent() {
-        setAllEvents([...allEvents, newEvent])
+        setAllEvents([...allEvents, newEvent]);
     }
 
     return (
@@ -76,21 +61,21 @@ const Calendrier = () => {
                 <div className="bas_de_page">
                     <NavigationDashboard />
                     <div className="Calendrier">
-                    <h2 className="Titre">Ajouter un évènement
-                        <div className="mini_formulaire_evenement">
-                            <input className="ajout_input" type="text" placeholder="Ajoutez un titre" style={{height: "20px", width: "100%", marginRight: "10px"}} 
-                                value={newEvent.Titre} onChange={(e) => setNewEvent({...newEvent, Titre: e.target.value})}/>
-                            <DatePicker className="ajout_input" placeholderText="Date de début" style={{height: "20px", width: "100%", marginRight: "10px"}}
-                            selected={newEvent.Début} onChange={(Début) => setNewEvent({...newEvent, Début})} />
-                            <DatePicker className="ajout_input" placeholderText="Date de fin" style={{height: "20px", width: "100%"}}
-                            selected={newEvent.Fin} onChange={(Fin) => setNewEvent({...newEvent, Fin})} />
-                        </div>
-                        <button className="bouton_ajout" onClick={handleAddEvent}>
-                            <p>Ajouter l'évènement</p>
-                        </button>
-                    </h2>
-                    <Calendar localizer={localizer} events={allEvents} 
-                    startAccessor="start" endAccessor="end" style={{height: "100%", width:"99%"}}/>
+                        <h2 className="Titre">Ajouter un évènement
+                            <div className="mini_formulaire_evenement">
+                                <input className="ajout_input" type="text" placeholder="Ajoutez un titre" style={{height: "20px", width: "100%", marginRight: "10px"}} 
+                                    value={newEvent.Titre} onChange={(e) => setNewEvent({...newEvent, title: e.target.value})}/>
+                                <DatePicker className="ajout_input" placeholderText="Date de début" style={{height: "20px", width: "100%", marginRight: "10px"}}
+                                selected={newEvent.start} onChange={(start) => setNewEvent({...newEvent, start})} />
+                                <DatePicker className="ajout_input" placeholderText="Date de fin" style={{height: "20px", width: "100%"}}
+                                selected={newEvent.end} onChange={(end) => setNewEvent({...newEvent, end})} />
+                            </div>
+                            <button className="bouton_ajout" onClick={handleAddEvent}>
+                                <p>Ajouter l'évènement</p>
+                            </button>
+                        </h2>
+                        <Calendar localizer={localizer} events={allEvents} 
+                        startAccessor="start" endAccessor="end" style={{height: "100%", width:"99%"}}/>
                     </div>
                 </div>
             </div>
