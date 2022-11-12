@@ -161,11 +161,20 @@ body {
                         justify-content: space-between;
                         width: auto;
                         height: 17.5%;
-                        margin: 0 25px;                        
+                        margin: 0 25px;          
                         border-bottom: 1px solid grey;
+
+                        .text_one_milieu {
+                            margin-top: auto;
+                            margin-bottom: auto;
+                            padding: 0 0 15px 0;
+
+                        }
 
                         .bouton_submit {
                             display: flex;
+                            padding: 0 0 15px 0;
+
                             
                             .bouton_modifierNom {
                                 width: 100px;
@@ -185,9 +194,11 @@ body {
 
                     .one_bas {
                         display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
                         width: auto;
+                        margin: 0 25px; 
                         height: 17.5%;
-                        background-color: red;
 
                         .bouton_submit {
                             display: flex;

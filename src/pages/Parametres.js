@@ -36,7 +36,8 @@ const Parametre = () => {
                                 </div>
                             </div>
                             <div className="one_bas">
-                            <div className='bouton_submit'>
+                                <p className="text_one_milieu">Mot de passe</p>
+                                <div className='bouton_submit'>
                                     <button className="bouton_modifierMDP" type="submit">Modifier le nom</button>
                                 </div>
                             </div>
