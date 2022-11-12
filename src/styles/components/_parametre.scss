@@ -126,7 +126,7 @@ body {
             }
             
     
-            .Compte {
+            .Parametre {
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
@@ -137,9 +137,10 @@ body {
                 .one {
                     display: flex;
                     flex-direction: column;
-                    justify-content: space-between;
+                    justify-content: space-evenly;
                     width: auto;
                     height: 28.5%;
+                    padding: 10px;
 
                     background: rgba(255, 255, 255, 0.3);
                     border-radius: 15px;
@@ -149,36 +150,29 @@ body {
 
                     .one_haut {
                         display: flex;
-                        width: auto;
+                        flex-direction: row;
+                        justify-content: space-between;
                         height: 50%;
-                        margin: 0 25px;                        
-                        border-bottom: 1px solid grey;
+                        border-bottom: 1px solid black;
                     }
 
                     .one_milieu {
                         display: flex;
                         flex-direction: row;
                         justify-content: space-between;
-                        width: auto;
-                        height: 17.5%;
-                        margin: 0 25px;          
-                        border-bottom: 1px solid grey;
-
-                        .text_one_milieu {
-                            margin-top: auto;
-                            margin-bottom: auto;
-                            padding: 0 0 15px 0;
-
-                        }
+                        padding: 9px;
+                        height: 25%;
+                        border-bottom: 1px solid black;
 
                         .bouton_submit {
                             display: flex;
-                            padding: 0 0 15px 0;
+                            margin-left: 30px;
+                            align-items: center;
+                            cursor: pointer;
 
-                            
-                            .bouton_modifierNom {
-                                width: 100px;
-                                height: 25px;
+                            .bouton_signalerPB {
+                                width: 75px;
+                                height: 20px;
                                 background-color: rgb(190, 189, 189);
                                 border-radius: 5px;
                                 border-radius: 5px;
@@ -196,16 +190,18 @@ body {
                         display: flex;
                         flex-direction: row;
                         justify-content: space-between;
-                        width: auto;
-                        margin: 0 25px; 
-                        height: 17.5%;
+                        padding: 9px;
+                        height: 25%;
 
                         .bouton_submit {
                             display: flex;
-                            
-                            .bouton_modifierNom {
-                                width: 100px;
-                                height: 25px;
+                            margin-left: 30px;
+                            align-items: center;
+                            cursor: pointer;
+
+                            .bouton_modifierMDP {
+                                width: 75px;
+                                height: 20px;
                                 background-color: rgb(190, 189, 189);
                                 border-radius: 5px;
                                 border-radius: 5px;
