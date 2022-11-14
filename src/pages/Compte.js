@@ -1,4 +1,5 @@
 import React from 'react';
+import NavigationDashboard from '../components/NavigationDashboard';
 
 
 const Compte = () => {
@@ -22,34 +23,7 @@ const Compte = () => {
                     </div>
                 </div>
                 <div className="bas_de_page">
-                    <div className="nav_bar_verticale">
-                        <div className="parti_one">
-                            <button className="button" type="submit">
-                                <img className="logo_nav_bar" srcSet="./logo_person.svg"/>                        
-                            </button>
-                        </div>  
-                        <div className="parti_two">
-                            <button className="button" type="submit">
-                                <img className="logo_nav_bar" srcSet="./logo_speed.svg"/> 
-                            </button>
-                            <button className="button" type="submit">
-                                <img className="logo_nav_bar" srcSet="./logo_graph.svg"/>
-                            </button>
-                            <button className="button" type="submit">
-                                <img className="logo_nav_bar" srcSet="./logo_calendrier.svg"/>
-                            </button>
-                        </div>
-                        <div className="parti_three">
-                            <button className="button" type="submit">
-                                <img className="logo_nav_bar" srcSet="./logo_group.svg"/>
-                            </button>
-                        </div>   
-                        <div className="parti_four">
-                            <button className="button" type="submit">
-                                <img className="logo_nav_bar" srcSet="./logo_parametre.svg"/>
-                            </button>
-                        </div>                                    
-                    </div>
+                    <NavigationDashboard />                      
                     <div className="Compte">
                         <div className="name_picture">
                             <div className="picture">
@@ -64,7 +38,7 @@ const Compte = () => {
                                     <p className="nom">Mateo Centeno</p>
                                 </div>
                                 <div className='bouton_submit'>
-                                    <button className="bouton_modifierNom" type="submit">Modifier le nom</button>
+                                    <button className="bouton_modifierNom" type="submit">Modifier</button>
                                 </div>
                             </div>
                         </div>

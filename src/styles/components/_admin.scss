@@ -67,10 +67,7 @@
         }
     }
 
-    /*.form{
-        align-self: center;
-        font-size: 30px;
-    }*/
+
 
     .Titre_Formulaire{
         display: flex;
@@ -95,6 +92,18 @@
             font-size: 70px;
             font-weight: bold;
         }
+
+        .Sous-titre {
+            display: flex;
+            /*background: rgba(255, 255, 255, 0.3);
+            border-radius: 15px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(3px);
+            -webkit-backdrop-filter: blur(15px);*/
+            margin: 10px;
+            font-size: 40px;
+            font-weight: bold;
+        }
         
 
         .Formulaire{
@@ -108,47 +117,56 @@
             -webkit-backdrop-filter: blur(15px);*/
             margin-left: 10px;
             margin-right: 10px;
-        }
 
-        .Formulaire_de_connexion {
-
-            display: flex;
-            flex-direction: row;
-            margin-top: 10%;
-            /*background: rgba(255, 255, 255, 0.3);
-            border-radius: 15px;
-            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-            backdrop-filter: blur(3px);
-            -webkit-backdrop-filter: blur(15px);*/
-
-            .texte_côté {
-                display:flex;
-                flex-direction: column;
-                justify-content: space-around;
-                height: 100%;
-            }
-
-            input {
+            .form{
                 display: flex;
                 flex-direction: column;
-                margin: 10px;
-            }
+                align-self: center;
+                font-size: 30px;
 
-            .button_submit {
-                display: flex;
-                margin-top: 150%;
-                margin-bottom: 2%;
-                padding-left: 10px;
-                
-                .bouton_réini{
-                background-color: rgb(190, 189, 189);
-                border-radius: 5px;
-                border: 1px solid black;
-                box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-                cursor: pointer;
+                .Formulaire_de_connexion {
+
+                    display: flex;
+                    flex-direction: row;
+                    margin-top: 5%;
+                    /*background: rgba(255, 255, 255, 0.3);
+                    border-radius: 15px;
+                    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+                    backdrop-filter: blur(3px);
+                    -webkit-backdrop-filter: blur(15px);*/
+        
+                    .texte_côté {
+                        display:flex;
+                        flex-direction: column;
+                        justify-content: space-around;
+                        height: 100%;
+                    }
+        
+                    input {
+                        display: flex;
+                        flex-direction: column;
+                        margin: 10px;
+                    }
+        
+                    .button_submit {
+                        display: flex;
+                        margin-top: 150%;
+                        margin-bottom: 2%;
+                        padding-left: 10px;
+                        
+                        .bouton_réini{
+                        background-color: rgb(190, 189, 189);
+                        border-radius: 5px;
+                        border: 1px solid black;
+                        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+                        cursor: pointer;
+                        }
+                    }
                 }
             }
         }
+
+        
 
         .texte {
             align-self: center;
@@ -187,8 +205,6 @@
                 font-size: 15px;
                 border-radius: 15px;
                 width: 20%;
-                align-items: center;
-                justify-content: center;
 
                 &:hover {
                     box-shadow: 0, 5px, 35px, 0 rgba(0, 0, 0, 1);
@@ -204,15 +220,15 @@
             .bouton_ann{
                 //display: flex;
                 background-color: grey;
-                border: 1px solid rgba(255, 255, 255, 0.1);
+                border: 0px solid rgba(255, 255, 255, 0.1);
                 backdrop-filter: blur(30px);
                 color: rgb(255, 255, 255);
                 cursor: pointer;
                 font-size: 15px;
                 border-radius: 15px;
                 width: 20%;
-                align-items: center;
-                justify-content: center;
+                text-decoration: none;
+                text-align: center;
 
                 &:hover {
                     box-shadow: 0, 5px, 35px, 0 rgba(0, 0, 0, 1);
@@ -231,22 +247,35 @@
         display: flex;
         flex-direction: column;
         flex-basis: 100%;
-        /*background: rgba(255, 255, 255, 0.3);
+        background: rgba(255, 255, 255, 0.3);
         border-radius: 15px;
         box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
         backdrop-filter: blur(3px);
-        -webkit-backdrop-filter: blur(15px);*/
+        -webkit-backdrop-filter: blur(15px);
         margin: 10px;
+        padding: 10px;
 
         .Titre {
             display: flex;
-            background: rgba(255, 255, 255, 0.3);
+            /*background: rgba(255, 255, 255, 0.3);
             border-radius: 15px;
             box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
             backdrop-filter: blur(3px);
-            -webkit-backdrop-filter: blur(15px);
-            //margin: 10px;
+            -webkit-backdrop-filter: blur(15px);*/
+            margin: 10px;
             font-size: 70px;
+            font-weight: bold;
+        }
+
+        .Sous-titre {
+            display: flex;
+            /*background: rgba(255, 255, 255, 0.3);
+            border-radius: 15px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(3px);
+            -webkit-backdrop-filter: blur(15px);*/
+            margin: 10px;
+            font-size: 40px;
             font-weight: bold;
         }
 
@@ -254,14 +283,15 @@
             display: flex;
             flex-direction: column;
             flex-basis: 100%;
-            background: rgba(255, 255, 255, 0.3);
+            /*background: rgba(255, 255, 255, 0.3);
             border-radius: 15px;
             box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
             backdrop-filter: blur(3px);
-            -webkit-backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);*/
             //margin: 10px;
             //padding: 10px;
             align-items: center;
+            margin-top: 5%;
 
             .input_box {
                 display: flex;
@@ -370,7 +400,6 @@
                     border-radius: 15px;
                     width: 30%;
                     align-items: center;
-                    justify-content: center;
     
                     &:hover {
                         box-shadow: 0, 5px, 35px, 0 rgba(0, 0, 0, 1);

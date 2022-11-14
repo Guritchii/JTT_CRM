@@ -1,8 +1,10 @@
 import axios from 'axios'
 import React, { useState } from 'react';
 import CryptoJS from 'crypto-js';
-import Admin from './Admin.js'
+import Admin from './Admin_create.js'
 import Dashboard from './Dashboard.js'
+import Dashboard from './Dashboard.js';
+import Admin_list from './Admin_list.js';
 
 const api = axios.create({
     baseURL: 'http://localhost:8080'
@@ -13,6 +15,7 @@ function Connexion() {
     const [auth, setAuth] = useState("");
     const [login, setLogin] = useState("");
     const [password, setPassword] = useState("");
+    const [roleUser, setRole] = useState("");
     
     function changeLogin(event) {
         setLogin(event.target.value);
@@ -53,10 +56,22 @@ function Connexion() {
     }
 
     if (auth === "Succeed") {
-        if (login === "admin")
-            return <Admin />
-        else
-            return <Dashboard />
+        const apiString = '/User/role/' + login;
+        api.get(apiString).then((response) => {
+            const role = response.data;
+            console.log("Role: " + role[0].idRole);
+            console.log("longueur role: " + role.length);
+            if (role.length > 0){
+                setRole(role[0].idRole);
+                }
+            else
+                setRole(-1);
+        });
+        console.log("RoleUser: " + roleUser);
+        if (roleUser === 4)
+            return (<Admin_list />);
+        else if (roleUser === 1)
+            return (<Dashboard />);
     }
     else {
         return (

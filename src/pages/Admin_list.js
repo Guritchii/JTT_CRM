@@ -8,7 +8,7 @@ const api = axios.create({
     baseURL: 'http://localhost:8080'
   })
 
-const Admin_supp = () => {
+function Admin_list() {
 
     const [users, setUsers] = useState([]);
     const [selectedIdUser, setSelectedIdUser] = useState();
@@ -28,10 +28,10 @@ const Admin_supp = () => {
         <div className="page_admin">
             <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"></link>
             {/* Create a page to delete an user in the admin page*/}
-            <NavigationAdmin />
+            <NavigationAdmin iduser={selectedIdUser}/>
             <div className="Titre_Formulaire_Rech">
                 <p className="Titre">Admin</p>
-                <p className="Sous-titre">Supression d'utilisateur</p>
+                <p className="Sous-titre">Liste des utilisateurs</p>
                 <div className="rechLogo">
                     <div className="input_box">
                     <input type="search" placeholder="Rechercher..."/>
@@ -98,4 +98,4 @@ const Admin_supp = () => {
     );
 };
 
-export default Admin_supp;
+export default Admin_list;
