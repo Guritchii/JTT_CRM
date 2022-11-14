@@ -24,7 +24,7 @@ const Parametre = () => {
                 </div>
                 <div className="bas_de_page">
                     <NavigationDashboard />                      
-                    <div className="Compte">
+                    <div className="Parametre">
                         <div className="one">
                             <div className="one_haut">
                                 sécurité
@@ -32,12 +32,13 @@ const Parametre = () => {
                             <div className="one_milieu">
                                 <p className="text_one_milieu">Signaler un problème</p>
                                 <div className='bouton_submit'>
-                                    <button className="bouton_modifierMDP" type="submit">Modifier le nom</button>
+                                    <button className="bouton_signalerPB" type="submit">Signaler</button>
                                 </div>
                             </div>
                             <div className="one_bas">
-                            <div className='bouton_submit'>
-                                    <button className="bouton_modifierMDP" type="submit">Modifier le nom</button>
+                                <p className="text_one_milieu">Mot de passe</p>
+                                <div className='bouton_submit'>
+                                    <button className="bouton_modifierMDP" type="submit">Modifier</button>
                                 </div>
                             </div>
                         </div>

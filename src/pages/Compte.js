@@ -39,7 +39,7 @@ const Compte = () => {
                                     <p className="nom">Mateo Centeno</p>
                                 </div>
                                 <div className='bouton_submit'>
-                                    <button className="bouton_modifierNom" type="submit">Modifier le nom</button>
+                                    <button className="bouton_modifierNom" type="submit">Modifier</button>
                                 </div>
                             </div>
                         </div>
