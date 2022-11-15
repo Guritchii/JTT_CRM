@@ -84,7 +84,7 @@ const Compte = () => {
 let fileUpload = document.getElementById("fileUpload");
 let display_image = document.getElementById("display_image");
 
-preview();
+//preview();
 
 function preview(){
     display_image.innerHTML = "";

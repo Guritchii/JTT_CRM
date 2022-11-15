@@ -5,6 +5,7 @@ import Admin from './Admin_create.js';
 import { useLocation } from "react-router-dom"
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
+import { NavLink } from 'react-router-dom';
 
 const api = axios.create({
     baseURL: 'http://localhost:8080'
@@ -36,6 +37,21 @@ function Admin_modif() {
         setSelectedIdRole(event.target.value);
     };
 
+    function checkModif(event){
+        
+        event.preventDefault();
+
+        const formData = new FormData(event.currentTarget);
+        const values = Object.fromEntries(formData.entries());
+        console.log(values.firstname);
+
+        const apiString = '/User/Update/' + currentUser.iduser;
+        api.post(apiString).then (function(response) {
+                    console.log(response.data);
+        });
+
+    }
+
     return (
         <div className="page_admin">
             <NavigationAdmin />
@@ -44,7 +60,7 @@ function Admin_modif() {
                 <p className="Titre">Admin</p>
                 <p className="Sous-titre">Modification d'utilisateur</p>
                 <div className="Formulaire">
-                    <form className="form">
+                    <form className="form" onSubmit={checkModif}>
                         <table className="Formulaire_de_connexion">
                             <tr>
                                 <div className="texte_côté">
@@ -79,12 +95,13 @@ function Admin_modif() {
                                 </div>
                             </tr>
                         </table>
+                        <p>{currentUser === true?"L'identifiant existe déja":''}</p>
+                        <div className="bouton_submit">
+                            <button className="bouton_val" type="submit">Valider</button>
+                            <NavLink className="bouton_ann" to="/Admin_list">Retour</NavLink>
+                        </div>
                     </form>
                 </div>
-                <tr className="bouton_submit">
-                    <button className="bouton_val" type="submit">Valider</button>
-                    <button className="bouton_ann" type="submit">Annuler</button>
-                </tr>
             </div>
         </div>
     );
