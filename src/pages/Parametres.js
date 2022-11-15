@@ -49,7 +49,7 @@ const Parametre = () => {
                             <div className="two_bas">
                                 <p className="text_two_bas">Mode sombre</p>
                                 <div className="center">
-                                    <input type="checkbox" name=''/>
+                                    <input type="checkbox" name=""/>
                                 </div>
                             </div>
                         </div>
