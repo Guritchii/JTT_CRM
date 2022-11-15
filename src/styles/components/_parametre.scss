@@ -1,9 +1,5 @@
 body {
-    background-image: url("../../../public/fond_page_connexion.png");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
+    background-color: $alice-blue;
 
     .page_parametre {
         display: flex;
@@ -24,7 +20,7 @@ body {
             
             background: rgba(255, 255, 255, 0.3);
             border-radius: 15px;
-            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.25);
             backdrop-filter: blur(3px);
             -webkit-backdrop-filter: blur(15px);
 
@@ -47,7 +43,7 @@ body {
                     width: 100%;
                     margin: 30px 30px;
                     border-radius: 25px;
-                    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+                    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.25);
 
                     input {
                         position: relative;
@@ -105,7 +101,7 @@ body {
 
                 background: rgba(255, 255, 255, 0.3);
                 border-radius: 15px;
-                box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+                box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.25);
                 backdrop-filter: blur(3px);
                 -webkit-backdrop-filter: blur(15px);
 
@@ -144,7 +140,7 @@ body {
 
                     background: rgba(255, 255, 255, 0.3);
                     border-radius: 15px;
-                    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+                    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.25);
                     backdrop-filter: blur(3px);
                     -webkit-backdrop-filter: blur(15px);
 
@@ -176,7 +172,7 @@ body {
                                 background-color: rgb(190, 189, 189);
                                 border-radius: 5px;
                                 border-radius: 5px;
-                                box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+                                box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.25);
                                 cursor: pointer;
     
                                 &:hover{
@@ -205,7 +201,7 @@ body {
                                 background-color: rgb(190, 189, 189);
                                 border-radius: 5px;
                                 border-radius: 5px;
-                                box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+                                box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.25);
                                 cursor: pointer;
     
                                 &:hover{
@@ -226,7 +222,7 @@ body {
 
                     background: rgba(255, 255, 255, 0.3);
                     border-radius: 15px;
-                    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+                    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.25);
                     backdrop-filter: blur(3px);
                     -webkit-backdrop-filter: blur(15px);
 
@@ -294,7 +290,7 @@ body {
 
                     background: rgba(255, 255, 255, 0.3);
                     border-radius: 15px;
-                    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+                    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.25);
                     backdrop-filter: blur(3px);
                     -webkit-backdrop-filter: blur(15px);
                 }
