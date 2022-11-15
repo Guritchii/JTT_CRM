@@ -1,17 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import NavigationDashboard from '../components/NavigationDashboard';
+import { createContext } from 'react';
 
+export const ThemeContext = createContext(null);
 
 const Parametre = () => {
+    const [theme, setTheme] = useState("light");
+    const toggleTheme = () => {
+        setTheme((curr) => (curr === "light" ? "dark" : "light"));
+    }
+    
     return (
-        <body>
+        <ThemeContext.Provider value={{ theme, setTheme}}>
+        <body className={theme}>
 
             <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"></link>
             
             <div className="page_parametre">
                 {/* Create an account page */}
                 <div className="haut_de_page">
-                    <h2 className="titre">Paramètre</h2>
+                    <h2 className="titre">Paramètres</h2>
                     <div className="rechLogo">
                         <div className="input_box">
                             <input type="search" placeholder="Rechercher..."/>
@@ -49,7 +57,7 @@ const Parametre = () => {
                             <div className="two_bas">
                                 <p className="text_two_bas">Mode sombre</p>
                                 <div className="center">
-                                    <input type="checkbox" name=""/>
+                                    <input type="checkbox" onChange={toggleTheme} checked={theme === "dark"}/>
                                 </div>
                             </div>
                         </div>
@@ -60,6 +68,7 @@ const Parametre = () => {
                 </div>
             </div>
         </body>
+        </ThemeContext.Provider>
     );
 };
 
