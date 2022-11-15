@@ -2,6 +2,7 @@ import React from 'react';
 import NavigationDashboard from '../components/NavigationDashboard';
 
 
+
 const Compte = () => {
     return (
         <body>
@@ -27,9 +28,9 @@ const Compte = () => {
                     <div className="Compte">
                         <div className="name_picture">
                             <div className="picture">
-                                <img className="photo_profil" srcSet="./logo_personEntouré.svg"/>
+                                <div id="display_image"></div>
                                 <div className='bouton_submit'>
-                                    <button className="bouton_ajoutPhoto" type="submit">Ajouter une photo</button>
+                                    <input type="file" name="fileUpload" id="fileUpload"/>
                                 </div>
                             </div>
                             <div className="name">
@@ -75,8 +76,34 @@ const Compte = () => {
                     </div>
                 </div>
             </div>
+            <script src="Compte.js" defer></script>
         </body>
     );
 };
+
+let fileUpload = document.getElementById("fileUpload");
+let display_image = document.getElementById("display_image");
+
+preview();
+
+function preview(){
+    display_image.innerHTML = "";
+
+    for(fileUpload of fileUpload.files){
+        let reader = new FileReader();
+        let figure = document.createElement("figure");
+        let figCap = document.createElement("figcaption");
+        figCap.innerText = fileUpload.name;
+        figure.appendChild(figCap);
+        reader.onload=()=>{
+            let img = document.createElement("img");
+            img.setAttribute("src", reader.result);
+            figure.insertBefore(img,figCap);
+        }
+        display_image.appendChild(figure);
+        reader.readAsDataURL(fileUpload);
+    }
+}
+
 
 export default Compte;

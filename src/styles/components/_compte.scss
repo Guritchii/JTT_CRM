@@ -162,11 +162,26 @@ body {
                         margin-left: 25px;
                         border-bottom: 1px solid grey;
 
-                        .photo_profil {
+                        #display_image {
                             display: flex;
+                            margin-bottom: 5px;
                             height: 135px;
                             width: 135px;
+                            background: rgba(255, 255, 255, 0.1);
+                            border-radius: 15px;
+                            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+                            backdrop-filter: blur(3px);
+                            -webkit-backdrop-filter: blur(15px);
                         }
+                        
+                        .figure{
+                            width: 45%;
+                        }
+        
+                        .img{
+                            width: 100%;
+                        }
+                        
 
                         .bouton_submit {
                             display: flex;
@@ -230,6 +245,7 @@ body {
                         }
                     }
                 }
+
 
                 .infoPerso {
                     display: flex;

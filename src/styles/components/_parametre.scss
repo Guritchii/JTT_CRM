@@ -218,8 +218,11 @@ body {
 
                 .two {
                     display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
                     width: auto;
                     height: 28.5%;
+                    padding: 10px;
 
                     background: rgba(255, 255, 255, 0.3);
                     border-radius: 15px;
@@ -227,6 +230,18 @@ body {
                     backdrop-filter: blur(3px);
                     -webkit-backdrop-filter: blur(15px);
 
+                    .two_haut {
+                        display: flex;
+                        height: 75%;
+                    }
+
+                    .two_bas {
+                        display: flex;
+                        flex-direction: row;
+                        padding: 9px;
+                        height: 25%;
+
+                    }
                 }
 
                 .three {

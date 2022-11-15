@@ -43,7 +43,15 @@ const Parametre = () => {
                             </div>
                         </div>
                         <div className="two">
-                            coucou
+                            <div className="two_haut">
+                                coucou
+                            </div>
+                            <div className="two_bas">
+                                <p className="text_two_bas">Mode sombre</p>
+                                <div className="center">
+                                    <input type="checkbox" name=''/>
+                                </div>
+                            </div>
                         </div>
                         <div className="three">
                             coucou
