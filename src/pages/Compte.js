@@ -35,11 +35,11 @@ const Compte = () => {
                             </div>
                             <div className="name">
                                 <div className="presentationNom">
-                                    <p className="def">Nom Complet :</p>
-                                    <p className="nom">Mateo Centeno</p>
+                                    <p id="texte" className="def">Nom Complet :</p>
+                                    <p id="texte" className="nom">Mateo Centeno</p>
                                 </div>
                                 <div className='bouton_submit'>
-                                    <button className="bouton_modifierNom" type="submit">Modifier</button>
+                                    <button id="bouton" className="bouton_modifierNom" type="submit">Modifier</button>
                                 </div>
                             </div>
                         </div>
@@ -103,6 +103,11 @@ function preview(){
         display_image.appendChild(figure);
         reader.readAsDataURL(fileUpload);
     }
+}
+
+function changeTexte(){
+    var para = document.querySelector("#texte");
+    console.log(para.innerHTML);
 }
 
 
