@@ -149,3 +149,19 @@ app.post('/User/Add', (req, res) => {
         res.send('Post added...' + result.insertId);
     });
 });
+
+app.post('/User/Update/:id', (req, res) => {
+
+    const id = req.params.id;
+    
+    let form = req.body;
+
+    console.log(form);
+
+    const sql = `UPDATE users SET lastname = '${form.lastname}', firstname = '${form.lastname}', idrole = '${form.lastname}', login = '${form.lastname}', password = '${form.lastname}', phone = '${form.lastname}', mail = '${form.lastname}' WHERE (iduser = ?)`;
+    db.query(sql ,[id], (err, result) => { 
+        if (err) throw err;
+        console.log(result);
+        res.send('Post added...' + result.insertId);
+    });
+});
