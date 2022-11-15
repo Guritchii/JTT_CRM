@@ -1,372 +1,204 @@
-.page_admin {
-    display: flex;
-    flex-direction: row;
-    height: 100vh;
-
-    .nav_bar_verticale {
+body {
+    
+    .page_admin {
         display: flex;
-        flex-direction: column;
-        width: 200px;
-        background: rgba(255, 255, 255, 0.143);
-        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-        backdrop-filter: blur(3px);
-        -webkit-backdrop-filter: blur(1.5px);
-        border-radius: 15px;
-        border: 1px solid rgba(255, 255, 255, 0.18);
-        margin: 10px;
+        flex-direction: row;
+        height: 100vh;
 
-
-        .create_user {
-            padding: 5px;
-            text-decoration: none;
-            align-self: center;
-        }
-
-        .modify_user {
-            padding: 5px;
-            text-decoration: none;
-            align-self: center;
-        }
-
-        .delete_user {
-            padding: 5px;
-            text-decoration: none;
-            align-self: center;
-        }
-
-
-        .bouton {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            width: 180px;
-            height: 100px;
-            border-radius: 10px;
-            font-size: 13.5px;
-            font-weight: bold;
-            transition: 1s box-shadow;
-            border: none;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-            background-color: rgb(163, 163, 163, 0.371);
-            border: 1px solid rgba(255,255,255,0.1);
-            backdrop-filter: blur(30px);
-            color: rgb(255, 255, 255);
-            cursor: pointer;
-            font-size: 17px;
-
-            &:hover{
-                box-shadow: 0, 5px, 35px, 0 rgba(0, 0, 0, 1);
-                color: white;
-                background-color: rgba(114, 114, 114, 0.371); 
-            }
-
-            &:active{
-                background-color:rgba(68, 68, 68, 0.972);
-            }
-        }
-    }
-
-
-
-    .Titre_Formulaire{
-        display: flex;
-        flex-direction: column;
-        flex-basis: 100%;
-        background: rgba(255, 255, 255, 0.3);
-        border-radius: 15px;
-        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-        backdrop-filter: blur(3px);
-        -webkit-backdrop-filter: blur(15px);
-        margin: 10px;
-        padding: 10px;
-
-        .Titre {
-            display: flex;
-            /*background: rgba(255, 255, 255, 0.3);
-            border-radius: 15px;
-            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-            backdrop-filter: blur(3px);
-            -webkit-backdrop-filter: blur(15px);*/
-            margin: 10px;
-            font-size: 70px;
-            font-weight: bold;
-        }
-
-        .Sous-titre {
-            display: flex;
-            /*background: rgba(255, 255, 255, 0.3);
-            border-radius: 15px;
-            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-            backdrop-filter: blur(3px);
-            -webkit-backdrop-filter: blur(15px);*/
-            margin: 10px;
-            font-size: 40px;
-            font-weight: bold;
-        }
-        
-
-        .Formulaire{
+        .nav_bar_verticale {
             display: flex;
             flex-direction: column;
-            align-items: center;
-            /*background: rgba(255, 255, 255, 0.3);
-            border-radius: 15px;
+            width: 200px;
+            background: rgba(255, 255, 255, 0.143);
             box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
             backdrop-filter: blur(3px);
-            -webkit-backdrop-filter: blur(15px);*/
-            margin-left: 10px;
-            margin-right: 10px;
+            -webkit-backdrop-filter: blur(1.5px);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            margin: 10px;
 
-            .form{
-                display: flex;
-                flex-direction: column;
-                align-self: center;
-                font-size: 30px;
 
-                .Formulaire_de_connexion {
-
-                    display: flex;
-                    flex-direction: row;
-                    margin-top: 5%;
-                    /*background: rgba(255, 255, 255, 0.3);
-                    border-radius: 15px;
-                    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-                    backdrop-filter: blur(3px);
-                    -webkit-backdrop-filter: blur(15px);*/
-        
-                    .texte_côté {
-                        display:flex;
-                        flex-direction: column;
-                        justify-content: space-around;
-                        height: 100%;
-                    }
-        
-                    input {
-                        display: flex;
-                        flex-direction: column;
-                        margin: 10px;
-                    }
-        
-                    .button_submit {
-                        display: flex;
-                        margin-top: 150%;
-                        margin-bottom: 2%;
-                        padding-left: 10px;
-                        
-                        .bouton_réini{
-                        background-color: rgb(190, 189, 189);
-                        border-radius: 5px;
-                        border: 1px solid black;
-                        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-                        cursor: pointer;
-                        }
-                    }
-                }
-            }
-        }
-
-        
-
-        .texte {
-            align-self: center;
-            font-size: 15px;
-            padding: 10px 10px 10px 0;
-        }
-
-        .texte_zone {
-            width: 600px;
-            height: 50px;
-            background-color: transparent;
-            border-radius: 5px;
-            border: 0.5px solid;
-            justify-content: center;
-            padding: 0 10px 0 15px;
-            padding-left: 10px;
-            padding-right: 10px;
-        }
-
-        .bouton_submit {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-around;
-            align-self: center;
-            width: 600px;
-            height: 30px;
-            margin-top: 5%;
-
-            .bouton_val{
-                //display: flex;
-                background-color: grey;
-                border: 1px solid rgba(255, 255, 255, 0.1);
-                backdrop-filter: blur(30px);
-                color: rgb(255, 255, 255);
-                cursor: pointer;
-                font-size: 15px;
-                border-radius: 15px;
-                width: 20%;
-
-                &:hover {
-                    box-shadow: 0, 5px, 35px, 0 rgba(0, 0, 0, 1);
-                    color: white;
-                    background-color: rgba(114, 114, 114, 0.371);
-                }
-    
-                &:active {
-                    background-color: rgba(68, 68, 68, 0.972);
-                }
-            }
-
-            .bouton_ann{
-                //display: flex;
-                background-color: grey;
-                border: 0px solid rgba(255, 255, 255, 0.1);
-                backdrop-filter: blur(30px);
-                color: rgb(255, 255, 255);
-                cursor: pointer;
-                font-size: 15px;
-                border-radius: 15px;
-                width: 20%;
+            .create_user {
+                padding: 5px;
                 text-decoration: none;
-                text-align: center;
-
-                &:hover {
-                    box-shadow: 0, 5px, 35px, 0 rgba(0, 0, 0, 1);
-                    color: white;
-                    background-color: rgba(114, 114, 114, 0.371);
-                }
-    
-                &:active {
-                    background-color: rgba(68, 68, 68, 0.972);
-                }
+                align-self: center;
             }
-        }
-    }
 
-    .Titre_Formulaire_Rech{
-        display: flex;
-        flex-direction: column;
-        flex-basis: 100%;
-        background: rgba(255, 255, 255, 0.3);
-        border-radius: 15px;
-        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-        backdrop-filter: blur(3px);
-        -webkit-backdrop-filter: blur(15px);
-        margin: 10px;
-        padding: 10px;
+            .modify_user {
+                padding: 5px;
+                text-decoration: none;
+                align-self: center;
+            }
 
-        .Titre {
-            display: flex;
-            /*background: rgba(255, 255, 255, 0.3);
-            border-radius: 15px;
-            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-            backdrop-filter: blur(3px);
-            -webkit-backdrop-filter: blur(15px);*/
-            margin: 10px;
-            font-size: 70px;
-            font-weight: bold;
-        }
+            .delete_user {
+                padding: 5px;
+                text-decoration: none;
+                align-self: center;
+            }
 
-        .Sous-titre {
-            display: flex;
-            /*background: rgba(255, 255, 255, 0.3);
-            border-radius: 15px;
-            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-            backdrop-filter: blur(3px);
-            -webkit-backdrop-filter: blur(15px);*/
-            margin: 10px;
-            font-size: 40px;
-            font-weight: bold;
-        }
 
-        .rechLogo {
-            display: flex;
-            flex-direction: column;
-            flex-basis: 100%;
-            /*background: rgba(255, 255, 255, 0.3);
-            border-radius: 15px;
-            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-            backdrop-filter: blur(3px);
-            -webkit-backdrop-filter: blur(15px);*/
-            //margin: 10px;
-            //padding: 10px;
-            align-items: center;
-            margin-top: 5%;
-
-            .input_box {
+            .bouton {
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 position: relative;
-                height: 40px;
-                max-width: 350px;
-                width: 100%;
-                //margin: 30px 30px;
-                border-radius: 25px;
-                box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+                width: 180px;
+                height: 100px;
+                border-radius: 10px;
+                font-size: 13.5px;
+                font-weight: bold;
+                transition: 1s box-shadow;
+                border: none;
+                box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+                background-color: rgb(163, 163, 163, 0.371);
+                border: 1px solid rgba(255,255,255,0.1);
+                backdrop-filter: blur(30px);
+                color: rgb(255, 255, 255);
+                cursor: pointer;
+                font-size: 17px;
 
-                input {
-                    position: relative;
-                    width: 100%;
-                    height: 100%;
-                    padding: 0 15px 0 65px;
-                    outline: none;
-                    border: none;
-                    border-radius: 25px;
-                    font-size: 16px;
-                    font-weight: 400;
-                    color: #333;
+                &:hover{
+                    box-shadow: 0, 5px, 35px, 0 rgba(0, 0, 0, 1);
+                    color: white;
+                    background-color: rgba(114, 114, 114, 0.371); 
                 }
 
-                .search {
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    position: absolute;
-                    left: 0;
-                    top: 0;
-                    height: 100%;
-                    width: 60px;
-                    border-radius: 25px 0 0 25px;
-
-                    .search-icon {
-                        font-size: 30px;
-                        color: black;
-                    }
+                &:active{
+                    background-color:rgba(68, 68, 68, 0.972);
                 }
             }
         }
 
-        .formulaire {
+
+
+        .Titre_Formulaire{
             display: flex;
             flex-direction: column;
             flex-basis: 100%;
-            /*background: rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.3);
             border-radius: 15px;
             box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
             backdrop-filter: blur(3px);
-            -webkit-backdrop-filter: blur(15px);*/
+            -webkit-backdrop-filter: blur(15px);
+            margin: 10px;
+            padding: 10px;
 
-            .bouton_personnes {
+            .Titre {
                 display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                width: 350px;
-                margin: 20px 0 0 0;
                 /*background: rgba(255, 255, 255, 0.3);
+                border-radius: 15px;
                 box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
                 backdrop-filter: blur(3px);
                 -webkit-backdrop-filter: blur(15px);*/
+                margin: 10px;
+                font-size: 70px;
+                font-weight: bold;
+            }
+
+            .Sous-titre {
+                display: flex;
+                /*background: rgba(255, 255, 255, 0.3);
+                border-radius: 15px;
+                box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+                backdrop-filter: blur(3px);
+                -webkit-backdrop-filter: blur(15px);*/
+                margin: 10px;
+                font-size: 40px;
+                font-weight: bold;
+            }
+            
+
+            .Formulaire{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                /*background: rgba(255, 255, 255, 0.3);
+                border-radius: 15px;
+                box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+                backdrop-filter: blur(3px);
+                -webkit-backdrop-filter: blur(15px);*/
+                margin-left: 10px;
+                margin-right: 10px;
+
+                .form{
+                    display: flex;
+                    flex-direction: column;
+                    align-self: center;
+                    font-size: 30px;
+
+                    .Formulaire_de_connexion {
+
+                        display: flex;
+                        flex-direction: row;
+                        margin-top: 5%;
+                        /*background: rgba(255, 255, 255, 0.3);
+                        border-radius: 15px;
+                        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+                        backdrop-filter: blur(3px);
+                        -webkit-backdrop-filter: blur(15px);*/
+            
+                        .texte_côté {
+                            display:flex;
+                            flex-direction: column;
+                            justify-content: space-around;
+                            height: 100%;
+                        }
+            
+                        input {
+                            display: flex;
+                            flex-direction: column;
+                            margin: 10px;
+                        }
+            
+                        .button_submit {
+                            display: flex;
+                            margin-top: 150%;
+                            margin-bottom: 2%;
+                            padding-left: 10px;
+                            
+                            .bouton_réini{
+                            background-color: rgb(190, 189, 189);
+                            border-radius: 5px;
+                            border: 1px solid black;
+                            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+                            cursor: pointer;
+                            }
+                        }
+                    }
+                }
+            }
+
+            
+
+            .texte {
+                align-self: center;
+                font-size: 15px;
+                padding: 10px 10px 10px 0;
+            }
+
+            .texte_zone {
+                width: 600px;
+                height: 50px;
+                background-color: transparent;
+                border-radius: 5px;
+                border: 0.5px solid;
+                justify-content: center;
+                padding: 0 10px 0 15px;
+                padding-left: 10px;
+                padding-right: 10px;
             }
 
             .bouton_submit {
                 display: flex;
                 flex-direction: row;
-                justify-content: space-between;
-                padding: 30px 0 0 0;
+                justify-content: space-around;
+                align-self: center;
+                width: 600px;
+                height: 30px;
+                margin-top: 5%;
 
-                .bouton_sup{
-                    display: flex;
+                .bouton_val{
+                    //display: flex;
                     background-color: grey;
                     border: 1px solid rgba(255, 255, 255, 0.1);
                     backdrop-filter: blur(30px);
@@ -374,10 +206,8 @@
                     cursor: pointer;
                     font-size: 15px;
                     border-radius: 15px;
-                    width: 30%;
-                    align-items: center;
-                    justify-content: center;
-    
+                    width: 20%;
+
                     &:hover {
                         box-shadow: 0, 5px, 35px, 0 rgba(0, 0, 0, 1);
                         color: white;
@@ -390,69 +220,17 @@
                 }
 
                 .bouton_ann{
-                    display: flex;
+                    //display: flex;
                     background-color: grey;
-                    border: 1px solid rgba(255, 255, 255, 0.1);
+                    border: 0px solid rgba(255, 255, 255, 0.1);
                     backdrop-filter: blur(30px);
                     color: rgb(255, 255, 255);
                     cursor: pointer;
                     font-size: 15px;
                     border-radius: 15px;
-                    width: 30%;
-                    align-items: center;
-    
-                    &:hover {
-                        box-shadow: 0, 5px, 35px, 0 rgba(0, 0, 0, 1);
-                        color: white;
-                        background-color: rgba(114, 114, 114, 0.371);
-                    }
-        
-                    &:active {
-                        background-color: rgba(68, 68, 68, 0.972);
-                    }
-                }
-            }
-
-            .tr_bouton {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-
-                .bouton_personne1 {
-                    display: flex;
-                    flex-direction: row;
-                    background-color: grey;
-                    border: 1px solid rgba(255, 255, 255, 0.1);
-                    backdrop-filter: blur(30px);
-                    color: rgb(255, 255, 255);
-                    cursor: pointer;
-                    font-size: 15px;
-                    align-items: center;
-                    justify-content: center;
-
-                    &:hover {
-                        box-shadow: 0, 5px, 35px, 0 rgba(0, 0, 0, 1);
-                        color: white;
-                        background-color: rgba(114, 114, 114, 0.371);
-                    }
-        
-                    &:active {
-                        background-color: rgba(68, 68, 68, 0.972);
-                    }
-                }
-
-                .bouton_personne2 {
-                    display: flex;
-                    flex-direction: row;
-                    background-color: grey;
-                    border: 1px solid rgba(255, 255, 255, 0.1);
-                    backdrop-filter: blur(30px);
-                    color: rgb(255, 255, 255);
-                    cursor: pointer;
-                    font-size: 15px;
-                    align-items: center;
-                    justify-content: center;
+                    width: 20%;
+                    text-decoration: none;
+                    text-align: center;
 
                     &:hover {
                         box-shadow: 0, 5px, 35px, 0 rgba(0, 0, 0, 1);
@@ -466,9 +244,230 @@
                 }
             }
         }
+
+        .Titre_Formulaire_Rech{
+            display: flex;
+            flex-direction: column;
+            flex-basis: 100%;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 15px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(3px);
+            -webkit-backdrop-filter: blur(15px);
+            margin: 10px;
+            padding: 10px;
+
+            .Titre {
+                display: flex;
+                /*background: rgba(255, 255, 255, 0.3);
+                border-radius: 15px;
+                box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+                backdrop-filter: blur(3px);
+                -webkit-backdrop-filter: blur(15px);*/
+                margin: 10px;
+                font-size: 70px;
+                font-weight: bold;
+            }
+
+            .Sous-titre {
+                display: flex;
+                /*background: rgba(255, 255, 255, 0.3);
+                border-radius: 15px;
+                box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+                backdrop-filter: blur(3px);
+                -webkit-backdrop-filter: blur(15px);*/
+                margin: 10px;
+                font-size: 40px;
+                font-weight: bold;
+            }
+
+            .rechLogo {
+                display: flex;
+                flex-direction: column;
+                flex-basis: 100%;
+                /*background: rgba(255, 255, 255, 0.3);
+                border-radius: 15px;
+                box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+                backdrop-filter: blur(3px);
+                -webkit-backdrop-filter: blur(15px);*/
+                //margin: 10px;
+                //padding: 10px;
+                align-items: center;
+                margin-top: 5%;
+
+                .input_box {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    position: relative;
+                    height: 40px;
+                    max-width: 350px;
+                    width: 100%;
+                    //margin: 30px 30px;
+                    border-radius: 25px;
+                    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+
+                    input {
+                        position: relative;
+                        width: 100%;
+                        height: 100%;
+                        padding: 0 15px 0 65px;
+                        outline: none;
+                        border: none;
+                        border-radius: 25px;
+                        font-size: 16px;
+                        font-weight: 400;
+                        color: #333;
+                    }
+
+                    .search {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        height: 100%;
+                        width: 60px;
+                        border-radius: 25px 0 0 25px;
+
+                        .search-icon {
+                            font-size: 30px;
+                            color: black;
+                        }
+                    }
+                }
+            }
+
+            .formulaire {
+                display: flex;
+                flex-direction: column;
+                flex-basis: 100%;
+                /*background: rgba(255, 255, 255, 0.3);
+                border-radius: 15px;
+                box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+                backdrop-filter: blur(3px);
+                -webkit-backdrop-filter: blur(15px);*/
+
+                .bouton_personnes {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    width: 350px;
+                    margin: 20px 0 0 0;
+                    /*background: rgba(255, 255, 255, 0.3);
+                    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+                    backdrop-filter: blur(3px);
+                    -webkit-backdrop-filter: blur(15px);*/
+                }
+
+                .bouton_submit {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    padding: 30px 0 0 0;
+
+                    .bouton_sup{
+                        display: flex;
+                        background-color: grey;
+                        border: 1px solid rgba(255, 255, 255, 0.1);
+                        backdrop-filter: blur(30px);
+                        color: rgb(255, 255, 255);
+                        cursor: pointer;
+                        font-size: 15px;
+                        border-radius: 15px;
+                        width: 30%;
+                        align-items: center;
+                        justify-content: center;
+        
+                        &:hover {
+                            box-shadow: 0, 5px, 35px, 0 rgba(0, 0, 0, 1);
+                            color: white;
+                            background-color: rgba(114, 114, 114, 0.371);
+                        }
+            
+                        &:active {
+                            background-color: rgba(68, 68, 68, 0.972);
+                        }
+                    }
+
+                    .bouton_ann{
+                        display: flex;
+                        background-color: grey;
+                        border: 1px solid rgba(255, 255, 255, 0.1);
+                        backdrop-filter: blur(30px);
+                        color: rgb(255, 255, 255);
+                        cursor: pointer;
+                        font-size: 15px;
+                        border-radius: 15px;
+                        width: 30%;
+                        align-items: center;
+        
+                        &:hover {
+                            box-shadow: 0, 5px, 35px, 0 rgba(0, 0, 0, 1);
+                            color: white;
+                            background-color: rgba(114, 114, 114, 0.371);
+                        }
+            
+                        &:active {
+                            background-color: rgba(68, 68, 68, 0.972);
+                        }
+                    }
+                }
+
+                .tr_bouton {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+
+                    .bouton_personne1 {
+                        display: flex;
+                        flex-direction: row;
+                        background-color: grey;
+                        border: 1px solid rgba(255, 255, 255, 0.1);
+                        backdrop-filter: blur(30px);
+                        color: rgb(255, 255, 255);
+                        cursor: pointer;
+                        font-size: 15px;
+                        align-items: center;
+                        justify-content: center;
+
+                        &:hover {
+                            box-shadow: 0, 5px, 35px, 0 rgba(0, 0, 0, 1);
+                            color: white;
+                            background-color: rgba(114, 114, 114, 0.371);
+                        }
+            
+                        &:active {
+                            background-color: rgba(68, 68, 68, 0.972);
+                        }
+                    }
+
+                    .bouton_personne2 {
+                        display: flex;
+                        flex-direction: row;
+                        background-color: grey;
+                        border: 1px solid rgba(255, 255, 255, 0.1);
+                        backdrop-filter: blur(30px);
+                        color: rgb(255, 255, 255);
+                        cursor: pointer;
+                        font-size: 15px;
+                        align-items: center;
+                        justify-content: center;
+
+                        &:hover {
+                            box-shadow: 0, 5px, 35px, 0 rgba(0, 0, 0, 1);
+                            color: white;
+                            background-color: rgba(114, 114, 114, 0.371);
+                        }
+            
+                        &:active {
+                            background-color: rgba(68, 68, 68, 0.972);
+                        }
+                    }
+                }
+            }
+        }
     }
 }
-
-    
-
-    
