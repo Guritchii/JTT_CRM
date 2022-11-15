@@ -2,7 +2,7 @@ import axios from 'axios'
 import React, { useState } from 'react';
 import CryptoJS from 'crypto-js';
 import Admin from './Admin_create.js'
-import Dashboard from './Dashboard.js';
+import Dashboard from './Dashboard.js'
 import Admin_list from './Admin_list.js';
 
 const api = axios.create({
