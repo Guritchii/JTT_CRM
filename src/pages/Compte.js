@@ -1,3 +1,4 @@
+import { click } from '@testing-library/user-event/dist/click';
 import React from 'react';
 import NavigationDashboard from '../components/NavigationDashboard';
 
@@ -76,7 +77,6 @@ const Compte = () => {
                     </div>
                 </div>
             </div>
-            <script src="Compte.js" defer></script>
         </body>
     );
 };
@@ -104,11 +104,5 @@ function preview(){
         reader.readAsDataURL(fileUpload);
     }
 }
-
-function changeTexte(){
-    var para = document.querySelector("#texte");
-    console.log(para.innerHTML);
-}
-
 
 export default Compte;
