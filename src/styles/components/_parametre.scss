@@ -218,8 +218,11 @@ body {
 
                 .two {
                     display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
                     width: auto;
                     height: 28.5%;
+                    padding: 10px;
 
                     background: rgba(255, 255, 255, 0.3);
                     border-radius: 15px;
@@ -227,6 +230,61 @@ body {
                     backdrop-filter: blur(3px);
                     -webkit-backdrop-filter: blur(15px);
 
+                    .two_haut {
+                        display: flex;
+                        height: 75%;
+                        
+                        border-bottom: 1px solid black;
+                    }
+
+                    .two_bas {
+                        display: flex;
+                        flex-direction: row;
+                        padding: 9px;
+                        height: 25%;
+
+                        .center {
+                            position: absolute;
+                            top: 84%;
+                            right: 0.5%;
+                            transform: translate(-50%,-50%);
+
+                            input[type="checkbox"] {
+                                position: relative;
+                                width: 50px;
+                                height: 25px;
+                                -webkit-appearance: none;
+                                background-color: #e2e2e2;
+                                outline: none;
+                                border-radius: 20px;
+                                box-shadow: inset 0 0 5px rgba(0,0,0,.5);
+                                transition: .5s;
+                                cursor: pointer;
+                            }
+
+                            input:checked[type="checkbox"] {
+                                background-color: rgb(41, 186, 41);
+                            }
+
+                            input[type="checkbox"]:before {
+                                content: '';
+                                position: absolute;
+                                width: 18px;
+                                height: 18px;
+                                border-radius: 20px;
+                                top: 12%;
+                                left: 10%;
+                                background-color: white;
+                                transform: scale(1.1);
+                                box-shadow: 0 2px 5px rgba(0,0,0,.2);
+                                transition: .5s;
+                            }
+
+                            input:checked[type="checkbox"]:before {
+                                left: 27px;
+                            }
+                        }
+                    }
                 }
 
                 .three {
