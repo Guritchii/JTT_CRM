@@ -1,6 +1,6 @@
 body {
     
-    .page_analyse {
+    .page_Repertoire {
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
@@ -89,7 +89,7 @@ body {
             justify-content: space-between;
             width: auto;
             height: 86%;
-    
+
             .nav_bar_verticale {
                 display: flex;
                 flex-direction: column;
@@ -156,39 +156,14 @@ body {
                 }
             }
 
-            .Analyse {
+            .Repertoire {
                 display: flex;
-                flex-direction: column;
-                justify-content: space-evenly;
+                flex-direction: row;
+                justify-content: space-between;
+                width: 94.3%;
                 height: auto;
-                width: 93.4%;
                 margin: 5px 10px 10px 5px;
 
-                .Stat_1 {
-                    display: flex;
-                    width: auto;
-                    height: 50%;
-                    margin: 50px 50px 8px 50px;
-
-                    background: rgba(255, 255, 255, 0.3);
-                    border-radius: 15px;
-                    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-                    backdrop-filter: blur(3px);
-                    -webkit-backdrop-filter: blur(15px);
-                }
-
-                .Stat_2 {
-                    display: flex;
-                    width: auto;
-                    height: 50%;
-                    margin: 8px 50px 50px 50px;
-
-                    background: rgba(255, 255, 255, 0.3);
-                    border-radius: 15px;
-                    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-                    backdrop-filter: blur(3px);
-                    -webkit-backdrop-filter: blur(15px);
-                }
             }
         }
     }

@@ -104,6 +104,42 @@ body {
                 backdrop-filter: blur(3px);
                 -webkit-backdrop-filter: blur(15px);
 
+                .parti_one {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-around;
+                    align-items: center;
+                    width: 100%;
+                    height: 20%;
+                }
+
+                .parti_two {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    align-items: center;
+                    width: 100%;
+                    height: 30%;
+                }
+
+                .parti_three {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-around;
+                    align-items: center;
+                    width: 100%;
+                    height: 20%;
+                }
+
+                .parti_four {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-around;
+                    align-items: center;
+                    width: 100%;
+                    height: 20%;
+                }
+
                 .button {
                     display: flex;
                     object-fit: cover;
