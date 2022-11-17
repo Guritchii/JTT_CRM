@@ -58,18 +58,14 @@ const NavigationDashboard = () => {
                     </button>
                 </NavLink>
                 <NavLink className="analyse" to="/Analyse">
-                    <div className="parti_two">
                         <button className="button" type="submit">
                             <ImageToggleOnMouseOver primaryImg={img3} secondaryImg={img31} alt="" />
                         </button>
-                    </div>
                 </NavLink>
                 <NavLink className="calendrier" to="/Calendrier">
-                    <div className="parti_two">
                         <button className="button" type="submit">
                             <ImageToggleOnMouseOver primaryImg={img4} secondaryImg={img41} alt="" />
                         </button>
-                    </div>
                 </NavLink>
             </div>
             <div className="parti_three">
