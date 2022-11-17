@@ -34,52 +34,73 @@ function Repertoire() {
     }, []);
 
     return (
-        <div className="page_admin">
+
+        <body>
+
             <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"></link>
-            {/* Create a page to delete an user in the admin page*/}
-            <NavigationDashboard />
-            <div className="Titre_Formulaire_Rech">
-                <p className="Titre">Admin</p>
-                <p className="Sous-titre">Liste des utilisateurs</p>
-                <div className="rechLogo">
-                    <div className="input_box">
-                        <input type="search" placeholder="Rechercher..." />
-                        <span className="search">
-                            <i class="uil uil-search search-icon"></i>
-                        </span>
+            
+            <div className="page_Repertoire">
+                {/* Create an account page */}
+                <div className="haut_de_page">
+                    <h2 className="titre">Repertoire</h2>
+                    <div className="rechLogo">
+                        <div className="input_box">
+                            <input type="search" placeholder="Rechercher..."/>
+                            <span className="search">
+                                <i class="uil uil-search search-icon"></i>
+                            </span>
+                        </div>
+                        <img className="logo" srcSet="./LogoApp.svg"/>
                     </div>
-                    <TableContainer component={Paper} sx={{ maxHeight: 0.8 }}>
-                        <Table aria-label="simple table" size="small" stickyHeader>
-                            <TableHead >
-                                <TableRow>
-                                    <TableCell sx={{ bgcolor: 'info.main' }} align="left">Nom</TableCell>
-                                    <TableCell sx={{ bgcolor: 'info.main' }} align="center">Prénom</TableCell>
-                                    <TableCell sx={{ bgcolor: 'info.main' }} align="center">Identifiant</TableCell>
-                                    <TableCell sx={{ bgcolor: 'info.main' }} align="center">Téléphone</TableCell>
-                                </TableRow>
-                            </TableHead>
-                            <TableBody >
-                                {contacts.map((contact) => (
-                                    <TableRow
-                                        key={contact.idcontact}
-                                        hover
-                                        // onClick={(event) => handleClick(event, contact.idcontact)}
-                                        // selected={contact.idcontact === selectedIdcontact}
-                                    >
-                                        <TableCell align="left">{contact.lastname}</TableCell>
-                                        <TableCell align="center">{contact.firstname}</TableCell>
-                                        <TableCell align="center">{contact.phone}</TableCell>
-                                        <TableCell align="center">{contact.mail}</TableCell>
-                                    </TableRow>
-                                ))}
-                            </TableBody>
-                        </Table>
-                    </TableContainer>
+                </div>
+                <div className="bas_de_page">
+                    <NavigationDashboard />
+                    <div className="Repertoire">
+                        <div className="Titre_Formulaire_Rech">
+                            <p className="Titre">Repertoire</p>
+                            <p className="Sous-titre">Liste des utilisateurs</p>
+                            <div className="rechLogo">
+                                <div className="input_box">
+                                    <input type="search" placeholder="Rechercher..." />
+                                    <span className="search">
+                                        <i class="uil uil-search search-icon"></i>
+                                    </span>
+                                </div>
+                                <TableContainer component={Paper} sx={{ maxHeight: 0.8 }}>
+                                    <Table aria-label="simple table" size="small" stickyHeader>
+                                        <TableHead >
+                                            <TableRow>
+                                                <TableCell sx={{ bgcolor: 'info.main' }} align="left">Nom</TableCell>
+                                                <TableCell sx={{ bgcolor: 'info.main' }} align="center">Prénom</TableCell>
+                                                <TableCell sx={{ bgcolor: 'info.main' }} align="center">Identifiant</TableCell>
+                                                <TableCell sx={{ bgcolor: 'info.main' }} align="center">Téléphone</TableCell>
+                                            </TableRow>
+                                        </TableHead>
+                                        <TableBody >
+                                            {contacts.map((contact) => (
+                                                <TableRow
+                                                    key={contact.idcontact}
+                                                    hover
+                                                    // onClick={(event) => handleClick(event, contact.idcontact)}
+                                                    // selected={contact.idcontact === selectedIdcontact}
+                                                >
+                                                    <TableCell align="left">{contact.lastname}</TableCell>
+                                                    <TableCell align="center">{contact.firstname}</TableCell>
+                                                    <TableCell align="center">{contact.phone}</TableCell>
+                                                    <TableCell align="center">{contact.mail}</TableCell>
+                                                </TableRow>
+                                            ))}
+                                        </TableBody>
+                                    </Table>
+                                </TableContainer>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
+        </body>
     );
-}
+};
 
 // function Repertoire() {
 
