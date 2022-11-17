@@ -17,7 +17,6 @@ const Parametre = () => {
             <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"></link>
             
             <div className="page_parametre">
-                {/* Create an account page */}
                 <div className="haut_de_page">
                     <h2 className="titre">Paramètres</h2>
                     <div className="rechLogo">
