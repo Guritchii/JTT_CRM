@@ -1,12 +1,20 @@
 import { Component } from '@fullcalendar/core';
-import { render } from '@testing-library/react';
-import { click } from '@testing-library/user-event/dist/click';
-import React from 'react';
+import React, { useState } from 'react';
 import NavigationDashboard from '../components/NavigationDashboard';
+import img1 from '../img/logo_personEntouré.svg';
 
 
 
-const Compte = () => {
+
+function Compte() {
+
+    const [file, setFile] = useState();
+    function handleChange(e) {
+        console.log(e.target.files);
+        setFile(URL.createObjectURL(e.target.files[0]));
+    }
+
+
     return (
         <body>
 
@@ -31,9 +39,16 @@ const Compte = () => {
                     <div className="Compte">
                         <div className="name_picture">
                             <div className="picture">
-                                <div id="display_image"></div>
+                                <div id="display_image">
+                                    <img src={img1} srcSet={file} id="img" className="img"></img>
+                                </div>
                                 <div className='bouton_submit'>
-                                    <input type="file" name="fileUpload" id="fileUpload" accept="image/*"/>
+                                    <input type="file" name="fileUpload" id="input" accept="image/" onChange={handleChange} />
+                                    <div className="label">
+                                        <label className="fileUpload" htmlFor="input">
+                                            Ajoutez votre photo
+                                        </label>
+                                    </div>
                                 </div>
                             </div>
                             <div className="name">
@@ -81,8 +96,8 @@ const Compte = () => {
             </div>
         </body>
     );
-
 };
+
 
 
 export default Compte;

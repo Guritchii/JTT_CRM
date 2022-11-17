@@ -199,10 +199,15 @@ body {
                             height: 135px;
                             width: 135px;
                             background: rgba(255, 255, 255, 0.1);
-                            border-radius: 15px;
+                            border-radius: 100px;
                             box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
                             backdrop-filter: blur(3px);
                             -webkit-backdrop-filter: blur(15px);
+
+                            .img {
+                                border-radius: 100px;
+                                object-fit: cover;
+                            }
                         }
                         
                         .figure{
@@ -220,7 +225,9 @@ body {
                             align-items: center;
                             cursor: pointer;
 
-                            .bouton_ajoutPhoto {
+                            
+
+                            /*.bouton_ajoutPhoto {
                                 height: 40px;
                                 width: 150px;
                                 background-color: rgb(190, 189, 189);
@@ -231,7 +238,7 @@ body {
                                 &:hover{
                                     background-color: lightgrey;   
                                 }
-                            }
+                            }*/
                         }
                     }
 
@@ -431,4 +438,24 @@ body {
             }
         }
     }
+}
+
+#input[type="file"] {
+    display: none;
+}
+
+.fileUpload{
+    width: 100%;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 150px;
+    height: 50px;
+    color: white;
+    border-radius: 10px;
+    background-color: $xiketic;
+    cursor: pointer;
 }
