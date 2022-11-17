@@ -165,3 +165,14 @@ app.post('/User/Update/:id', (req, res) => {
         res.send('Post added...' + result.insertId);
     });
 });
+
+//Api pour les contacts de la page repertoire
+
+app.get('/Contact/All', (req, res) => {
+    let sql = 'SELECT * FROM contacts ORDER BY idcontact';
+    db.query(sql, (err, result) => {
+        if (err) throw err;
+        console.log(result);
+        res.send(result);
+    });
+});

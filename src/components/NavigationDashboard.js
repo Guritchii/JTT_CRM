@@ -5,6 +5,7 @@ import { NavLink } from 'react-router-dom';
 //Pour image compte
 import img1 from '../img/logo_person.svg'
 import img11 from '../img/logo_person_vide.svg'
+import img12 from '../img/logo_person_light.svg'
 
 //Pour image dashboard
 import img2 from '../img/logo_speed.svg'
@@ -28,7 +29,7 @@ import img61 from '../img/logo_parametre_vide.svg'
 
 const NavigationDashboard = () => {
 
-    const ImageToggleOnMouseOver = ({ primaryImg, secondaryImg }) => {
+    const ImageToggleOnMouseOver = ({ primaryImg, secondaryImg, tertiaryImg }) => {
         const imageRef = useRef(null);
 
         return (
@@ -58,18 +59,14 @@ const NavigationDashboard = () => {
                     </button>
                 </NavLink>
                 <NavLink className="analyse" to="/Analyse">
-                    <div className="parti_two">
                         <button className="button" type="submit">
                             <ImageToggleOnMouseOver primaryImg={img3} secondaryImg={img31} alt="" />
                         </button>
-                    </div>
                 </NavLink>
                 <NavLink className="calendrier" to="/Calendrier">
-                    <div className="parti_two">
                         <button className="button" type="submit">
                             <ImageToggleOnMouseOver primaryImg={img4} secondaryImg={img41} alt="" />
                         </button>
-                    </div>
                 </NavLink>
             </div>
             <div className="parti_three">

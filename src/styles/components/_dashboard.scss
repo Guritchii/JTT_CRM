@@ -110,16 +110,16 @@ body {
                     justify-content: space-around;
                     align-items: center;
                     width: 100%;
-                    height: 20%;
+                    height: 18%;
                 }
 
                 .parti_two {
                     display: flex;
                     flex-direction: column;
-                    justify-content: space-between;
+                    justify-content: space-around;
                     align-items: center;
                     width: 100%;
-                    height: 30%;
+                    height: 35%;
                 }
 
                 .parti_three {
@@ -127,8 +127,9 @@ body {
                     flex-direction: row;
                     justify-content: space-around;
                     align-items: center;
+                    margin-top: 15px;
                     width: 100%;
-                    height: 20%;
+                    height: 18%;
                 }
 
                 .parti_four {
@@ -137,7 +138,7 @@ body {
                     justify-content: space-around;
                     align-items: center;
                     width: 100%;
-                    height: 20%;
+                    height: 18%;
                 }
 
                 .button {
