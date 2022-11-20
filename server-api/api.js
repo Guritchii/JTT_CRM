@@ -150,19 +150,16 @@ app.post('/User/Add', (req, res) => {
     });
 });
 
-app.put('/User/Update', (req, res) => {
+app.put('/User/Update/:id', (req, res) => {
 
     const id = req.params.id;
-    
     let form = req.body;
 
-    console.log(req.body);
-
-    const sql = `UPDATE users SET "lastname" = ?, firstname = ?, idrole = ?, login = ?, password = ?, phone = ?, mail = ? WHERE (iduser = ?)`;
-    db.query(sql ,[form.lastname,form.firstname,form.idrole,form.login,form.password,form.phone,form.mail,form.id], (err, result) => { 
+    const sql = `UPDATE users SET lastname = ?, firstname = ?, idrole = ?, login = ?, password = ?, phone = ?, mail = ? WHERE (iduser = ?)`;
+    db.query(sql, [form.lastname, form.firstname, form.idrole, form.login, form.password, form.phone, form.mail, id], (err, result) => { 
         if (err) throw err;
         console.log(result);
-        res.send('Post added...' + result.insertId);
+        res.send('Post added...');
     });
 });
 
