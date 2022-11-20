@@ -25,7 +25,7 @@ function Admin_modif() {
             setCurrentUser(response.data[0]);
             setSelectedIdRole(response.data[0].idrole);
         });
-    });
+    }, []);
 
     useEffect(() =>{
         api.get('/Role/All/').then((response) => {
@@ -34,6 +34,7 @@ function Admin_modif() {
     }, []);
 
     function handleChangeRole(event){
+        console.log(event.target.value);
         setSelectedIdRole(event.target.value);
     };
 
@@ -46,8 +47,8 @@ function Admin_modif() {
         console.log(values.firstname);
 
         const apiString = '/User/Update/' + currentUser.iduser;
-        api.post(apiString).then (function(response) {
-                    console.log(response.data);
+        api.put(apiString).then((response) => {
+            console.log(response.data);
         });
 
     }
@@ -73,6 +74,7 @@ function Admin_modif() {
                                 </div>
                             </tr>
                             <tr>
+                                <input id="id" value={currentUser.iduser} name='id' type="hidden" required/>
                                 <input id="nom" value={currentUser.lastname} name='lastname' className="texte_zone" type="text" placeholder="Nom..." required/>
                                 <input id="prenom" value={currentUser.firstname} name="firstname" className="texte_zone" type="text" placeholder="Prénom..." required/>
                                 <Select
@@ -95,7 +97,6 @@ function Admin_modif() {
                                 </div>
                             </tr>
                         </table>
-                        <p>{currentUser === true?"L'identifiant existe déja":''}</p>
                         <div className="bouton_submit">
                             <button className="bouton_val" type="submit">Valider</button>
                             <NavLink className="bouton_ann" to="/Admin_list">Retour</NavLink>
