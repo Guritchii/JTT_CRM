@@ -1,7 +1,7 @@
 ![Alt text](./Doc/Image1.png)
 
 [![Build Status](https://codefirst.iut.uca.fr/api/badges/maxence.lanone/JTT_CrM/status.svg)](https://codefirst.iut.uca.fr/maxence.lanone/JTT_CrM)
-[![Quality gate](https://codefirst.iut.uca.fr/sonar/api/project_badges/quality_gate?project=jtt_crm&token=f3cf8928cde66bc2aaa1131ec7c4e18f0ae13a33)](https://codefirst.iut.uca.fr/sonar/dashboard?id=jtt_crm)
+[![Quality gate](https://codefirst.iut.uca.fr/sonar/api/project_badges/quality_gate?project=jtt_crm&token=4e704a73064f9dd9388eb33b182fcfe6f8aed2a4)](https://codefirst.iut.uca.fr/sonar/dashboard?id=jtt_crm)
 
 
 En developpement
