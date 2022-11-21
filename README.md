@@ -1,5 +1,7 @@
 ![Alt text](./Doc/Image1.png)
 
+[![Build Status](https://codefirst.iut.uca.fr/api/badges/maxence.lanone/JTT_CrM/status.svg)](https://codefirst.iut.uca.fr/maxence.lanone/JTT_CrM)
+
 ⚠️En developpement⚠️
 
 # Getting Started with Create React App
