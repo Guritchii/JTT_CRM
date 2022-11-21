@@ -1,4 +1,4 @@
-![Alt text](url "./Doc/Image1.png")
+![Alt text](./Doc/Image1.png)
 
 # Getting Started with Create React App
 
