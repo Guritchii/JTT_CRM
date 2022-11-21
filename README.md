@@ -1,72 +1,68 @@
-![Alt text](url "./Doc/Image1.png")
+![Alt text](./Doc/Image1.png)
 
-# Getting Started with Create React App
+[![Build Status](https://codefirst.iut.uca.fr/api/badges/maxence.lanone/JTT_CrM/status.svg)](https://codefirst.iut.uca.fr/maxence.lanone/JTT_CrM)
+[![Quality Gate Status](https://codefirst.iut.uca.fr/sonar/api/project_badges/measure?project=jtt_crm&metric=alert_status&token=4e704a73064f9dd9388eb33b182fcfe6f8aed2a4)](https://codefirst.iut.uca.fr/sonar/dashboard?id=jtt_crm)
+[![Code Smells](https://codefirst.iut.uca.fr/sonar/api/project_badges/measure?project=jtt_crm&metric=code_smells&token=4e704a73064f9dd9388eb33b182fcfe6f8aed2a4)](https://codefirst.iut.uca.fr/sonar/dashboard?id=jtt_crm)
+[![Lines of Code](https://codefirst.iut.uca.fr/sonar/api/project_badges/measure?project=jtt_crm&metric=ncloc&token=4e704a73064f9dd9388eb33b182fcfe6f8aed2a4)](https://codefirst.iut.uca.fr/sonar/dashboard?id=jtt_crm)
+[![Quality Gate Status](https://codefirst.iut.uca.fr/sonar/api/project_badges/measure?project=jtt_crm&metric=alert_status&token=4e704a73064f9dd9388eb33b182fcfe6f8aed2a4)](https://codefirst.iut.uca.fr/sonar/dashboard?id=jtt_crm)
+[![Bugs](https://codefirst.iut.uca.fr/sonar/api/project_badges/measure?project=jtt_crm&metric=bugs&token=4e704a73064f9dd9388eb33b182fcfe6f8aed2a4)](https://codefirst.iut.uca.fr/sonar/dashboard?id=jtt_crm)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+En developpement
 
-In the project directory, you can run:
+# Contexte du projet
+
+Ce projet est réalisé dans le cadre du projet de 1er semestre en 2ème année de BUT Informatique a l'IUT de Clermont-Ferrand.
+Il correspond a la SAE3.01.
+
+## L'application
+
+### Logiciel de type CRM (Customer Relationship Management) ou en français Gestion de la Relation Client (GRC).
+
+#### L'utilisateur gere ses clients depuis l'application, il a acces a différents outils :
+
+- Modification et visualition de ses informations personelles (Page compte)
+- Visualition globales des outils (Dashboard)
+- Details des différentes analyse lié a ses ventes (Page analyse)
+- Vue d'un calendrier qui référence différentes informations à propos des clients (Page calendrier)
+- Répertoire permettant donnant la possiblité de faire différentes actions sur les clients (Page repertoire)
+- Modification de certains paramatres de l'application (Page parametre)
+
+<br>
+<br>
+<br>
+
+# A propos du language
+![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+# Crée avec Create React App
+
+Ce projet a été crée avec [Create React App](https://github.com/facebook/create-react-app).
+
+## Commande disponible
+
+Dans le dossier JTT_CrM vous pouvez lancer :
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Lancer l'appli sur en mode developpement.\
+Ouvrir [http://localhost:3000](http://localhost:3000) pour voir dans un naviguateur.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+La page est rechagée lorsque vous faites des changements.\
+Vous pouvez également voir les erreurs de lint dans la console.
 
 ### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Lance le programme d'exécution des tests en mode de surveillance interactive.\
+Regarder la section à propos de [running tests](https://facebook.github.io/create-react-app/docs/running-tests) pour plus d'informations
 
 ### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Construit l'application pour la production dans le dossier `build`.
+Il regroupe correctement React en mode production et optimise la compilation pour obtenir les meilleures performances.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+La compilation est réduite et les noms de fichiers incluent les hachages.
+Votre application est prête à être déployée !
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Regarder la section à propos de [deployment](https://facebook.github.io/create-react-app/docs/deployment) pour plus d'informations.
