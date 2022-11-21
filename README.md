@@ -2,7 +2,7 @@
 
 [![Build Status](https://codefirst.iut.uca.fr/api/badges/maxence.lanone/JTT_CrM/status.svg)](https://codefirst.iut.uca.fr/maxence.lanone/JTT_CrM)
 
-⚠️En developpement⚠️
+En developpement
 
 # Contexte du projet
 
@@ -11,17 +11,30 @@ Il correspond a la SAE3.01.
 
 ## L'application
 
+### Logiciel de type CRM (Customer Relationship Management) ou en français Gestion de la Relation Client (GRC).
+
+#### L'utilisateur gere ses clients depuis l'application, il a acces a différents outils :
+
+- Modification et visualition de ses informations personelles (Page compte)
+- Visualition globales des outils (Dashboard)
+- Details des différentes analyse lié a ses ventes (Page analyse)
+- Vue d'un calendrier qui référence différentes informations à propos des clients (Page calendrier)
+- Répertoire permettant donnant la possiblité de faire différentes actions sur les clients (Page repertoire)
+- Modification de certains paramatres de l'application (Page parametre)
+
+<br>
+<br>
+<br>
+
+# A propos du language
 ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
-
-
-
-# Getting Started with Create React App
+# Crée avec Create React App
 
 Ce projet a été crée avec [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Commande disponible
 
 Dans le dossier JTT_CrM vous pouvez lancer :
 
