@@ -1,17 +1,20 @@
 import React, { useState } from 'react';
 import NavigationDashboard from '../components/NavigationDashboard';
-import { createContext } from 'react';
-
-export const ThemeContext = createContext(null);
 
 const Parametre = () => {
-    const [theme, setTheme] = useState("light");
+    const [theme, setTheme] = useState("light");    
+    if (localStorage.getItem('theme') && localStorage.getItem("theme") !== '' && localStorage.getItem("theme") !== theme) {
+        setTheme(localStorage.getItem("theme"))
+    }
+
+    
     const toggleTheme = () => {
         setTheme((curr) => (curr === "light" ? "dark" : "light"));
+        localStorage.setItem("theme", (theme === "light" ? "dark" : "light"))
     }
     
+    
     return (
-        <ThemeContext.Provider value={{ theme, setTheme}}>
         <body className={theme}>
 
             <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"></link>
@@ -67,7 +70,7 @@ const Parametre = () => {
                 </div>
             </div>
         </body>
-        </ThemeContext.Provider>
+        // </ThemeContext.Provider>
     );
 };
 

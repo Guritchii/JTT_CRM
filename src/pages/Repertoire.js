@@ -21,6 +21,10 @@ const api = axios.create({
 })
 
 function Repertoire() {
+    const [theme, setTheme] = useState("light");    
+    if (localStorage.getItem('theme') && localStorage.getItem("theme") !== '' && localStorage.getItem("theme") !== theme) {
+        setTheme(localStorage.getItem("theme"))
+    }
 
     const [contacts, setContacts] = useState([]);
     const [SearchTerm, setSearchTerm] = useState("");
@@ -35,7 +39,7 @@ function Repertoire() {
 
     return (
 
-        <body>
+        <body className={theme}>
 
             <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"></link>
             

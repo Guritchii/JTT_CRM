@@ -10,6 +10,10 @@ const api = axios.create({
   })
   
 function Connexion() {
+    const [theme, setTheme] = useState("light");    
+    if (localStorage.getItem('theme') && localStorage.getItem("theme") !== '' && localStorage.getItem("theme") !== theme) {
+        setTheme(localStorage.getItem("theme"))
+    }
 
     const [auth, setAuth] = useState("");
     const [login, setLogin] = useState("");

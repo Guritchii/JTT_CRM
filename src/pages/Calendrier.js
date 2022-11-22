@@ -30,6 +30,10 @@ const locales = {
 
 const Calendrier = () => {
 
+    const [theme, setTheme] = useState("light");    
+    if (localStorage.getItem('theme') && localStorage.getItem("theme") !== '' && localStorage.getItem("theme") !== theme) {
+        setTheme(localStorage.getItem("theme"))
+    }
     const [newEvent, setNewEvent] = useState({title: "", start: "", end:""});
     const [allEvents, setAllEvents] = useState(events);
 
@@ -38,7 +42,7 @@ const Calendrier = () => {
     }
 
     return (
-        <body>
+        <body className={theme}>
 
             <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"></link>
 

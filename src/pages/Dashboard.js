@@ -1,9 +1,14 @@
-import React from 'react';
+import React, {useState} from 'react';
 import NavigationDashboard from '../components/NavigationDashboard';
 
 const Dashboard = () => {
+    const [theme, setTheme] = useState("light");    
+    if (localStorage.getItem('theme') && localStorage.getItem("theme") !== '' && localStorage.getItem("theme") !== theme) {
+        setTheme(localStorage.getItem("theme"))
+    }
+
     return (
-        <body>
+        <body className={theme}>
 
             <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"></link>
             

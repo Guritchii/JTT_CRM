@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import axios from 'axios'
 import Chart from 'chart.js/auto'
 import NavigationDashboard from '../components/NavigationDashboard';
@@ -10,8 +10,13 @@ const api = axios.create({
 
 
 const Analyse = () => {
+    const [theme, setTheme] = useState("light");    
+    if (localStorage.getItem('theme') && localStorage.getItem("theme") !== '' && localStorage.getItem("theme") !== theme) {
+        setTheme(localStorage.getItem("theme"))
+    }
+
     return (
-        <body>
+        <body className={theme}>
 
             <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"></link>
 
