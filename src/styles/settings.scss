@@ -14,19 +14,7 @@ $rufous: #9b2915ff;
 $xiketic: #020114ff;
 $beau-blue: #b1c5d2;
 
-/* SCSS HSL */
-$alice-blue: hsla(204, 28%, 93%, 1);
-$blue-munsell: hsla(190, 100%, 32%, 1);
-$malachite: hsla(142, 80%, 55%, 1);
-$rufous: hsla(9, 76%, 35%, 1);
-$xiketic: hsla(243, 90%, 4%, 1);
 
-/* SCSS RGB */
-$alice-blue: rgba(232, 238, 242, 1);
-$blue-munsell: rgba(0, 136, 163, 1);
-$malachite: rgba(50, 232, 117, 1);
-$rufous: rgba(155, 41, 21, 1);
-$xiketic: rgb(21, 18, 75);
 
 /* SCSS Gradient */
 $gradient-top: linear-gradient(0deg, #e8eef2ff, #0088a3ff, #32e875ff, #9b2915ff, #020114ff);
@@ -59,4 +47,9 @@ body {
 
 li {
     list-style-type: none;
+}
+
+.dark{
+    background-color: $xiketic;
+    color: white;
 }
