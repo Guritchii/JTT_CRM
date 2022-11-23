@@ -10,6 +10,11 @@ const api = axios.create({
 
 function Admin_list() {
 
+    const [theme, setTheme] = useState("light");    
+    if (localStorage.getItem('theme') && localStorage.getItem("theme") !== '' && localStorage.getItem("theme") !== theme) {
+        setTheme(localStorage.getItem("theme"))
+    }
+
     const [users, setUsers] = useState([]);
     const [selectedIdUser, setSelectedIdUser] = useState();
 
@@ -24,8 +29,9 @@ function Admin_list() {
         setSelectedIdUser(iduser);
     };
 
+
     return (
-        <div className="page_admin">
+        <body className="page_admin">
             <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"></link>
             {/* Create a page to delete an user in the admin page*/}
             <NavigationAdmin iduser={selectedIdUser}/>
@@ -94,7 +100,7 @@ function Admin_list() {
                     </TableContainer>
                 </div>
             </div>
-         </div>
+         </body>
     );
 };
 

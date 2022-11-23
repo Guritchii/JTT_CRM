@@ -58,8 +58,7 @@ function Admin_create() {
 
     return (
         <div className="page_admin">
-            {/*<NavigationAdmin />*/}
-            {/* Create a admin page */}
+            <NavigationAdmin />
             <div className="Titre_Formulaire">
                 <p className="Titre">Admin</p>
                 <p className="Sous-titre">Création d'utilisateur</p>
