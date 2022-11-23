@@ -1,3 +1,8 @@
+.dark{
+    background-color: $xiketic;
+    color: white;
+}
+
 body {
     
     .page_admin {
@@ -74,14 +79,14 @@ body {
         .Titre_Formulaire{
             display: flex;
             flex-direction: column;
+            margin: 10px 10px 10px 0px;
+            padding: 10px;
             flex-basis: 100%;
             background: rgba(255, 255, 255, 0.3);
             border-radius: 15px;
             box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
             backdrop-filter: blur(3px);
             -webkit-backdrop-filter: blur(15px);
-            margin: 10px;
-            padding: 10px;
 
             .Titre {
                 display: flex;
@@ -198,42 +203,43 @@ body {
                 margin-top: 5%;
 
                 .bouton_val{
-                    //display: flex;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    width: 150px;
+                    height: 40px;
+                    font-size: 20px;
+                    text-decoration: none;
+                    color: white;
                     background-color: grey;
-                    border: 1px solid rgba(255, 255, 255, 0.1);
-                    backdrop-filter: blur(30px);
-                    color: rgb(255, 255, 255);
-                    cursor: pointer;
-                    font-size: 15px;
                     border-radius: 15px;
-                    width: 20%;
+                    border: 0;
 
                     &:hover {
-                        box-shadow: 0, 5px, 35px, 0 rgba(0, 0, 0, 1);
                         color: white;
                         background-color: rgba(114, 114, 114, 0.371);
                     }
-        
+
                     &:active {
                         background-color: rgba(68, 68, 68, 0.972);
                     }
                 }
 
                 .bouton_ann{
-                    //display: flex;
-                    background-color: grey;
-                    border: 0px solid rgba(255, 255, 255, 0.1);
-                    backdrop-filter: blur(30px);
-                    color: rgb(255, 255, 255);
-                    cursor: pointer;
-                    font-size: 15px;
-                    border-radius: 15px;
-                    width: 20%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    width: 150px;
+                    height: 40px;
+                    font-size: 20px;
                     text-decoration: none;
-                    text-align: center;
+                    color: white;
+                    background-color: grey;
+                    border-radius: 15px;
 
                     &:hover {
-                        box-shadow: 0, 5px, 35px, 0 rgba(0, 0, 0, 1);
                         color: white;
                         background-color: rgba(114, 114, 114, 0.371);
                     }
@@ -248,14 +254,14 @@ body {
         .Titre_Formulaire_Rech{
             display: flex;
             flex-direction: column;
+            margin: 10px 10px 10px 0px;
+            padding: 10px;
             flex-basis: 100%;
             background: rgba(255, 255, 255, 0.3);
             border-radius: 15px;
             box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
             backdrop-filter: blur(3px);
             -webkit-backdrop-filter: blur(15px);
-            margin: 10px;
-            padding: 10px;
 
             .Titre {
                 display: flex;
