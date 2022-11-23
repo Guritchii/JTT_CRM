@@ -21,9 +21,10 @@ function Repertoire() {
     const [SearchTerm, setSearchTerm] = useState("");
     const [SearchResults, setSearchResults] = useState([]);
     const [customers, setCustomers] = useState([]);
+    
 
     useEffect(() => {
-        api.get('/Contact/All').then((response) => {
+        api.get('/Contact/AllWithCustomerName').then((response) => {
             setContacts(response.data);
             setSearchTerm(response.data[0].idcontact);
         });
@@ -70,7 +71,7 @@ function Repertoire() {
                                     <TableCell>Photo</TableCell>
                                     <TableCell>Nom</TableCell>
                                     <TableCell>Prénom</TableCell>
-                                    
+                                    <TableCell>Entreprise</TableCell>
                                 </TableRow>
                             </TableHead>
                             <TableBody>
@@ -79,6 +80,7 @@ function Repertoire() {
                                         <TableCell><img className="photoContact" src={user} /></TableCell>
                                         <TableCell>{contact.lastname}</TableCell>
                                         <TableCell>{contact.firstname}</TableCell>
+                                        <TableCell>{contact.name}</TableCell>
                                     </TableRow>
                                 ))}
                             </TableBody>

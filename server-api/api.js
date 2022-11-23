@@ -165,8 +165,8 @@ app.put('/User/Update/:id', (req, res) => {
 
 //Api pour les contacts de la page repertoire
 
-app.get('/Contact/All', (req, res) => {
-    let sql = 'SELECT * FROM contacts ORDER BY idcontact';
+app.get('/Contact/AllWithCustomerName', (req, res) => {
+    let sql = 'SELECT c.*, cu.name FROM contacts c, customers cu WHERE cu.idCustomer = c.idCustomer ORDER BY idcontact';
     db.query(sql, (err, result) => {
         if (err) throw err;
         console.log(result);
