@@ -13,21 +13,11 @@ const Admin_devis = () => {
     return (
         <div className="page_admin">
             <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"></link>
-            {/* Create a page to delete an user in the admin page*/}
             <NavigationAdmin />
-            <div className="Titre_Formulaire_Rech">
-                <p className="Titre">Admin</p>
-                <p className="Sous-titre">Supression d'utilisateur</p>
-                <div className="rechLogo">
-                    <div className="input_box">
-                    <input type="search" placeholder="Rechercher..."/>
-                        <span className="search">
-                            <i class="uil uil-search search-icon"></i>
-                        </span>
-                    </div>
-                </div>
+            <div className="devis">
+                <p className="Titre">Devis</p>
             </div>
-         </div>
+        </div>
     );
 };
 
