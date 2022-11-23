@@ -12,6 +12,8 @@ import Admin_create from './pages/Admin_create';
 import Calendrier from './pages/Calendrier';
 import Repertoire from './pages/Repertoire';
 import Parametres from './pages/Parametres';
+import RestartPassword from './pages/RestartPassword';
+
 
 
 
@@ -25,6 +27,7 @@ const App = () => {
       <Route path="/Account" element={<Compte />} />
       <Route path="/Admin_list" element={<Admin_list />} />
       <Route path="/Admin_modif" element={<Admin_modif />} />
+      <Route path='/RestartPassword' element={<RestartPassword />} />
       <Route path="/Admin_devis" element={<Admin_devis />} />
       <Route path="/Admin_supp" element={<Admin_supp />} />
       <Route path="/Dashboard" element={<Dashboard />} />

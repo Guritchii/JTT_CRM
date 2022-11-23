@@ -16,7 +16,7 @@ const NavigationAdmin = (props) => {
                 <NavLink className="modify_user" to="/Admin_modif" state={{ iduser: props.iduser }}>
                     <button id="bouton_modif" className="bouton" type="button" value="Modifier un utilisateur">Modifier utilisateur</button>
                 </NavLink>
-                <NavLink className="delete_user" to="/Admin_supp">
+                <NavLink className="delete_user" to="/Admin_supp" state={{ iduser: props.iduser }}>
                     <button id="bouton_sup" className="bouton" type="button" value="Supprimer un utilisateur">Supprimer utilisateur</button>
                 </NavLink>
                 <NavLink className="list_devis" to="/Admin_devis">

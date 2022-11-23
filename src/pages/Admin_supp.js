@@ -1,44 +1,52 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios'
 import NavigationAdmin from '../components/NavigationAdmin.js';
+import { NavLink, useLocation } from "react-router-dom";
 import { TableContainer,Table,TableHead,TableBody,TableRow,TableCell } from '@mui/material';
 import { Paper } from '@mui/material';
+import { useNavigate } from "react-router-dom";
 
 const api = axios.create({
     baseURL: 'http://localhost:8080'
   })
 
-const Admin_supp = () => {
+function Admin_supp(){
 
-    const [users, setUsers] = useState([]);
-    const [selectedIdUser, setSelectedIdUser] = useState();
+    const location = useLocation();
+    const { iduser } = location.state;
+
+    const [selectedUser, setSelectedUsers] = useState([]);
+
+    const navigate = useNavigate();
 
     useEffect(() =>{
-        api.get('/User/All/').then((response) => {
-            setUsers(response.data);
-            setSelectedIdUser(response.data[0].iduser);
+        const apiString = '/User/Id/' + iduser;
+        api.get(apiString).then((response) => {
+            console.log(response.data[0]);
+            setSelectedUsers(response.data[0]);
         });
     }, []);
 
-    const handleClick = (event, iduser) => {
-        setSelectedIdUser(iduser);
-    };
+    function checkDelete(event){
+        
+        event.preventDefault();
+
+        const apiString = '/User/Delete/' + iduser;
+        api.delete(apiString).then((response) => {
+            console.log(response.data);
+        });
+
+        navigate("/Admin_list");
+    }
 
     return (
         <div className="page_admin">
             <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"></link>
-            {/* Create a page to delete an user in the admin page*/}
             <NavigationAdmin />
             <div className="Titre_Formulaire_Rech">
                 <p className="Titre">Admin</p>
                 <p className="Sous-titre">Supression d'utilisateur</p>
                 <div className="rechLogo">
-                    <div className="input_box">
-                    <input type="search" placeholder="Rechercher..."/>
-                        <span className="search">
-                            <i class="uil uil-search search-icon"></i>
-                        </span>
-                    </div>
                     <TableContainer component={Paper} sx={{ maxHeight: 0.8 }}>
                         <Table aria-label="simple table" size="small" stickyHeader>
                             <TableHead >
@@ -48,28 +56,23 @@ const Admin_supp = () => {
                                     <TableCell sx={{ bgcolor: 'info.main'}} align="center">Identifiant</TableCell>
                                     <TableCell sx={{ bgcolor: 'info.main'}} align="center">Téléphone</TableCell>
                                     <TableCell sx={{ bgcolor: 'info.main'}} align="center">Email</TableCell>
-                                    <TableCell sx={{ bgcolor: 'info.main'}} align="center">Rôle</TableCell>
                                 </TableRow>
                             </TableHead>
                             <TableBody >
-                                {users.map((user) => (
-                                    <TableRow
-                                        key={user.iduser}
-                                        hover
-                                        onClick={(event) => handleClick(event, user.iduser)}
-                                        selected={user.iduser === selectedIdUser}
-                                    >
-                                        <TableCell align="left">{user.lastname}</TableCell>
-                                        <TableCell align="center">{user.firstname}</TableCell>
-                                        <TableCell align="center">{user.login}</TableCell>
-                                        <TableCell align="center">{user.phone}</TableCell>
-                                        <TableCell align="center">{user.mail}</TableCell>
-                                        <TableCell align="center">{user.name}</TableCell>
-                                    </TableRow>
-                                ))}
+                                <TableRow>
+                                    <TableCell align="left">{selectedUser.lastname}</TableCell>
+                                    <TableCell align="center">{selectedUser.firstname}</TableCell>
+                                    <TableCell align="center">{selectedUser.login}</TableCell>
+                                    <TableCell align="center">{selectedUser.phone}</TableCell>
+                                    <TableCell align="center">{selectedUser.mail}</TableCell>
+                                </TableRow>
                             </TableBody>
                         </Table>
                     </TableContainer>
+                </div>
+                <div className="bouton_submit">
+                    <button onClick={checkDelete}>Valider</button>
+                    <NavLink className="bouton_ann" to="/Admin_list">Retour</NavLink>
                 </div>
             </div>
          </div>
