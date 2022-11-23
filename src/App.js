@@ -4,6 +4,7 @@ import Compte from './pages/Compte';
 import Connexion from './pages/Connexion';
 import Admin_modif from './pages/Admin_modif';
 import Admin_supp from './pages/Admin_supp';
+import Admin_devis from './pages/Admin_devis';
 import Dashboard from './pages/Dashboard';
 import Analyse from './pages/Analyse';
 import Admin_list from './pages/Admin_list';
@@ -24,6 +25,7 @@ const App = () => {
       <Route path="/Account" element={<Compte />} />
       <Route path="/Admin_list" element={<Admin_list />} />
       <Route path="/Admin_modif" element={<Admin_modif />} />
+      <Route path="/Admin_devis" element={<Admin_devis />} />
       <Route path="/Admin_supp" element={<Admin_supp />} />
       <Route path="/Dashboard" element={<Dashboard />} />
       <Route path="/Analyse" element={<Analyse />} />

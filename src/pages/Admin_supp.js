@@ -39,28 +39,6 @@ const Admin_supp = () => {
                             <i class="uil uil-search search-icon"></i>
                         </span>
                     </div>
-                    {/*
-                    <form className="formulaire">
-                        <table className="Formulaire_de_recherche">
-                            <tr className="tr_bouton">
-                                <div className="bouton_personnes">
-                                    <p className="bouton_personne1">
-                                        <strong>Dupont Jacques</strong>
-                                    </p>
-                                    <p className="bouton_personne2">
-                                        <strong>Carreau Alexis</strong>
-                                    </p>
-                                </div>
-                            </tr>
-                            <tr>
-                                <div id="style" className='bouton_submit'>
-                                    <button className="bouton_sup" type="submit" onClick="document.getElementById('style').style.backgroundColor='green'">Supprimer</button>
-                                    <button className="bouton_ann" type="submit" onClick="document.getElementById('style').style.backgroundColor='red'">Annuler</button>
-                                </div>
-                            </tr>
-                        </table>
-                    </form>
-                    */}
                     <TableContainer component={Paper} sx={{ maxHeight: 0.8 }}>
                         <Table aria-label="simple table" size="small" stickyHeader>
                             <TableHead >
