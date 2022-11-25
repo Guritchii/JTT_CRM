@@ -4,7 +4,6 @@
 [![Quality Gate Status](https://codefirst.iut.uca.fr/sonar/api/project_badges/measure?project=jtt_crm&metric=alert_status&token=4e704a73064f9dd9388eb33b182fcfe6f8aed2a4)](https://codefirst.iut.uca.fr/sonar/dashboard?id=jtt_crm)
 [![Code Smells](https://codefirst.iut.uca.fr/sonar/api/project_badges/measure?project=jtt_crm&metric=code_smells&token=4e704a73064f9dd9388eb33b182fcfe6f8aed2a4)](https://codefirst.iut.uca.fr/sonar/dashboard?id=jtt_crm)
 [![Lines of Code](https://codefirst.iut.uca.fr/sonar/api/project_badges/measure?project=jtt_crm&metric=ncloc&token=4e704a73064f9dd9388eb33b182fcfe6f8aed2a4)](https://codefirst.iut.uca.fr/sonar/dashboard?id=jtt_crm)
-[![Quality Gate Status](https://codefirst.iut.uca.fr/sonar/api/project_badges/measure?project=jtt_crm&metric=alert_status&token=4e704a73064f9dd9388eb33b182fcfe6f8aed2a4)](https://codefirst.iut.uca.fr/sonar/dashboard?id=jtt_crm)
 [![Bugs](https://codefirst.iut.uca.fr/sonar/api/project_badges/measure?project=jtt_crm&metric=bugs&token=4e704a73064f9dd9388eb33b182fcfe6f8aed2a4)](https://codefirst.iut.uca.fr/sonar/dashboard?id=jtt_crm)
 
 
