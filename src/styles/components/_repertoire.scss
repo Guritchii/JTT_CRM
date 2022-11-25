@@ -1,17 +1,12 @@
-.dark{
-    background-color: $xiketic;
-    color: white;
-}
-
 body {
-    
-    .page_Repertoire {
+
+    #page_repertoire {
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
         width: auto;
         height: 100vh;
-    
+
         .haut_de_page {
             display: flex;
             flex-direction: row;
@@ -21,7 +16,7 @@ body {
             height: 10%;
             align-items: center;
             margin: 10px 10px 5px 10px;
-            
+
             background: rgba(255, 255, 255, 0.3);
             border-radius: 15px;
             box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
@@ -31,7 +26,7 @@ body {
             .titre {
                 font-size: 40px;
             }
-            
+
             .rechLogo {
                 display: flex;
                 flex-direction: row;
@@ -85,9 +80,9 @@ body {
                     width: 100px;
                     height: 100px;
                 }
-            }            
+            }
         }
-    
+
         .bas_de_page {
             display: flex;
             flex-direction: row;
@@ -98,7 +93,7 @@ body {
             .nav_bar_verticale {
                 display: flex;
                 flex-direction: column;
-                justify-content: space-around;
+                justify-content: space-evenly;
                 align-items: center;
                 width: 5%;
                 margin: 5px 5px 10px 10px;
@@ -153,7 +148,7 @@ body {
                     border: none;
                     cursor: pointer;
 
-                    .logo_nav_bar{
+                    .logo_nav_bar {
                         display: flex;
                         margin: 10px;
                         height: 50px;
@@ -162,14 +157,104 @@ body {
                 }
             }
 
-            .Repertoire {
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
-                width: 94.3%;
-                height: auto;
-                margin: 5px 10px 10px 5px;
+            .contenu {
+                width: 100%;
 
+                .searchAndAddButton {
+                    height: 100px;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    width: 100%;
+                    justify-content: space-between;
+
+                    .boutonAddContact {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        height: 40px;
+                        min-width: 150px;
+                        margin: 30px 30px;
+                        border-radius: 25px;
+                        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+                    }
+
+                    .input_box {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        position: relative;
+                        height: 40px;
+                        max-width: 350px;
+                        width: 100%;
+                        margin: 30px 30px;
+                        border-radius: 25px;
+                        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+
+                        input {
+                            position: relative;
+                            width: 100%;
+                            height: 100%;
+                            padding: 0 15px 0 65px;
+                            outline: none;
+                            border: none;
+                            border-radius: 25px;
+                            font-size: 16px;
+                            font-weight: 400;
+                            color: #333;
+                        }
+
+                        .search {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            position: absolute;
+                            left: 0;
+                            top: 0;
+                            height: 100%;
+                            width: 60px;
+                            border-radius: 25px 0 0 25px;
+
+                            .search-icon {
+                                font-size: 30px;
+                                color: black;
+                            }
+                        }
+                    }
+
+                }
+
+                .tabListContact {
+                    margin-bottom: 20px;
+                    padding-right: 10px;
+                    height: 82%;
+                    scroll-behavior: smooth;
+                    overflow-y: scroll;
+
+                    &::-webkit-scrollbar {
+                        width: 15px;
+                    }
+
+                    &::-webkit-scrollbar-track {
+                        background: #f1f1f1;
+                    }
+
+                    &::-webkit-scrollbar-thumb {
+                        background: #888;
+                        border-radius: 10px;
+                    }
+
+                    &::-webkit-scrollbar-thumb:hover {
+                        background: #555;
+                    }
+                    .photoContact{
+                        width: 50px;
+                        height: 50px;
+                        border-radius: 50%;
+                        object-fit: cover;
+                        border: 1px solid black;
+                    }
+                }
             }
         }
     }

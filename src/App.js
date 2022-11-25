@@ -4,6 +4,7 @@ import Compte from './pages/Compte';
 import Connexion from './pages/Connexion';
 import Admin_modif from './pages/Admin_modif';
 import Admin_supp from './pages/Admin_supp';
+import Admin_devis from './pages/Admin_devis';
 import Dashboard from './pages/Dashboard';
 import Analyse from './pages/Analyse';
 import Admin_list from './pages/Admin_list';
@@ -13,6 +14,8 @@ import Repertoire from './pages/Repertoire';
 import Parametres from './pages/Parametres';
 import Chargement from './pages/Chargement';
 import { Component } from 'fullcalendar';
+import RestartPassword from './pages/RestartPassword';
+
 
 
 

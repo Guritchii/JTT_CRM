@@ -2,10 +2,11 @@ import axios from 'axios'
 import React, { useState, useEffect } from 'react';
 import NavigationAdmin from '../components/NavigationAdmin.js';
 import Admin from './Admin_create.js';
-import { useLocation } from "react-router-dom"
+import { useLocation } from "react-router-dom";
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import { NavLink } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 const api = axios.create({
     baseURL: 'http://localhost:8080'
@@ -24,6 +25,8 @@ function Admin_modif() {
     const [mail, setMail] = useState();
     const [login, setLogin] = useState();
 
+    const navigate = useNavigate();
+
     useEffect(() =>{
         api.get('/Role/All/').then((response) => {
             setRoles(response.data);
@@ -38,9 +41,9 @@ function Admin_modif() {
 
             setLastName(response.data[0].lastname);
             setFirstName(response.data[0].firstname);
+            setLogin(response.data[0].login);
             setPhone(response.data[0].phone);
             setMail(response.data[0].mail);
-            setLogin(response.data[0].login);
         });
     }, []);
 
@@ -81,12 +84,13 @@ function Admin_modif() {
         api.put(apiString, values).then((response) => {
             console.log(response.data);
         });
+
+        navigate("/Admin_list");
     }
 
     return (
         <div className="page_admin">
             <NavigationAdmin />
-            {/* Create a admin page */}
             <div className="Titre_Formulaire">
                 <p className="Titre">Admin</p>
                 <p className="Sous-titre">Modification d'utilisateur</p>
@@ -97,15 +101,16 @@ function Admin_modif() {
                                 <div className="texte_côté">
                                     <p>Nom :</p>
                                     <p>Prénom :</p>
+                                    <p>Login :</p>
                                     <p>Rôle :</p>
-                                    <p>Identifiant :</p>
-                                    <p>Identifiant :</p>
-                                    <p>Mot de passe :</p>
+                                    <p>Téléphone :</p>
+                                    <p>Mail :</p>
                                 </div>
                             </tr>
                             <tr>
                                 <input id="nom" value={lastName} onChange={handleChangeLastName} name="lastname" className="texte_zone" type="text" placeholder="Nom..." required/>
                                 <input id="prenom" value={firstName} onChange={handleChangeFirstName} name="firstname" className="texte_zone" type="text" placeholder="Prénom..." required/>
+                                <input id="identifiant" value={login} onChange={handleChangeLogin} name="login" className="texte_zone" type="text" placeholder="Identifiant..." required/>
                                 <Select
                                     name="idrole"
                                     value={selectedIdRole}
@@ -121,9 +126,7 @@ function Admin_modif() {
                                 <input id="identifiant" value={login} onChange={handleChangeLogin} name="login" className="texte_zone" type="text" placeholder="Identifiant..." required/>
                             </tr>
                             <tr>
-                                <div className="button_submit">
-                                    <button className="bouton_réini">Réinitialiser le mot de passe</button>
-                                </div>
+                                <NavLink className="button_submit" to="/RestartPassword" state={{ iduser:iduser }}>Réinitialiser le mot de passe</NavLink>
                             </tr>
                         </table>
                         <div className="bouton_submit">

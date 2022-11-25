@@ -1,0 +1,12 @@
+cd server-api
+
+npm install --save body-parser
+npm install --save cors
+npm install --save mysql
+npm install --save express
+npm install -g nodemon
+npm install --save-dev nodemon
+
+
+npm install --save axios
+npm install @mui/material @emotion/react @emotion/styled

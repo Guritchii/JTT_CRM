@@ -1,19 +1,9 @@
 import NavigationDashboard from '../components/NavigationDashboard';
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Switch, Route, Routes } from 'react-router-dom';
-import { v4 as uuid } from 'uuid';
-import Header from '../components/Contact/Header';
-import AddContact from '../components/Contact/AddContact'
-import ContactList from '../components/Contact/ContactList';
-import ContactDetail from '../components/Contact/ContactDetail';
-import EditContact from '../components/Contact/EditContact';
 import axios from 'axios';
 import user from '../images/user.jpg';
-import { Link, useLocation } from 'react-router-dom';
-
 import { TableContainer, Table, TableHead, TableBody, TableRow, TableCell } from '@mui/material';
 import { Paper } from '@mui/material';
-
 
 
 const api = axios.create({
@@ -21,6 +11,7 @@ const api = axios.create({
 })
 
 function Repertoire() {
+
     const [theme, setTheme] = useState("light");    
     if (localStorage.getItem('theme') && localStorage.getItem("theme") !== '' && localStorage.getItem("theme") !== theme) {
         setTheme(localStorage.getItem("theme"))
@@ -29,80 +20,102 @@ function Repertoire() {
     const [contacts, setContacts] = useState([]);
     const [SearchTerm, setSearchTerm] = useState("");
     const [SearchResults, setSearchResults] = useState([]);
+    const [customers, setCustomers] = useState([]);
+    
 
     useEffect(() => {
-        api.get('/Contact/All').then((response) => {
+        api.get('/Contact/AllWithCustomerName').then((response) => {
             setContacts(response.data);
             setSearchTerm(response.data[0].idcontact);
         });
     }, []);
 
+    useEffect(() => {
+        api.get('/Customer/All').then((response) => {
+            setCustomers(response.data);
+        });
+    }, []);
+
     return (
-
-        <body className={theme}>
-
+        <div className={theme} id="page_repertoire">
+            {/* Create an account page */}
             <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"></link>
-            
-            <div className="page_Repertoire">
-                {/* Create an account page */}
-                <div className="haut_de_page">
-                    <h2 className="titre">Repertoire</h2>
-                    <div className="rechLogo">
+            <div className="haut_de_page">
+                <h2 className="titre">Repertoire</h2>
+                <div className="rechLogo">
+                    <div className="input_box">
+                        <input type="search" placeholder="Rechercher..." />
+                        <span className="search">
+                            <i class="uil uil-search search-icon"></i>
+                        </span>
+                    </div>
+                    <img className="logo" srcSet="./LogoApp.svg" />
+                </div>
+            </div>
+            <div className="bas_de_page">
+                <NavigationDashboard />
+                <div className="contenu">
+                    <span className="searchAndAddButton">
                         <div className="input_box">
-                            <input type="search" placeholder="Rechercher..."/>
+                            <input type="search" placeholder="Rechercher..." />
                             <span className="search">
                                 <i class="uil uil-search search-icon"></i>
                             </span>
                         </div>
-                        <img className="logo" srcSet="./LogoApp.svg"/>
-                    </div>
+                        <button className="boutonAddContact">Ajouter</button>
+                    </span>
+                    <TableContainer component={Paper} className="tabListContact">
+                        <Table>
+                            <TableHead>
+                                <TableRow>
+                                    <TableCell>Photo</TableCell>
+                                    <TableCell>Nom</TableCell>
+                                    <TableCell>Prénom</TableCell>
+                                    <TableCell>Entreprise</TableCell>
+                                </TableRow>
+                            </TableHead>
+                            <TableBody>
+                                {contacts.map((contact) => (
+                                    <TableRow key={contact.idcontact}>
+                                        <TableCell><img className="photoContact" src={user} /></TableCell>
+                                        <TableCell>{contact.lastname}</TableCell>
+                                        <TableCell>{contact.firstname}</TableCell>
+                                        <TableCell>{contact.name}</TableCell>
+                                    </TableRow>
+                                ))}
+                            </TableBody>
+                        </Table>
+                    </TableContainer>
                 </div>
-                <div className="bas_de_page">
-                    <NavigationDashboard />
-                    <div className="Repertoire">
-                        <div className="Titre_Formulaire_Rech">
-                            <p className="Titre">Repertoire</p>
-                            <p className="Sous-titre">Liste des utilisateurs</p>
-                            <div className="rechLogo">
-                                <div className="input_box">
-                                    <input type="search" placeholder="Rechercher..." />
-                                    <span className="search">
-                                        <i class="uil uil-search search-icon"></i>
-                                    </span>
-                                </div>
-                                <TableContainer component={Paper} sx={{ maxHeight: 0.8 }}>
-                                    <Table aria-label="simple table" size="small" stickyHeader>
-                                        <TableHead >
-                                            <TableRow>
-                                                <TableCell sx={{ bgcolor: 'info.main' }} align="left">Nom</TableCell>
-                                                <TableCell sx={{ bgcolor: 'info.main' }} align="center">Prénom</TableCell>
-                                                <TableCell sx={{ bgcolor: 'info.main' }} align="center">Identifiant</TableCell>
-                                                <TableCell sx={{ bgcolor: 'info.main' }} align="center">Téléphone</TableCell>
+                {/* <TableContainer component={Paper} sx={{ maxHeight: 0.8 }} className="tabListContact">
+                                <Table aria-label="simple table" size="small" stickyHeader>
+                                    <TableHead >
+                                        <TableRow>
+                                            <TableCell sx={{ bgcolor: 'info.main' }} align="center">Entreprise</TableCell>
+                                            <TableCell sx={{ bgcolor: 'info.main' }} align="left">Nom</TableCell>
+                                            <TableCell sx={{ bgcolor: 'info.main' }} align="center">Prénom</TableCell>
+
+                                        </TableRow>
+                                    </TableHead>
+                                    <TableBody >
+                                        {contacts.map((contact) => (
+                                            <TableRow
+                                                key={contact.idcontact}
+                                                hover
+                                            // onClick={(event) => handleClick(event, contact.idcontact)}
+                                            // selected={contact.idcontact === selectedIdcontact}
+                                            >
+
+                                                <TableCell align="center">{contact.idcustomer.name}</TableCell>
+                                                <TableCell align="left">{contact.lastname}</TableCell>
+                                                <TableCell align="center">{contact.firstname}</TableCell>
                                             </TableRow>
-                                        </TableHead>
-                                        <TableBody >
-                                            {contacts.map((contact) => (
-                                                <TableRow
-                                                    key={contact.idcontact}
-                                                    hover
-                                                    // onClick={(event) => handleClick(event, contact.idcontact)}
-                                                    // selected={contact.idcontact === selectedIdcontact}
-                                                >
-                                                    <TableCell align="left">{contact.lastname}</TableCell>
-                                                    <TableCell align="center">{contact.firstname}</TableCell>
-                                                    <TableCell align="center">{contact.phone}</TableCell>
-                                                    <TableCell align="center">{contact.mail}</TableCell>
-                                                </TableRow>
-                                            ))}
-                                        </TableBody>
-                                    </Table>
-                                </TableContainer>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                                        ))}
+                                    </TableBody>
+                                </Table>
+                            </TableContainer> */}
             </div>
-        </body>
+        </div>
     );
 };
 

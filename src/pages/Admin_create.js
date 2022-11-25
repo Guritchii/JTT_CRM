@@ -36,7 +36,6 @@ function Admin_create() {
 
         const formData = new FormData(event.currentTarget);
         const values = Object.fromEntries(formData.entries());
-         {/* Verif value login exist déja */}
         console.log(values.firstname);
         api.get('/User/Exist/'+ values.login).then((response) => {
             const login = response.data;
@@ -58,8 +57,7 @@ function Admin_create() {
 
     return (
         <div className="page_admin">
-            {/*<NavigationAdmin />*/}
-            {/* Create a admin page */}
+            <NavigationAdmin />
             <div className="Titre_Formulaire">
                 <p className="Titre">Admin</p>
                 <p className="Sous-titre">Création d'utilisateur</p>

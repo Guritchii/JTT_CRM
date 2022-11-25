@@ -1,13 +1,18 @@
 import { Component } from '@fullcalendar/core';
-import React, { useState } from 'react';
+import userEvent from '@testing-library/user-event';
+import React, { useEffect, useState } from 'react';
 import NavigationDashboard from '../components/NavigationDashboard';
 import img1 from '../img/logo_personEntouré.svg';
+import axios from 'axios'
 
 
-
+const api = axios.create({
+    baseURL: 'http://localhost:8080'
+  })
 
 function Compte() {
-    const [theme, setTheme] = useState("light");    
+    const [theme, setTheme] = useState("light");
+    const [modification, setModification] = useState(false);
     if (localStorage.getItem('theme') && localStorage.getItem("theme") !== '' && localStorage.getItem("theme") !== theme) {
         setTheme(localStorage.getItem("theme"))
     }
@@ -18,11 +23,8 @@ function Compte() {
         setFile(URL.createObjectURL(e.target.files[0]));
     }
 
-    const [modification, setModification] = useState(false);
-
     const modificationHandler = () => {
         setModification((modification) => !modification)
-        console.log("modificationHandler")
         console.log(modification)
     }
 
@@ -66,6 +68,7 @@ function Compte() {
                             <div className="name">
                                 <div className="presentationNom">
                                     <p id="texte" className="def">Nom Complet :</p>
+                                    <p>{}</p>
                                     <p id="texte" className="nom">Mateo Centeno</p>
                                 </div>
                                 <div className='bouton_submit'>
