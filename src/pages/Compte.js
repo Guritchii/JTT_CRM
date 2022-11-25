@@ -18,6 +18,14 @@ function Compte() {
         setFile(URL.createObjectURL(e.target.files[0]));
     }
 
+    const [modification, setModification] = useState(false);
+
+    const modificationHandler = () => {
+        setModification((modification) => !modification)
+        console.log("modificationHandler")
+        console.log(modification)
+    }
+
 
     return (
         <body className={theme}>
@@ -61,7 +69,7 @@ function Compte() {
                                     <p id="texte" className="nom">Mateo Centeno</p>
                                 </div>
                                 <div className='bouton_submit'>
-                                    <button id="bouton" className="bouton_modifierNom" type="submit">Modifier</button>
+                                    <button id="bouton" className="bouton_modifierNom" type="submit" onClick={modificationHandler}>{!modification ? "Modifier" : "Envoyer"}</button>
                                 </div>
                             </div>
                         </div>
