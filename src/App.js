@@ -21,6 +21,8 @@ import RestartPassword from './pages/RestartPassword';
 
 const App = () => {
 
+  <Chargement/>
+
     return (
       <BrowserRouter>
         <Routes>
