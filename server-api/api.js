@@ -214,3 +214,39 @@ app.get('/Contact/AllWithCustomerName', (req, res) => {
         res.send(result);
     });
 });
+
+app.get('/Entreprise/All', (req, res) => {
+    let sql = 'SELECT * FROM customers ORDER BY name';
+    db.query(sql, (err, result) => {
+        if (err) throw err;
+        console.log(result);
+        res.send(result);
+    });
+});
+
+app.get('/Contact/Exist/:login', (req, res) => {
+    
+    const login = req.params.login;
+    let sql = 'SELECT idContact FROM contact WHERE login = ?';
+
+    db.query(sql, [login], (err, result) => {
+        if (err) throw err;
+
+        console.log(result);
+        res.send(result);
+    });
+});
+
+app.post('/Contact/Add', (req, res) => {
+    
+    let form = req.body;
+
+    console.log(form);
+
+    const sql = `INSERT INTO contact(name, firstname, mail, phone, idUser, idCustomer) VALUES ('${form.name}', '${form.firstname}', '${form.mail}',  '${form.phone}' , '${form.idrole}', '${form.idUser}', '${form.idCustomer}' )`;
+    db.query(sql , (err, result) => { 
+        if (err) throw err;
+        console.log(result);
+        res.send('Post added...' + result.insertId);
+    });
+});
