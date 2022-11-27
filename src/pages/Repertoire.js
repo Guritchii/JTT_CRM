@@ -62,7 +62,7 @@ function Repertoire() {
                                 <i class="uil uil-search search-icon"></i>
                             </span>
                         </div>
-                        <button className="boutonAddContact">Ajouter</button>
+                        <button onClick={ajouter()} className="boutonAddContact">Ajouter</button>
                     </span>
                     <TableContainer component={Paper} className="tabListContact">
                         <Table>
@@ -117,6 +117,10 @@ function Repertoire() {
             </div>
         </div>
     );
+};
+
+function ajouter() {
+    console.log("ajouter");
 };
 
 // function Repertoire() {

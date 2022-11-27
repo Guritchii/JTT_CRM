@@ -1,0 +1,6 @@
+projectKey=jtt_crm
+serverUrl=https://codefirst.iut.uca.fr/sonar
+serverVersion=9.6.1.59531
+dashboardUrl=https://codefirst.iut.uca.fr/sonar/dashboard?id=jtt_crm
+ceTaskId=AYSvDEjizKKB0GF_0uUi
+ceTaskUrl=https://codefirst.iut.uca.fr/sonar/api/ce/task?id=AYSvDEjizKKB0GF_0uUi
