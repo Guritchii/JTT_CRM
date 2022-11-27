@@ -1,9 +1,10 @@
 import axios from 'axios'
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import CryptoJS from 'crypto-js';
 import Admin from './Admin_create.js'
 import Dashboard from './Dashboard.js'
 import Admin_list from './Admin_list.js';
+import Chargement from './Chargement.js';
 
 const api = axios.create({
     baseURL: 'http://localhost:8080'
@@ -58,6 +59,15 @@ function Connexion() {
         });
     }
 
+    const [loader, setLoader] = useState(true);
+
+    useEffect(() => {
+        setTimeout(() => {
+            setLoader(false);
+        }, 3000)
+    }, [])
+
+
     if (auth === "Succeed") {
         const apiString = '/User/role/' + login;
         api.get(apiString).then((response) => {
@@ -77,7 +87,9 @@ function Connexion() {
             return (<Dashboard />);
     }
     else {
-        return (
+        return loader ?(
+            <Chargement/>
+        ) : (
             <div className="page_connexion">
                 <img className="logo" srcSet="./LogoApp.svg"></img>
                 <form onSubmit={chechAuth} className="formulaire_de_connexion">

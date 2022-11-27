@@ -33,7 +33,6 @@ function Admin_list() {
     return (
         <body className="page_admin">
             <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"></link>
-            {/* Create a page to delete an user in the admin page*/}
             <NavigationAdmin iduser={selectedIdUser}/>
             <div className="Titre_Formulaire_Rech">
                 <p className="Titre">Admin</p>
@@ -45,28 +44,6 @@ function Admin_list() {
                             <i class="uil uil-search search-icon"></i>
                         </span>
                     </div>
-                    {/*
-                    <form className="formulaire">
-                        <table className="Formulaire_de_recherche">
-                            <tr className="tr_bouton">
-                                <div className="bouton_personnes">
-                                    <p className="bouton_personne1">
-                                        <strong>Dupont Jacques</strong>
-                                    </p>
-                                    <p className="bouton_personne2">
-                                        <strong>Carreau Alexis</strong>
-                                    </p>
-                                </div>
-                            </tr>
-                            <tr>
-                                <div id="style" className='bouton_submit'>
-                                    <button className="bouton_sup" type="submit" onClick="document.getElementById('style').style.backgroundColor='green'">Supprimer</button>
-                                    <button className="bouton_ann" type="submit" onClick="document.getElementById('style').style.backgroundColor='red'">Annuler</button>
-                                </div>
-                            </tr>
-                        </table>
-                    </form>
-                    */}
                     <TableContainer component={Paper} sx={{ maxHeight: 0.8 }}>
                         <Table aria-label="simple table" size="small" stickyHeader>
                             <TableHead >

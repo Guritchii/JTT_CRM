@@ -86,6 +86,20 @@ app.get('/User/Auth/:login/:pwd', (req, res) => {
     });
 });
 
+app.get('/User/Auth/Password/:id/:pwd', (req, res) => {
+
+    const id = req.params.id;
+    const pwd = req.params.pwd;
+    let sql = 'SELECT login FROM users WHERE iduser = ? AND password = ?';
+
+    db.query(sql, [id, pwd], (err, result) => {
+        if (err) throw err;
+
+        console.log(result);
+        res.send(result);
+    });
+});
+
 app.get('/User/Role/:login', (req, res) => {
     
         const login = req.params.login;
@@ -155,11 +169,38 @@ app.put('/User/Update/:id', (req, res) => {
     const id = req.params.id;
     let form = req.body;
 
-    const sql = `UPDATE users SET lastname = ?, firstname = ?, idrole = ?, login = ?, password = ?, phone = ?, mail = ? WHERE (iduser = ?)`;
-    db.query(sql, [form.lastname, form.firstname, form.idrole, form.login, form.password, form.phone, form.mail, id], (err, result) => { 
+    const sql = `UPDATE users SET lastname = ?, firstname = ?, idrole = ?, login = ?, phone = ?, mail = ? WHERE (iduser = ?)`;
+    db.query(sql, [form.lastname, form.firstname, form.idrole, form.login, form.phone, form.mail, id], (err, result) => { 
         if (err) throw err;
         console.log(result);
-        res.send('Post added...');
+        res.send('Post update...');
+    });
+});
+
+app.put('/User/Update/Password/:id', (req, res) => {
+
+    const id = req.params.id;
+    let form = req.body;
+
+    console.log(form.newPassword);
+
+    const sql = `UPDATE users SET password = ? WHERE (iduser = ?)`;
+    db.query(sql, [form.newPassword, id], (err, result) => { 
+        if (err) throw err;
+        console.log(result);
+        res.send('Post password update...');
+    });
+});
+
+app.delete('/User/Delete/:id', (req, res) => {
+
+    const id = req.params.id;
+
+    const sql = `DELETE FROM users WHERE (iduser = ?)`;
+    db.query(sql, [id], (err, result) => { 
+        if (err) throw err;
+        console.log(result);
+        res.send('Post delete...');
     });
 });
 
