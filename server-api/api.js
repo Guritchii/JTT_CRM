@@ -125,6 +125,21 @@ app.get('/Role/All/', (req, res) => {
     });
 });
 
+app.get('/Sale/Pie/:iduser/:month/:year', (req, res) => {
+    
+    const iduser = req.params.iduser;
+    const month = req.params.month;
+    const year = req.params.year;
+    let sql = 'SELECT DISTINCT SUM(s.amount) as total,cu.name FROM sales s,customers cu,contacts co WHERE co.iduser = ? AND co.idcustomer = cu.idcustomer AND cu.idcustomer = s.idcustomer AND s.month >= ? AND s.year >= ? GROUP BY cu.name ORDER BY total DESC';
+
+    db.query(sql, [iduser,month,year], (err, result) => {
+        if (err) throw err;
+
+        console.log(result);
+        res.send(result);
+    });
+});
+
 app.get('/User/All', (req, res) => {
 
     let sql = 'SELECT iduser,lastname,firstname,login,phone,mail,roles.name FROM users,roles where users.idrole = roles.idrole Order by roles.idrole,lastname,firstname;';
