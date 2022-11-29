@@ -8,7 +8,7 @@ import axios from 'axios'
 
 const api = axios.create({
     baseURL: 'http://localhost:8080'
-  })
+})
 
 function Compte() {
     const [theme, setTheme] = useState("light");
@@ -27,6 +27,20 @@ function Compte() {
         setModification((modification) => !modification)
         console.log(modification)
     }
+
+    const [users, setUsers] = useState([]);
+    const [selectedIdUser, setSelectedIdUser] = useState();
+
+    useEffect(() =>{
+        api.get('/User/Id/:id').then((response) => {
+            setUsers(response.data);
+            setSelectedIdUser(response.data[0].iduser);
+        });
+    }, []);
+
+    const handleClick = (event, iduser) => {
+        setSelectedIdUser(iduser);
+    };
 
 
     return (
@@ -66,11 +80,17 @@ function Compte() {
                                 </div>
                             </div>
                             <div className="name">
-                                <div className="presentationNom">
-                                    <p id="texte" className="def">Nom Complet :</p>
-                                    <p>{}</p>
-                                    <p id="texte" className="nom">Mateo Centeno</p>
-                                </div>
+                            {users.map((user) => (
+                                    <div className="presentationNom"
+                                        key={user.iduser}
+                                        hover
+                                        onClick={(event) => handleClick(event, user.iduser)}
+                                        selected={user.iduser === selectedIdUser}
+                                    >
+                                        <p id="texte" className="def">Nom Complet :</p>
+                                        <p id="texte" className="nom">{user.lastname}</p>
+                                    </div>
+                                ))}
                                 <div className='bouton_submit'>
                                     <button id="bouton" className="bouton_modifierNom" type="submit" onClick={modificationHandler}>{!modification ? "Modifier" : "Envoyer"}</button>
                                 </div>
