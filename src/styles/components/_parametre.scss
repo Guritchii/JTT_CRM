@@ -313,7 +313,7 @@ body {
                                 width: 18px;
                                 height: 18px;
                                 border-radius: 20px;
-                                top: 12%;
+                                top: 3.25pt;
                                 left: 10%;
                                 background-color: white;
                                 transform: scale(1.1);
@@ -322,7 +322,8 @@ body {
                             }
 
                             input:checked[type="checkbox"]:before {
-                                left: 20px;
+                                top: 3.25pt;
+                                left: 27px;
                             }
                         }
                     }
