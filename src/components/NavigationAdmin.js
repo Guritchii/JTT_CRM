@@ -23,6 +23,11 @@ const NavigationAdmin = (props) => {
                     <button id="bouton_devis" className="bouton" type="button" value="Devis">Devis</button>
                 </NavLink>
             </div>
+            <div className="BoutonDeco">
+                <NavLink className="déconnexion" to="/">
+                    <button id="bouton_deco" className="bouton" type="button" value="Déco">Déconnexion</button>
+                </NavLink>
+            </div>
         </div>
     );
 };
