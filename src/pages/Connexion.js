@@ -5,6 +5,7 @@ import Admin from './Admin_create.js'
 import Dashboard from './Dashboard.js'
 import Admin_list from './Admin_list.js';
 import Chargement from './Chargement.js';
+import Session from 'react-session-api';
 
 const api = axios.create({
     baseURL: 'http://localhost:8080'
@@ -47,11 +48,14 @@ function Connexion() {
         const apiString = '/User/Auth/' + login + "/" + CryptoJS.SHA256(password).toString(CryptoJS.enc.Hex);
         api.get(apiString).then((response) => {
             const users = response.data;
-            console.log(response.data.length);
-            console.log(users.length);
+            //console.log(response.data.length);
+            //console.log(users.length);
             if (users.length > 0)
                 if (users[0].result === 1)
+                {
                     setAuth("Succeed");
+                    Session.set("idUser", (users[0].iduser));
+                }
                 else
                     setAuth("Failed");
             else
@@ -72,15 +76,15 @@ function Connexion() {
         const apiString = '/User/role/' + login;
         api.get(apiString).then((response) => {
             const role = response.data;
-            console.log("Role: " + role[0].idRole);
-            console.log("longueur role: " + role.length);
+            //console.log("Role: " + role[0].idRole);
+            //console.log("longueur role: " + role.length);
             if (role.length > 0){
                 setRole(role[0].idRole);
                 }
             else
                 setRole(-1);
         });
-        console.log("RoleUser: " + roleUser);
+        //console.log("RoleUser: " + roleUser);
         if (roleUser === 4)
             return (<Admin_list />);
         else if (roleUser === 1)

@@ -28,6 +28,7 @@ body {
                 flex-direction: column;
                 justify-content: space-around;
                 align-items: center;
+                height: 20%;
 
                 .logo {
                     max-width: 150px;
@@ -39,8 +40,7 @@ body {
                 display: flex;
                 flex-direction: column;
                 justify-content: space-evenly;
-                height: 450px;
-                margin-bottom: 180px;
+                height: 50%;
 
                 .create_user {
                     display: flex;
@@ -69,35 +69,45 @@ body {
                     text-decoration: none;
                     align-self: center;
                 }
-    
-                .bouton {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    width: 150px;
-                    height: 60px;
-                    font-size: 17px;
-                    font-weight: bold;
-                    transition: 1s box-shadow;
-                    border: none;
-                    cursor: pointer;
+            }
+
+            .BoutonDeco {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: 15%;
+
+                .déconnexion {
+                    text-decoration: none;
+                }
+            }
+
+            .bouton {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 150px;
+                height: 60px;
+                font-size: 17px;
+                font-weight: bold;
+                transition: 1s box-shadow;
+                border: none;
+                cursor: pointer;
+                color: white;
+                background-color: grey;
+                border-radius: 15px;
+
+                &:hover {
                     color: white;
-                    background-color: grey;
-                    border-radius: 15px;
+                    background-color: rgba(114, 114, 114, 0.371);
+                }
 
-                    &:hover {
-                        color: white;
-                        background-color: rgba(114, 114, 114, 0.371);
-                    }
-
-                    &:active {
-                        background-color: rgba(68, 68, 68, 0.972);
-                    }
+                &:active {
+                    background-color: rgba(68, 68, 68, 0.972);
                 }
             }
         }
-
-
 
         .Titre_Formulaire{
             display: flex;
