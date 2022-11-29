@@ -6,6 +6,7 @@ import { Pie } from "react-chartjs-2";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { setDefaultLocale } from 'react-datepicker';
 import { private_excludeVariablesFromRoot } from '@mui/material';
+import Session from 'react-session-api';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -14,6 +15,7 @@ const api = axios.create({
   })
 
 const Analyse = () => {
+
     const [theme, setTheme] = useState("light");    
     if (localStorage.getItem('theme') && localStorage.getItem("theme") !== '' && localStorage.getItem("theme") !== theme) {
         setTheme(localStorage.getItem("theme"))
@@ -29,7 +31,7 @@ const Analyse = () => {
         const year = date.getFullYear();
         const month = (date.getMonth() + 1);
 
-        const apiString = '/Sale/Pie/' + 41 + '/' + month + '/' + year;
+        const apiString = '/Sale/Pie/' + Session.get("idUser") + '/' + month + '/' + year;
         api.get(apiString).then((response) => {
 
             // Don't work !!

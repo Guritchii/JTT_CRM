@@ -76,7 +76,7 @@ app.get('/User/Auth/:login/:pwd', (req, res) => {
 
     const login = req.params.login;
     const pwd = req.params.pwd;
-    let sql = 'SELECT login, password = ? as result FROM users WHERE login = ?';
+    let sql = 'SELECT iduser,login, password = ? as result FROM users WHERE login = ?';
 
     db.query(sql, [pwd, login], (err, result) => {
         if (err) throw err;
@@ -130,9 +130,9 @@ app.get('/Sale/Pie/:iduser/:month/:year', (req, res) => {
     const iduser = req.params.iduser;
     const month = req.params.month;
     const year = req.params.year;
-    let sql = 'SELECT DISTINCT SUM(s.amount) as total,cu.name FROM sales s,customers cu,contacts co WHERE co.iduser = ? AND co.idcustomer = cu.idcustomer AND cu.idcustomer = s.idcustomer AND s.month >= ? AND s.year >= ? GROUP BY cu.name ORDER BY total DESC';
+    let sql = 'SELECT DISTINCT SUM(s.amount) as total,cu.name FROM sales s,customers cu,contacts co WHERE co.iduser = ? AND co.idcustomer = cu.idcustomer AND cu.idcustomer = s.idcustomer AND ((s.month >= ? AND s.year = ?) OR s.year > ?) GROUP BY cu.name ORDER BY total DESC';
 
-    db.query(sql, [iduser,month,year], (err, result) => {
+    db.query(sql, [iduser,month,year,year], (err, result) => {
         if (err) throw err;
 
         console.log(result);
