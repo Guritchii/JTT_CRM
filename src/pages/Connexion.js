@@ -9,7 +9,7 @@ import Session from 'react-session-api';
 
 const api = axios.create({
     baseURL: 'http://localhost:8080'
-  })
+})
   
 function Connexion() {
     const [theme, setTheme] = useState("light");    
