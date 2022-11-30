@@ -69,8 +69,6 @@ function RestartPassword() {
 
     return (
         <div className="page_admin">
-            <NavigationAdmin />
-            {/* Create a admin page */}
             <div className="Titre_Formulaire">
                 <p className="Titre">Admin</p>
                 <p className="Sous-titre">Modification d'utilisateur</p>
