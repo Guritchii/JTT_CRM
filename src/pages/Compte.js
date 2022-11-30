@@ -8,7 +8,7 @@ import Session from 'react-session-api';
 
 const api = axios.create({
     baseURL: 'http://localhost:8080'
-  })
+})
 
 function Compte() {
     const [theme, setTheme] = useState("light");
@@ -53,12 +53,6 @@ function Compte() {
                 <div className="haut_de_page">
                     <h2 className="titre">Mon Compte</h2>
                     <div className="rechLogo">
-                        <div className="input_box">
-                            <input type="search" placeholder="Rechercher..." />
-                            <span className="search">
-                                <i class="uil uil-search search-icon"></i>
-                            </span>
-                        </div>
                         <img className="logo" srcSet="./LogoApp.svg" />
                     </div>
                 </div>
