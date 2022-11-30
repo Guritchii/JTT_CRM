@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import NavigationDashboard from '../components/NavigationDashboard';
+import { NavLink } from 'react-router-dom';
 
 const Parametre = () => {
     const [theme, setTheme] = useState("light");    
@@ -48,7 +49,7 @@ const Parametre = () => {
                             <div className="one_bas">
                                 <p className="text_one_milieu">Mot de passe</p>
                                 <div className='bouton_submit'>
-                                    <button className="bouton_modifierMDP" type="submit">Modifier</button>
+                                    <NavLink className="bouton_modifierMDP" to="/RestartPassword">Modifier</NavLink>
                                 </div>
                             </div>
                         </div>

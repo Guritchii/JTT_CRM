@@ -3,12 +3,21 @@ import axios from 'axios'
 import NavigationAdmin from '../components/NavigationAdmin.js';
 import { TableContainer,Table,TableHead,TableBody,TableRow,TableCell } from '@mui/material';
 import { Paper } from '@mui/material';
+import { useNavigate } from "react-router-dom";
+import Session from 'react-session-api';
 
 const api = axios.create({
     baseURL: 'http://localhost:8080'
   })
 
 function Admin_list() {
+    //test rejet
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if(Session.get("idUser") == null)
+            navigate("/");
+    }, []);
 
     const [theme, setTheme] = useState("light");    
     if (localStorage.getItem('theme') && localStorage.getItem("theme") !== '' && localStorage.getItem("theme") !== theme) {

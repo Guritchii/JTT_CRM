@@ -6,6 +6,7 @@ import Dashboard from './Dashboard.js'
 import Admin_list from './Admin_list.js';
 import Chargement from './Chargement.js';
 import Session from 'react-session-api';
+import { useNavigate } from "react-router-dom";
 
 const api = axios.create({
     baseURL: 'http://localhost:8080'
@@ -16,6 +17,8 @@ function Connexion() {
     if (localStorage.getItem('theme') && localStorage.getItem("theme") !== '' && localStorage.getItem("theme") !== theme) {
         setTheme(localStorage.getItem("theme"))
     }
+
+    const navigate = useNavigate();
 
     const [auth, setAuth] = useState("");
     const [login, setLogin] = useState("");
@@ -71,7 +74,6 @@ function Connexion() {
         }, 3000)
     }, [])
 
-
     if (auth === "Succeed") {
         const apiString = '/User/role/' + login;
         api.get(apiString).then((response) => {
@@ -86,9 +88,9 @@ function Connexion() {
         });
         //console.log("RoleUser: " + roleUser);
         if (roleUser === 4)
-            return (<Admin_list />);
+            navigate("/Admin_list");
         else if (roleUser === 1)
-            return (<Dashboard />);
+            navigate("/Dashboard");
     }
     else {
         return loader ?(
