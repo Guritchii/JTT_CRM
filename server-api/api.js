@@ -140,6 +140,22 @@ app.get('/Sale/Pie/:iduser/:month/:year', (req, res) => {
     });
 });
 
+app.get('/Sale/Verif/:amount/:month/:year/:idcustomer', (req, res) => {
+    
+    const amount = req.params.amount;
+    const month = req.params.month;
+    const year = req.params.year;
+    const idcustomer = req.params.idcustomer;
+    let sql = 'SELECT s.idsale FROM sales s WHERE s.amount = ? AND s.month = ? AND s.year = ? AND s.idcustomer = ?';
+
+    db.query(sql, [amount,month,year,idcustomer], (err, result) => {
+        if (err) throw err;
+
+        console.log(result);
+        res.send(result);
+    });
+});
+
 app.get('/User/All', (req, res) => {
 
     let sql = 'SELECT iduser,lastname,firstname,login,phone,mail,roles.name FROM users,roles where users.idrole = roles.idrole Order by roles.idrole,lastname,firstname;';
