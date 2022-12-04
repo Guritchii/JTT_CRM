@@ -11,20 +11,29 @@ const api = axios.create({
 
 function Admin_devis() {
 
-    const [excelData, setExcelData] = useState([]);
-
     const processExcelFile = (data) =>{
         var workbook = XLSX.read(data, {type: 'binary'});
         const wsname = workbook.SheetNames[0];
         const ws = workbook.Sheets[wsname];
 
-        const dataParse = XLSX.utils.sheet_to_json(ws, {header:1});
-        setExcelData(dataParse);
+        const dataParse = XLSX.utils.sheet_to_json(ws, {header:1});;
 
         dataParse.forEach(line => {
-            //api.get('/Role/All/').then((response) => {
-            //    console.log(response.data);
-            //});
+            const apiString = '/Sale/Verif/' + line[2] + '/'+ line[1] + '/' + line[3];
+            api.get(apiString).then((response) => {
+                const data = response.data;
+                if(data.length > 0){
+                    const apiStringUpdate = '/Sale/Update/' + data[0].idsale;
+                    api.put(apiStringUpdate, line).then((response) => {
+                        console.log(response.data);
+                    });
+                }
+                else{
+                    api.post('/Sale/Add', line).then (function(response) {
+                        console.log(response.data);
+                    });
+                }
+            });
         });
     };
 
