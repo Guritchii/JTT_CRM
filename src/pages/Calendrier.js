@@ -12,8 +12,6 @@ import parse from "date-fns/parse";
 import startOfWeek from "date-fns/startOfWeek";
 import { Calendar, dateFnsLocalizer } from "react-big-calendar";
 import "react-big-calendar/lib/css/react-big-calendar.css";
-import Session from 'react-session-api'
-import axios from 'axios'
 
 
 const api = axios.create({
@@ -31,69 +29,30 @@ const localizer = dateFnsLocalizer({
     locales,
 });
 
-const apiStringGetEvent = '/edt/' + Session.get("idUser");
-  
-const events = []
-
-const recupererEvents = () => {
-    // api.get(apiStringGetEvent).then((response) => {
-    //     response.forEach(element => {
-    //         events.push({
-    //             title: element.Comment,
-    //             start: new Date(element.jour+" "+element.StartTime),
-    //             end: new Date(element.jour+" "+element.EndTime)
-    //         })
-    //     });
-    // })
-    const event = []
-    if (localStorage.getItem("events") !== null &&localStorage.getItem("events") !== "" && localStorage.getItem("events") !== []) {
-        JSON.parse(localStorage.getItem("events")).forEach(element => {
-            event.push({
-                title: element.title,
-                start: new Date(element.start),
-                end: new Date(element.end)
-            })
-        });
-        return event
-    }
-
-    return [];
-    
-}
-
 function Calendrier(){
 
     const [contacts, setContacts] = useState([]);
     const [events, setEvents] = useState([]);
     const [selectedContact, setSelectedContact] = useState(1);
-const envoyerNouvelleEvent = (event) => {
-    // const apiStringPostEvent = '/edt/' + Session.get("idUser");
-    // api.post(apiStringPostEvent, {
-    //     Comment: event.title,
-    //     jour: event.start,
-    //     StartTime: event.start,
-    //     EndTime: event.end
-    // })
-}
 
-    useEffect(() =>{
-        const apiString = '/Contact/' + Session.get("idUser");
-        api.get(apiString).then((response) => {
-            setContacts(response.data);
-            setSelectedContact(response.data[0].idcontact)
-        });
+useEffect(() =>{
+    const apiString = '/Contact/' + Session.get("idUser");
+    api.get(apiString).then((response) => {
+        setContacts(response.data);
+        setSelectedContact(response.data[0].idcontact)
+    });
 
-        const apiStringEvent = '/Event/' + Session.get("idUser");
-        api.get(apiStringEvent).then((response) => {
-            setEvents(response.data);
-        });
+    const apiStringEvent = '/Event/' + Session.get("idUser");
+    api.get(apiStringEvent).then((response) => {
+        setEvents(response.data);
+    });
 
-        events.forEach(event => {
-            const newEvent = { title: event.comment, start: new Date(event.date+" "+event.starttime), end: new Date(event.date+" "+event.endtime) };
-            setAllEvents([...allEvents, newEvent]);
-            console.log("here");
-        });
-    }, []);
+    events.forEach(event => {
+        const newEvent = { title: event.comment, start: new Date(event.date+" "+event.starttime), end: new Date(event.date+" "+event.endtime) };
+        setAllEvents([...allEvents, newEvent]);
+        console.log("here");
+    });
+}, []);
 
 
     const [theme, setTheme] = useState("light");    
@@ -105,7 +64,7 @@ const envoyerNouvelleEvent = (event) => {
     const [heureDebut, setHeureDebut] = useState(new Date());
     const [heureFin, setHeureFin] = useState(new Date());
 
-    const [allEvents, setAllEvents] = useState(recupererEvents);
+    const [allEvents, setAllEvents] = useState(events);
 
     function handleAddEvent() {
         const newEvent = { title: titre, start: new Date(jour+" "+heureDebut), end: new Date(jour+" "+heureFin) };
@@ -114,7 +73,6 @@ const envoyerNouvelleEvent = (event) => {
             console.log(response.data);
         });
         setAllEvents([...allEvents, newEvent]);
-        localStorage.setItem("events", JSON.stringify([...allEvents, newEvent]));
     }
 
     function handleChangeContact(event){
