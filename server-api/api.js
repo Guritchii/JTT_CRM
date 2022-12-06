@@ -271,3 +271,29 @@ app.get('/Contact/AllWithCustomerName', (req, res) => {
         res.send(result);
     });
 });
+
+// Api obtenir l'emploi du temps du id
+
+app.get('/edt/:id', (req, res) => {
+    const id = req.params.id;
+    let sql = 'SELECT * FROM Events WHERE IdUserReceive = ?';
+    db.query(sql, [id], (err, result) => {
+        if (err) throw err;
+        console.log(result);
+        res.send(result);
+    });
+});
+
+app.put('/edt/Add/:id/:jour/:debut/:fin', (req, res) => {
+    
+    // let form = req.body;
+
+    // console.log(form);
+
+    // const sql = `INSERT INTO Events(firstname, idrole, login, password, phone, mail) VALUES ('${form.lastname}', '${form.firstname}', '${form.idrole}', '${form.login}', '${form.password}', '${form.phone}', '${form.mail}')`;
+    // db.query(sql , (err, result) => { 
+    //     if (err) throw err;
+    //     console.log(result);
+    //     res.send('Post added...' + result.insertId);
+    // });
+});
