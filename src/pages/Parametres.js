@@ -59,7 +59,7 @@ const Parametre = () => {
                             </div>
                         </div>
                         <div className="three">
-                            <p className="text_three_haut">Coucou</p>
+                            <p className="text_three_haut">Autre</p>
                             <div className="déconnexion">
                                 <p className="text_three">Déconnexion</p>
                                 <NavLink to="/">
