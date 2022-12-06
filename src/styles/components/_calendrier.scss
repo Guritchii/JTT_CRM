@@ -121,7 +121,7 @@ body {
                 display: flex;
                 flex-direction: row;
                 background: rgba(255, 255, 255, 0.3);
-                border-radius: 15px;
+                border-radius: 5px;
                 box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
                 backdrop-filter: blur(3px);
                 -webkit-backdrop-filter: blur(15px);
@@ -176,7 +176,7 @@ body {
             }
 
             .rbc-calendar {
-                border-radius: 15px;
+                border-radius: 5px;
                 border: 1px solid black;
 
                 .rbc-day-bg {
@@ -188,6 +188,17 @@ body {
                     border-color: black;
                     border-right: none;
                     border-bottom: none;
+                }
+
+                .rbc-toolbar-label {
+                    display: flex;
+                    justify-content: center;
+                    flex-wrap: wrap;
+                }
+
+                .rbc-btn-group {
+                    display: flex;
+                    flex-wrap: wrap;
                 }
             }
 
