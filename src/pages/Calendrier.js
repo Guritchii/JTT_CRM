@@ -1,24 +1,24 @@
 import React, { useState } from 'react';
 import "react-datepicker/dist/react-datepicker.css";
 import NavigationDashboard from '../components/NavigationDashboard';
+
 import format from "date-fns/format";
 import getDay from "date-fns/getDay";
 import parse from "date-fns/parse";
 import startOfWeek from "date-fns/startOfWeek";
 import { Calendar, dateFnsLocalizer } from "react-big-calendar";
 import "react-big-calendar/lib/css/react-big-calendar.css";
-import DatePicker from "react-datepicker";
-
 
 const locales = {
-    "en-US": require("date-fns/locale/en-US"),
+    'fr': require('date-fns/locale/fr')
   };
   const localizer = dateFnsLocalizer({
     format,
     parse,
     startOfWeek,
     getDay,
-    locales
+    locales,
+    
   });
   
   const events = [
@@ -34,10 +34,15 @@ const Calendrier = () => {
     if (localStorage.getItem('theme') && localStorage.getItem("theme") !== '' && localStorage.getItem("theme") !== theme) {
         setTheme(localStorage.getItem("theme"))
     }
-    const [newEvent, setNewEvent] = useState({title: "", start: "", end:""});
+    const [titre, setTitre] = useState("");
+    const [jour , setJour] = useState(new Date());
+    const [heureDebut, setHeureDebut] = useState(new Date());
+    const [heureFin, setHeureFin] = useState(new Date());
+
     const [allEvents, setAllEvents] = useState(events);
 
     function handleAddEvent() {
+        const newEvent = { title: titre, start: new Date(jour+" "+heureDebut), end: new Date(jour+" "+heureFin) };
         setAllEvents([...allEvents, newEvent]);
     }
 
@@ -62,18 +67,24 @@ const Calendrier = () => {
                         <h2 className="Titre">Ajouter un évènement
                             <div className="mini_formulaire_evenement">
                                 <input className="ajout_input" type="text" placeholder="Ajoutez un titre" style={{height: "20px", width: "100%", marginRight: "10px"}} 
-                                    value={newEvent.Titre} onChange={(e) => setNewEvent({...newEvent, title: e.target.value})}/>
-                                <DatePicker className="ajout_input" placeholderText="Date de début" style={{height: "20px", width: "100%", marginRight: "10px"}}
-                                selected={newEvent.start} onChange={(start) => setNewEvent({...newEvent, start})} />
-                                <DatePicker className="ajout_input" placeholderText="Date de fin" style={{height: "20px", width: "100%"}}
-                                selected={newEvent.end} onChange={(end) => setNewEvent({...newEvent, end})} />
+                                onChange={(e) => setTitre(e.target.value)} />
+                                <input className='date' type="date" placeholder="Ajoutez un jour" style={{height: "20px", width: "100%", marginRight: "10px"}} 
+                                onChange={(e) => setJour(e.target.value)} />
+                                <input className='date' type="time" placeholder="Ajoutez une heure de début" style={{height: "20px", width: "100%", marginRight: "10px"}}
+                                onChange={(e) => setHeureDebut(e.target.value)} />
+                                <input className='date' type="time" placeholder="Ajoutez une heure de fin" style={{height: "20px", width: "100%", marginRight: "10px"}}
+                                onChange={(e) => setHeureFin(e.target.value)} />
+
+
+
+                                
                             </div>
                             <button className="bouton_ajout" onClick={handleAddEvent}>
                                 <p>Ajouter l'évènement</p>
                             </button>
                         </h2>
-                        <Calendar localizer={localizer} events={allEvents} 
-                        startAccessor="start" endAccessor="end" style={{height: "100%", width:"99%"}}/>
+                        <Calendar localizer={localizer} events={allEvents} defaultView="week"
+                        startAccessor="start" endAccessor="end" style={{height: "100%", width:"99%"}} />
                     </div>
                 </div>
             </div>

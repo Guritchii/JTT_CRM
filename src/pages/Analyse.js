@@ -127,12 +127,21 @@ const Analyse = () => {
                 <div className="bas_de_page">
                     <NavigationDashboard />   
                     <div className="Analyse">
-                        <div className="Stat_1">
-                            Tendances des ventes
-                            <Pie data={data}/>
+                        <div className="Stat-1">
+                            <div className="Stat-1_titre">
+                                <p>Tendances des ventes</p>
+                            </div>
+                            <div className='camenbert'>
+                                <Pie data={data}/>
+                            </div>
                         </div>
-                        <div className="Stat_2">
-                            Statistique n°2
+                        <div className="Stat-2">
+                            <div className="Stat-2_titre">
+                                <p>coucou2</p>
+                            </div>
+                            <div className="histogramme">
+                                coucou21
+                            </div>
                         </div>
                     </div>                       
                 </div>

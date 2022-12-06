@@ -42,7 +42,6 @@ function Admin_supp(){
     return (
         <div className="page_admin">
             <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"></link>
-            <NavigationAdmin />
             <div className="Titre_Formulaire_Rech">
                 <p className="Titre">Admin</p>
                 <p className="Sous-titre">Supression d'utilisateur</p>

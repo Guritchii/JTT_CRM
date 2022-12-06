@@ -3,11 +3,12 @@ import React, { useState, useEffect } from 'react';
 import NavigationAdmin from '../components/NavigationAdmin.js';
 import Admin from './Admin_create.js';
 import { useLocation } from "react-router-dom";
-import Select, { SelectChangeEvent } from '@mui/material/Select';
+import Select, { SelectChangeEvent } from '@mui/material/Select'; 
 import MenuItem from '@mui/material/MenuItem';
 import { NavLink } from 'react-router-dom';
 import CryptoJS from 'crypto-js';
 import { useNavigate } from "react-router-dom";
+import Session from 'react-session-api';
 
 
 const api = axios.create({
@@ -16,8 +17,6 @@ const api = axios.create({
 
 function RestartPassword() {
     const location = useLocation();
-    const { iduser } = location.state;
-    console.log(iduser);
 
     const [password, setPassword] = useState("");
     const [confPassword, setConfPassword] = useState("");
@@ -46,7 +45,7 @@ function RestartPassword() {
 
         if(password === confPassword)
         {
-            const apiString = '/User/Auth/Password/' + iduser + "/" + CryptoJS.SHA256(confPassword).toString(CryptoJS.enc.Hex);
+            const apiString = '/User/Auth/Password/' + Session.get("idUser") + "/" + CryptoJS.SHA256(confPassword).toString(CryptoJS.enc.Hex);
             api.get(apiString).then((response) => {
                 const login = response.data;
                 if (login.length > 0){
@@ -54,12 +53,12 @@ function RestartPassword() {
 
                     values.newPassword = CryptoJS.SHA256(newPassword).toString(CryptoJS.enc.Hex);
 
-                    const apiStringUpdate = '/User/Update/Password/' + iduser;
+                    const apiStringUpdate = '/User/Update/Password/' + Session.get("idUser");
                     api.put(apiStringUpdate, values).then((response) => {
                         console.log(response.data);
                     });
 
-                    navigate("/Admin_list");
+                    navigate("/Parametres");
                 }
                 else{
                     console.log("trt");
@@ -70,8 +69,6 @@ function RestartPassword() {
 
     return (
         <div className="page_admin">
-            <NavigationAdmin />
-            {/* Create a admin page */}
             <div className="Titre_Formulaire">
                 <p className="Titre">Admin</p>
                 <p className="Sous-titre">Modification d'utilisateur</p>
@@ -93,7 +90,7 @@ function RestartPassword() {
                         </table>
                         <div className="bouton_submit">
                             <button className="bouton_val" type="submit">Valider</button>
-                            <NavLink className="bouton_ann" to="/Admin_list">Retour</NavLink>
+                            <NavLink className="bouton_ann" to="/Parametres">Retour</NavLink>
                         </div>
                     </form>
                 </div>

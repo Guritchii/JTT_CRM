@@ -90,7 +90,6 @@ function Admin_modif() {
 
     return (
         <div className="page_admin">
-            <NavigationAdmin />
             <div className="Titre_Formulaire">
                 <p className="Titre">Admin</p>
                 <p className="Sous-titre">Modification d'utilisateur</p>
