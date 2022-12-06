@@ -42,9 +42,9 @@ const Parametre = () => {
                             </div>
                             <div className="one_bas">
                                 <p className="text_one_milieu">Mot de passe</p>
-                                <div className='bouton_submit'>
-                                    <NavLink className="bouton_modifierMDP" to="/RestartPassword">Modifier</NavLink>
-                                </div>
+                                <NavLink className="bouton_submit" to="/RestartPassword">
+                                    <button className="bouton_modifierMDP" type="submit">Modifier</button>
+                                </NavLink>
                             </div>
                         </div>
                         <div className="two">
