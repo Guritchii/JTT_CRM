@@ -196,6 +196,7 @@ body {
                             display: flex;
                             margin-left: 30px;
                             align-items: center;
+                            text-decoration: none;
                             cursor: pointer;
 
                             .bouton_modifierMDP {
@@ -289,6 +290,7 @@ body {
 
                 .three {
                     display: flex;
+                    flex-direction: column;
                     width: auto;
                     height: 40%;
 
@@ -297,6 +299,40 @@ body {
                     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.25);
                     backdrop-filter: blur(3px);
                     -webkit-backdrop-filter: blur(15px);
+
+                    .text_three_haut {
+                        display: flex;
+                        margin: 10px;
+                    }
+
+                    .déconnexion {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        margin-left: 10px;
+                        margin-right: 10px;
+                        padding: 10px;
+                        
+                        border-top: 1px solid black;
+
+                        .text_three {
+                            display: flex;
+                        }
+
+                        .bouton {
+                            width: 100px;
+                            height: 20px;
+                            background-color: rgb(190, 189, 189);
+                            border-radius: 5px;
+                            border-radius: 5px;
+                            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.25);
+                            cursor: pointer;
+
+                            &:hover{
+                                background-color: lightgrey; 
+                            }
+                        }
+                    }
                 }
             }
         }

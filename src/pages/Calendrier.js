@@ -12,6 +12,8 @@ import parse from "date-fns/parse";
 import startOfWeek from "date-fns/startOfWeek";
 import { Calendar, dateFnsLocalizer } from "react-big-calendar";
 import "react-big-calendar/lib/css/react-big-calendar.css";
+import Session from 'react-session-api'
+import axios from 'axios'
 
 
 const api = axios.create({
@@ -27,18 +29,52 @@ const localizer = dateFnsLocalizer({
     startOfWeek,
     getDay,
     locales,
-    
 });
+
+const apiStringGetEvent = '/edt/' + Session.get("idUser");
   
-const events = [
+const events = []
+
+const recupererEvents = () => {
+    // api.get(apiStringGetEvent).then((response) => {
+    //     response.forEach(element => {
+    //         events.push({
+    //             title: element.Comment,
+    //             start: new Date(element.jour+" "+element.StartTime),
+    //             end: new Date(element.jour+" "+element.EndTime)
+    //         })
+    //     });
+    // })
+    const event = []
+    if (localStorage.getItem("events") !== null &&localStorage.getItem("events") !== "" && localStorage.getItem("events") !== []) {
+        JSON.parse(localStorage.getItem("events")).forEach(element => {
+            event.push({
+                title: element.title,
+                start: new Date(element.start),
+                end: new Date(element.end)
+            })
+        });
+        return event
+    }
+
+    return [];
     
-];
+}
 
 function Calendrier(){
 
     const [contacts, setContacts] = useState([]);
     const [events, setEvents] = useState([]);
     const [selectedContact, setSelectedContact] = useState(1);
+const envoyerNouvelleEvent = (event) => {
+    // const apiStringPostEvent = '/edt/' + Session.get("idUser");
+    // api.post(apiStringPostEvent, {
+    //     Comment: event.title,
+    //     jour: event.start,
+    //     StartTime: event.start,
+    //     EndTime: event.end
+    // })
+}
 
     useEffect(() =>{
         const apiString = '/Contact/' + Session.get("idUser");
@@ -59,6 +95,7 @@ function Calendrier(){
         });
     }, []);
 
+
     const [theme, setTheme] = useState("light");    
     if (localStorage.getItem('theme') && localStorage.getItem("theme") !== '' && localStorage.getItem("theme") !== theme) {
         setTheme(localStorage.getItem("theme"))
@@ -68,7 +105,7 @@ function Calendrier(){
     const [heureDebut, setHeureDebut] = useState(new Date());
     const [heureFin, setHeureFin] = useState(new Date());
 
-    const [allEvents, setAllEvents] = useState(events);
+    const [allEvents, setAllEvents] = useState(recupererEvents);
 
     function handleAddEvent() {
         const newEvent = { title: titre, start: new Date(jour+" "+heureDebut), end: new Date(jour+" "+heureFin) };
@@ -77,6 +114,7 @@ function Calendrier(){
             console.log(response.data);
         });
         setAllEvents([...allEvents, newEvent]);
+        localStorage.setItem("events", JSON.stringify([...allEvents, newEvent]));
     }
 
     function handleChangeContact(event){
