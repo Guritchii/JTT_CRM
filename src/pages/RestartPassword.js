@@ -21,6 +21,7 @@ function RestartPassword() {
     const [password, setPassword] = useState("");
     const [confPassword, setConfPassword] = useState("");
     const [newPassword, setNewPassword] = useState("");
+    const [resetPasswordError, setResetPasswordError] = useState(false);
     
     const navigate = useNavigate();
 
@@ -61,7 +62,7 @@ function RestartPassword() {
                     navigate("/Parametres");
                 }
                 else{
-                    console.log("trt");
+                    setResetPasswordError(true);
                 }
             });
         }
@@ -70,8 +71,6 @@ function RestartPassword() {
     return (
         <div className="page_admin">
             <div className="Titre_Formulaire">
-                <p className="Titre">Admin</p>
-                <p className="Sous-titre">Modification d'utilisateur</p>
                 <div className="Formulaire">
                     <form className="form" onSubmit={checkRestartPassword}>
                         <table className="Formulaire_de_connexion">
@@ -83,11 +82,12 @@ function RestartPassword() {
                                 </div>
                             </tr>
                             <tr>
-                                <input id="MotDePasse" value={password} onChange={handleChangePassword} name='password' className="texte_zone" type="text" placeholder="Mot de passe..." required/>
-                                <input id="ConfirmeMotDePasse" value={confPassword} onChange={handleChangeConfPassword} name='confimPassword' className="texte_zone" type="text" placeholder="Confirmation mot de passe..." required/>
-                                <input id="NouvMotDePasse" value={newPassword} onChange={handleChangeNewPassword} name='newPassword' className="texte_zone" type="text" placeholder="Nouveau mot de passe..." required/>
+                                <input id="MotDePasse" value={password} onChange={handleChangePassword} name='password' className="texte_zone" type="password" placeholder="Mot de passe..." required/>
+                                <input id="ConfirmeMotDePasse" value={confPassword} onChange={handleChangeConfPassword} name='confimPassword' className="texte_zone" type="password" placeholder="Confirmation mot de passe..." required/>
+                                <input id="NouvMotDePasse" value={newPassword} onChange={handleChangeNewPassword} name='newPassword' className="texte_zone" type="password" placeholder="Nouveau mot de passe..." required/>
                             </tr>
                         </table>
+                        <p>{resetPasswordError === true?"Le mot de passe est incorrect":''}</p>
                         <div className="bouton_submit">
                             <button className="bouton_val" type="submit">Valider</button>
                             <NavLink className="bouton_ann" to="/Parametres">Retour</NavLink>

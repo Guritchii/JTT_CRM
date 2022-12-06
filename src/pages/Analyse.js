@@ -2,7 +2,7 @@ import React, {useState,useEffect} from 'react';
 import axios from 'axios'
 import Chart from 'chart.js/auto'
 import NavigationDashboard from '../components/NavigationDashboard';
-import { Pie } from "react-chartjs-2";
+import { Pie,Line } from "react-chartjs-2";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { setDefaultLocale } from 'react-datepicker';
 import { private_excludeVariablesFromRoot } from '@mui/material';
@@ -22,6 +22,7 @@ const Analyse = () => {
     }    
 
     const [pieDatas, setPieDatas] = useState([]);
+    const [lineDatas, setLineDatas] = useState([]);
 
     useEffect(() => {
         const date = new Date();
@@ -67,6 +68,11 @@ const Analyse = () => {
         
             setPieDatas(response.data);
         });
+
+        const apiStringLine = '/Sale/Line/' + Session.get("idUser") + '/' + month + '/' + year;
+        api.get(apiStringLine).then((response) => {
+            setLineDatas(response.data);
+        });
     }, []);
 
     const data = {
@@ -102,13 +108,33 @@ const Analyse = () => {
         data.datasets[0].data[i] = pieDatas[i].total;
     }
 
+    const dataH = {
+        labels: [],
+        datasets: [
+                {
+                label: 'Sales',
+                fill: true,
+                data: [],
+                backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                borderColor:'rgba(255, 99, 132, 1)',
+                borderWidth: 1,
+                },
+            ],
+    };
+
+    for(let i = 0; i < lineDatas.length; i++)
+    {
+        console.log(lineDatas);
+        dataH.labels[i] = lineDatas[i].month +"/" +lineDatas[i].year;
+        dataH.datasets[0].data[i] = lineDatas[i].total;
+    }
+
     return (
         <body className={theme}>
 
             <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"></link>
 
             <div className="page_analyse">
-                {/* Create an analysis page */}
                 <div className="haut_de_page">
                     <h2 className="titre">Analyse</h2>
                     <div className="rechLogo">
@@ -129,10 +155,10 @@ const Analyse = () => {
                         </div>
                         <div className="Stat-2">
                             <div className="Stat-2_titre">
-                                <p>coucou2</p>
+                                <p>Courbe des ventes</p>
                             </div>
                             <div className="histogramme">
-                                coucou21
+                                <Line data={dataH}/>
                             </div>
                         </div>
                     </div>                       

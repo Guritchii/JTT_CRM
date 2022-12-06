@@ -1,6 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import "react-datepicker/dist/react-datepicker.css";
 import NavigationDashboard from '../components/NavigationDashboard';
+import axios from 'axios';
+import Session from 'react-session-api';
+import Select, { SelectChangeEvent } from '@mui/material/Select';
+import MenuItem from '@mui/material/MenuItem';
 
 import format from "date-fns/format";
 import getDay from "date-fns/getDay";
@@ -9,26 +13,51 @@ import startOfWeek from "date-fns/startOfWeek";
 import { Calendar, dateFnsLocalizer } from "react-big-calendar";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 
+
+const api = axios.create({
+    baseURL: 'http://localhost:8080'
+})
+
 const locales = {
     'fr': require('date-fns/locale/fr')
-  };
-  const localizer = dateFnsLocalizer({
+};
+const localizer = dateFnsLocalizer({
     format,
     parse,
     startOfWeek,
     getDay,
     locales,
     
-  });
+});
   
-  const events = [
+const events = [
     
-  ];
+];
 
-    
+function Calendrier(){
 
+    const [contacts, setContacts] = useState([]);
+    const [events, setEvents] = useState([]);
+    const [selectedContact, setSelectedContact] = useState(1);
 
-const Calendrier = () => {
+    useEffect(() =>{
+        const apiString = '/Contact/' + Session.get("idUser");
+        api.get(apiString).then((response) => {
+            setContacts(response.data);
+            setSelectedContact(response.data[0].idcontact)
+        });
+
+        const apiStringEvent = '/Event/' + Session.get("idUser");
+        api.get(apiStringEvent).then((response) => {
+            setEvents(response.data);
+        });
+
+        events.forEach(event => {
+            const newEvent = { title: event.comment, start: new Date(event.date+" "+event.starttime), end: new Date(event.date+" "+event.endtime) };
+            setAllEvents([...allEvents, newEvent]);
+            console.log("here");
+        });
+    }, []);
 
     const [theme, setTheme] = useState("light");    
     if (localStorage.getItem('theme') && localStorage.getItem("theme") !== '' && localStorage.getItem("theme") !== theme) {
@@ -43,8 +72,16 @@ const Calendrier = () => {
 
     function handleAddEvent() {
         const newEvent = { title: titre, start: new Date(jour+" "+heureDebut), end: new Date(jour+" "+heureFin) };
+        const newEventBD = { date: jour,starttime: heureDebut,endtime: heureFin,comment: titre, idusersend: Session.get("idUser"),iduserreceive: Session.get("idUser"), idcontact: selectedContact};
+        api.post('/Event/Add', newEventBD).then (function(response) {
+            console.log(response.data);
+        });
         setAllEvents([...allEvents, newEvent]);
     }
+
+    function handleChangeContact(event){
+        setSelectedContact(event.target.value);
+    };
 
     return (
         <body className={theme}>
@@ -74,10 +111,15 @@ const Calendrier = () => {
                                 onChange={(e) => setHeureDebut(e.target.value)} />
                                 <input className='date' type="time" placeholder="Ajoutez une heure de fin" style={{height: "20px", width: "100%", marginRight: "10px"}}
                                 onChange={(e) => setHeureFin(e.target.value)} />
-
-
-
-                                
+                                <Select
+                                    name='idcontact'
+                                    value={selectedContact}
+                                    onChange={handleChangeContact}
+                                    >
+                                    {contacts.map(contact => (
+                                        <MenuItem value={contact.idcontact}>{contact.firstname + contact.lastname + '\n(' + contact.name + ')'}</MenuItem>    
+                                    ))}
+                                </Select>
                             </div>
                             <button className="bouton_ajout" onClick={handleAddEvent}>
                                 <p>Ajouter l'évènement</p>
