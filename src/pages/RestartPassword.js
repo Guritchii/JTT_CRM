@@ -19,8 +19,8 @@ function RestartPassword() {
     const location = useLocation();
 
     const [password, setPassword] = useState("");
-    const [confPassword, setConfPassword] = useState("");
     const [newPassword, setNewPassword] = useState("");
+    const [confNewPassword, setConfNewPassword] = useState("");
     
     const navigate = useNavigate();
 
@@ -28,13 +28,13 @@ function RestartPassword() {
         setPassword(event.target.value);
     };
 
-    function handleChangeConfPassword(event){
-        setConfPassword(event.target.value);
-    };
-
     function handleChangeNewPassword(event){
         setNewPassword(event.target.value);
     };
+
+    function handleChangeConfNewPassword(event){
+        setConfNewPassword(event.target.value)
+    };  
 
     function checkRestartPassword(event){
 
@@ -43,9 +43,9 @@ function RestartPassword() {
         
         event.preventDefault();
 
-        if(password === confPassword)
+        if(newPassword === confNewPassword)
         {
-            const apiString = '/User/Auth/Password/' + Session.get("idUser") + "/" + CryptoJS.SHA256(confPassword).toString(CryptoJS.enc.Hex);
+            const apiString = '/User/Auth/Password/' + Session.get("idUser") + "/" + CryptoJS.SHA256(password).toString(CryptoJS.enc.Hex);
             api.get(apiString).then((response) => {
                 const login = response.data;
                 if (login.length > 0){
@@ -78,14 +78,14 @@ function RestartPassword() {
                             <tr>
                                 <div className="texte_côté">
                                     <p>Mot de passe :</p>
-                                    <p>Confirmation mot de passe :</p>
                                     <p>Nouveau mot de passe :</p>
+                                    <p>Confirmation nouveau mot de passe : </p>
                                 </div>
                             </tr>
                             <tr>
                                 <input id="MotDePasse" value={password} onChange={handleChangePassword} name='password' className="texte_zone" type="text" placeholder="Mot de passe..." required/>
-                                <input id="ConfirmeMotDePasse" value={confPassword} onChange={handleChangeConfPassword} name='confimPassword' className="texte_zone" type="text" placeholder="Confirmation mot de passe..." required/>
                                 <input id="NouvMotDePasse" value={newPassword} onChange={handleChangeNewPassword} name='newPassword' className="texte_zone" type="text" placeholder="Nouveau mot de passe..." required/>
+                                <input id="ConfNouvMotDePasse" value={confNewPassword} onChange={handleChangeConfNewPassword} name='ConfNewPassword' className="texte_zone" type="text" placeholder="Confirmation nouveau mot de passe..." required/>
                             </tr>
                         </table>
                         <div className="bouton_submit">
