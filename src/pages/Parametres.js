@@ -49,7 +49,7 @@ const Parametre = () => {
                         </div>
                         <div className="two">
                             <div className="two_haut">
-                                coucou
+                                Général
                             </div>
                             <div className="two_bas">
                                 <p className="text_two_bas">Mode sombre</p>
@@ -59,13 +59,18 @@ const Parametre = () => {
                             </div>
                         </div>
                         <div className="three">
-                            coucou
+                            <p className="text_three_haut">Coucou</p>
+                            <div className="déconnexion">
+                                <p className="text_three">Déconnexion</p>
+                                <NavLink to="/">
+                                    <button id="bouton_deco" className="bouton" type="button" value="Déco">Se déconnecter</button>
+                                </NavLink>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </body>
-        // </ThemeContext.Provider>
     );
 };
 
