@@ -6,6 +6,7 @@ import { TableContainer, Table, TableHead, TableBody, TableRow, TableCell } from
 import { Paper } from '@mui/material';
 import { NavLink } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+import Session from 'react-session-api';
 
 const api = axios.create({
     baseURL: 'http://localhost:8080'
@@ -23,10 +24,12 @@ function Repertoire() {
     const [SearchResults, setSearchResults] = useState([]);
     const [customers, setCustomers] = useState([]);
 
-
     useEffect(() => {
-        api.get('/Contact/AllWithCustomerName').then((response) => {
+        const apiString = '/Contact/' + Session.get("idUser");
+        api.get(apiString).then((response) => {
+            
             setContacts(response.data);
+            console.log("response.data", response.data);
             setSearchTerm(response.data[0].idcontact);
         });
     }, []);

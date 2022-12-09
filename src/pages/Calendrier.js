@@ -39,6 +39,7 @@ useEffect(() =>{
     const apiString = '/Contact/' + Session.get("idUser");
     api.get(apiString).then((response) => {
         setContacts(response.data);
+        console.log("response.data",response.data);
         setSelectedContact(response.data[0].idcontact)
     });
 

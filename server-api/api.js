@@ -312,9 +312,9 @@ app.post('/Contact/Add', (req, res) => {
     
     let form = req.body;
 
-    console.log(form);
+    console.log("on est dans le form",form);
 
-    const sql = `INSERT INTO contact(name, firstname, mail, phone, idUser, idCustomer) VALUES ('${form.name}', '${form.firstname}', '${form.mail}',  '${form.phone}' , '${form.idrole}', '${form.idUser}', '${form.idCustomer}' )`;
+    const sql = `INSERT INTO contacts(firstname,lastname, mail, phone, iduser, idcustomer) VALUES ('${form.firstname}', '${form.lastname}', '${form.mail}',  '${form.phone}', '${form.iduser}', '${form.idcustomer}' )`;
     db.query(sql , (err, result) => { 
         if (err) throw err;
         console.log(result);
@@ -338,7 +338,7 @@ app.post('/Event/Add', (req, res) => {
     
     let form = req.body;
     
-    console.log(form);
+    console.log("on est dans le form d'un event ",form);
     
     const sql = `INSERT INTO events(date,starttime,endtime,comment,idusersend,iduserreceive,idcontact) VALUES ('${form.date}', '${form.starttime}', '${form.endtime}', '${form.comment}', '${form.idusersend}', '${form.iduserreceive}', '${form.idcontact}')`;
      db.query(sql , (err, result) => { 
