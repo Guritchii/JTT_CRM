@@ -13,7 +13,7 @@ const api = axios.create({
     baseURL: 'http://localhost:8080'
   })
 
-function AddContact(props) {
+function AddContact() {
 
     const [loginError, setLoginError] = useState(false);    
     const [entreprises, setEntreprises] = useState([]);
@@ -29,37 +29,38 @@ function AddContact(props) {
 
     function handleChangeEntreprise(event){
         setSelectedIdEntreprise(event.target.value);
+        console.log("je suis dans handleChangeEntreprise");
     };
 
-    function checkAdd(event){
+    // function checkAdd(event){
         
-        event.preventDefault();
+    //     event.preventDefault();
 
-        const formData = new FormData(event.currentTarget);
-        const values = Object.fromEntries(formData.entries());
-        console.log(values.name);
-        api.get('/Contact/Exist/'+ values.login).then((response) => {
-            const login = response.data;
-            if (login.length > 0){
-                setLoginError(true);
-            }
-            else {
-                setLoginError(false);
+    //     const formData = new FormData(event.currentTarget);
+    //     const values = Object.fromEntries(formData.entries());
+    //     console.log(values.name);
+    //     api.get('/Contact/Exist/'+ values.login).then((response) => {
+    //         const login = response.data;
+    //         if (login.length > 0){
+    //             setLoginError(true);
+    //         }
+    //         else {
+    //             setLoginError(false);
 
-                api.post('/Contact/Add', values).then (function(response) {
-                    console.log(response.data);
-                });
+    //             api.post('/Contact/Add', values).then (function(response) {
+    //                 console.log(response.data);
+    //             });
 
-                navigate("/Repertoire");
-            }
-        });
-    };
+    //             navigate("/Repertoire");
+    //         }
+    //     });
+    // };
     
     return (
         <div className='addContactPage'>
             <h2>Ajouter un nouveau contact</h2>
             <div className="Formulaire">
-                    <form className="form" onSubmit={checkAdd}>
+                    <form className="form" >
                         <table className="Formulaire_de_connexion">
                             <tr>
                                 <div className="texte_côté">
@@ -92,4 +93,4 @@ function AddContact(props) {
     )
 }
 
-export default AddContact
+export default AddContact;

@@ -216,7 +216,7 @@ app.get('/Contact/AllWithCustomerName', (req, res) => {
 });
 
 app.get('/Entreprise/All', (req, res) => {
-    let sql = 'SELECT * FROM customers ORDER BY name';
+    let sql = 'SELECT idcustomer,name FROM customers ORDER BY name';
     db.query(sql, (err, result) => {
         if (err) throw err;
         console.log(result);
