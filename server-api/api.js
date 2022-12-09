@@ -224,12 +224,11 @@ app.get('/Entreprise/All', (req, res) => {
     });
 });
 
-app.get('/Contact/Exist/:login', (req, res) => {
-    
-    const login = req.params.login;
-    let sql = 'SELECT idContact FROM contact WHERE login = ?';
+app.get('/Contact/Exist/:phone', (req, res) => {
+    const phone = req.params.phone
+    let sql = 'SELECT idcontact FROM contacts WHERE phone = ?';
 
-    db.query(sql, [login], (err, result) => {
+    db.query(sql, [phone], (err, result) => {
         if (err) throw err;
 
         console.log(result);

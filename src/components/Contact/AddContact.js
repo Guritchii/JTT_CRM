@@ -24,6 +24,7 @@ function AddContact() {
     useEffect(() =>{
         api.get('/Entreprise/All').then((response) => {
             setEntreprises(response.data);
+            console.log(entreprises);
         });
     }, []);
 
@@ -32,35 +33,35 @@ function AddContact() {
         console.log("je suis dans handleChangeEntreprise");
     };
 
-    // function checkAdd(event){
+    function checkAdd(event){
         
-    //     event.preventDefault();
+        event.preventDefault();
 
-    //     const formData = new FormData(event.currentTarget);
-    //     const values = Object.fromEntries(formData.entries());
-    //     console.log(values.name);
-    //     api.get('/Contact/Exist/'+ values.login).then((response) => {
-    //         const login = response.data;
-    //         if (login.length > 0){
-    //             setLoginError(true);
-    //         }
-    //         else {
-    //             setLoginError(false);
+        const formData = new FormData(event.currentTarget);
+        const values = Object.fromEntries(formData.entries());
+        console.log(values.name);
+        api.get('/Contact/Exist/'+ values.idcontact).then((response) => {
+            const login = response.data;
+            if (login.length > 0){
+                setLoginError(true);
+            }
+            else {
+                setLoginError(false);
 
-    //             api.post('/Contact/Add', values).then (function(response) {
-    //                 console.log(response.data);
-    //             });
-
-    //             navigate("/Repertoire");
-    //         }
-    //     });
-    // };
+                api.post('/Contact/Add', values).then (function(response) {
+                    console.log(response.data);
+                });
+                
+                navigate("/Repertoire");
+            }
+        });
+    };
     
     return (
         <div className='addContactPage'>
             <h2>Ajouter un nouveau contact</h2>
             <div className="Formulaire">
-                    <form className="form" >
+                    <form className="form" onSubmit={checkAdd}>
                         <table className="Formulaire_de_connexion">
                             <tr>
                                 <div className="texte_côté">
@@ -78,7 +79,7 @@ function AddContact() {
                                     placeholder="Téléphone..." pattern="[0-9]{10}" required/>
                                 <input id="email" name='mail' className="texte_zone" type="email" placeholder="Email..." required/>
                                 <Select name='idcustomer' value={selectedIdEntreprise} onChange={handleChangeEntreprise}>
-                                    {entreprises.map(entreprise => (<MenuItem value={entreprise.idCustomer}>{entreprise.name}</MenuItem>))}
+                                    {entreprises.map(entreprise => (<MenuItem value={entreprise.idcustomer}>{entreprise.name}</MenuItem>))}
                                 </Select>
                             </tr>
                         </table>
