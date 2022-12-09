@@ -352,7 +352,7 @@ app.get('/Event/:iduser', (req, res) => {
 
     const iduser = req.params.iduser;
 
-    let sql = 'SELECT * FROM events e where e.iduserreceive = ?';
+    let sql = 'SELECT e.date,e.starttime,e.endtime,e.comment FROM events e where e.iduserreceive = ?';
 
     db.query(sql,[iduser], (err, result) => {
         if (err) throw err;

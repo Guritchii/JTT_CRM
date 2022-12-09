@@ -32,40 +32,36 @@ const localizer = dateFnsLocalizer({
 function Calendrier(){
 
     const [contacts, setContacts] = useState([]);
-    const [events, setEvents] = useState([]);
     const [selectedContact, setSelectedContact] = useState(1);
+    const [allEvents, setAllEvents] = useState([]);
 
-useEffect(() =>{
-    const apiString = '/Contact/' + Session.get("idUser");
-    api.get(apiString).then((response) => {
-        setContacts(response.data);
-        console.log("response.data",response.data);
+    useEffect(() =>{
+        const apiString = '/Contact/' + Session.get("idUser");
+        api.get(apiString).then((response) => {
+            setContacts(response.data);
         setSelectedContact(response.data[0].idcontact)
-    });
+        });
 
-    const apiStringEvent = '/Event/' + Session.get("idUser");
-    api.get(apiStringEvent).then((response) => {
-        setEvents(response.data);
-    });
+        const apiStringEvent = '/Event/' + Session.get("idUser");
+        api.get(apiStringEvent).then((response) => {
+            setAllEvents([]);
+            response.data.forEach(event => {
+                const newEvent = { title: event.comment, start: new Date(event.date+" "+event.starttime), end: new Date(event.date+" "+event.endtime) };
+                setAllEvents(allEvents => [...allEvents, newEvent]);
+            });
+        });
 
-    events.forEach(event => {
-        const newEvent = { title: event.comment, start: new Date(event.date+" "+event.starttime), end: new Date(event.date+" "+event.endtime) };
-        setAllEvents([...allEvents, newEvent]);
-        console.log("here");
-    });
-}, []);
-
+    }, []);
 
     const [theme, setTheme] = useState("light");    
     if (localStorage.getItem('theme') && localStorage.getItem("theme") !== '' && localStorage.getItem("theme") !== theme) {
         setTheme(localStorage.getItem("theme"))
     }
+
     const [titre, setTitre] = useState("");
     const [jour , setJour] = useState(new Date());
     const [heureDebut, setHeureDebut] = useState(new Date());
     const [heureFin, setHeureFin] = useState(new Date());
-
-    const [allEvents, setAllEvents] = useState(events);
 
     function handleAddEvent() {
         const newEvent = { title: titre, start: new Date(jour+" "+heureDebut), end: new Date(jour+" "+heureFin) };
