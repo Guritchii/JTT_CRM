@@ -90,16 +90,15 @@ function Admin_modif() {
 
     return (
         <div className="page_admin">
-            <NavigationAdmin />
             <div className="Titre_Formulaire">
                 <p className="Titre">Admin</p>
                 <p className="Sous-titre">Modification d'utilisateur</p>
                 <div className="Formulaire">
                     <form className="form" onSubmit={checkModif}>
                         <table className="Formulaire_de_connexion">
-                            <tr>
+                            <tr className="one">
                                 <div className="texte_côté">
-                                    <p>Nom :</p>
+                                    <div>Nom :</div>
                                     <p>Prénom :</p>
                                     <p>Login :</p>
                                     <p>Rôle :</p>
@@ -107,7 +106,7 @@ function Admin_modif() {
                                     <p>Mail :</p>
                                 </div>
                             </tr>
-                            <tr>
+                            <tr className="two">
                                 <input id="nom" value={lastName} onChange={handleChangeLastName} name="lastname" className="texte_zone" type="text" placeholder="Nom..." required/>
                                 <input id="prenom" value={firstName} onChange={handleChangeFirstName} name="firstname" className="texte_zone" type="text" placeholder="Prénom..." required/>
                                 <input id="identifiant" value={login} onChange={handleChangeLogin} name="login" className="texte_zone" type="text" placeholder="Identifiant..." required/>
@@ -125,8 +124,8 @@ function Admin_modif() {
                                 <input id="email" value={mail} onChange={handleChangeMail} name="mail" className="texte_zone" type="email" placeholder="Email..." required/>
                                 <input id="identifiant" value={login} onChange={handleChangeLogin} name="login" className="texte_zone" type="text" placeholder="Identifiant..." required/>
                             </tr>
-                            <tr>
-                                <NavLink className="button_submit" to="/RestartPassword" state={{ iduser:iduser }}>Réinitialiser le mot de passe</NavLink>
+                            <tr className="three">
+                                <NavLink className="button_submit" to="/RestartPassword" state={{ iduser:iduser }}>Réinitialiser mot de passe</NavLink>
                             </tr>
                         </table>
                         <div className="bouton_submit">

@@ -1,45 +1,83 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import "react-datepicker/dist/react-datepicker.css";
 import NavigationDashboard from '../components/NavigationDashboard';
+import axios from 'axios';
+import Session from 'react-session-api';
+import Select, { SelectChangeEvent } from '@mui/material/Select';
+import MenuItem from '@mui/material/MenuItem';
+
 import format from "date-fns/format";
 import getDay from "date-fns/getDay";
 import parse from "date-fns/parse";
 import startOfWeek from "date-fns/startOfWeek";
 import { Calendar, dateFnsLocalizer } from "react-big-calendar";
 import "react-big-calendar/lib/css/react-big-calendar.css";
-import DatePicker from "react-datepicker";
 
+
+const api = axios.create({
+    baseURL: 'http://localhost:8080'
+})
 
 const locales = {
-    "en-US": require("date-fns/locale/en-US"),
-  };
-  const localizer = dateFnsLocalizer({
+    'fr': require('date-fns/locale/fr')
+};
+const localizer = dateFnsLocalizer({
     format,
     parse,
     startOfWeek,
     getDay,
-    locales
-  });
-  
-  const events = [
-    
-  ];
+    locales,
+});
 
-    
+function Calendrier(){
 
+    const [contacts, setContacts] = useState([]);
+    const [events, setEvents] = useState([]);
+    const [selectedContact, setSelectedContact] = useState(1);
 
-const Calendrier = () => {
+useEffect(() =>{
+    const apiString = '/Contact/' + Session.get("idUser");
+    api.get(apiString).then((response) => {
+        setContacts(response.data);
+        setSelectedContact(response.data[0].idcontact)
+    });
+
+    const apiStringEvent = '/Event/' + Session.get("idUser");
+    api.get(apiStringEvent).then((response) => {
+        setEvents(response.data);
+    });
+
+    events.forEach(event => {
+        const newEvent = { title: event.comment, start: new Date(event.date+" "+event.starttime), end: new Date(event.date+" "+event.endtime) };
+        setAllEvents([...allEvents, newEvent]);
+        console.log("here");
+    });
+}, []);
+
 
     const [theme, setTheme] = useState("light");    
     if (localStorage.getItem('theme') && localStorage.getItem("theme") !== '' && localStorage.getItem("theme") !== theme) {
         setTheme(localStorage.getItem("theme"))
     }
-    const [newEvent, setNewEvent] = useState({title: "", start: "", end:""});
+    const [titre, setTitre] = useState("");
+    const [jour , setJour] = useState(new Date());
+    const [heureDebut, setHeureDebut] = useState(new Date());
+    const [heureFin, setHeureFin] = useState(new Date());
+
     const [allEvents, setAllEvents] = useState(events);
 
     function handleAddEvent() {
+        const newEvent = { title: titre, start: new Date(jour+" "+heureDebut), end: new Date(jour+" "+heureFin) };
+        const newEventBD = { date: jour,starttime: heureDebut,endtime: heureFin,comment: titre, idusersend: Session.get("idUser"),iduserreceive: Session.get("idUser"), idcontact: selectedContact};
+        api.post('/Event/Add', newEventBD).then (function(response) {
+            console.log(response.data);
+        });
         setAllEvents([...allEvents, newEvent]);
     }
+
+    function handleChangeContact(event){
+        setSelectedContact(event.target.value);
+    };
 
     return (
         <body className={theme}>
@@ -52,12 +90,6 @@ const Calendrier = () => {
                     <h2 className="titre">Calendrier</h2>
                     <link href='fullcalendar/main.css' rel='stylesheet' />
                     <div className="rechLogo">
-                        <div className="input_box">
-                            <input type="search" placeholder="Rechercher..."/>
-                            <span className="search">
-                                <i class="uil uil-search search-icon"></i>
-                            </span>
-                        </div>
                         <img className="logo" srcSet="./LogoApp.svg"/>
                     </div>
                 </div>
@@ -68,18 +100,29 @@ const Calendrier = () => {
                         <h2 className="Titre">Ajouter un évènement
                             <div className="mini_formulaire_evenement">
                                 <input className="ajout_input" type="text" placeholder="Ajoutez un titre" style={{height: "20px", width: "100%", marginRight: "10px"}} 
-                                    value={newEvent.Titre} onChange={(e) => setNewEvent({...newEvent, title: e.target.value})}/>
-                                <DatePicker className="ajout_input" placeholderText="Date de début" style={{height: "20px", width: "100%", marginRight: "10px"}}
-                                selected={newEvent.start} onChange={(start) => setNewEvent({...newEvent, start})} />
-                                <DatePicker className="ajout_input" placeholderText="Date de fin" style={{height: "20px", width: "100%"}}
-                                selected={newEvent.end} onChange={(end) => setNewEvent({...newEvent, end})} />
+                                onChange={(e) => setTitre(e.target.value)} />
+                                <input className='date' type="date" placeholder="Ajoutez un jour" style={{height: "20px", width: "100%", marginRight: "10px"}} 
+                                onChange={(e) => setJour(e.target.value)} />
+                                <input className='date' type="time" placeholder="Ajoutez une heure de début" style={{height: "20px", width: "100%", marginRight: "10px"}}
+                                onChange={(e) => setHeureDebut(e.target.value)} />
+                                <input className='date' type="time" placeholder="Ajoutez une heure de fin" style={{height: "20px", width: "100%", marginRight: "10px"}}
+                                onChange={(e) => setHeureFin(e.target.value)} />
+                                <Select
+                                    name='idcontact'
+                                    value={selectedContact}
+                                    onChange={handleChangeContact}
+                                    >
+                                    {contacts.map(contact => (
+                                        <MenuItem value={contact.idcontact}>{contact.firstname + contact.lastname + '\n(' + contact.name + ')'}</MenuItem>    
+                                    ))}
+                                </Select>
                             </div>
                             <button className="bouton_ajout" onClick={handleAddEvent}>
                                 <p>Ajouter l'évènement</p>
                             </button>
                         </h2>
-                        <Calendar localizer={localizer} events={allEvents} 
-                        startAccessor="start" endAccessor="end" style={{height: "100%", width:"99%"}}/>
+                        <Calendar localizer={localizer} events={allEvents} defaultView="week"
+                        startAccessor="start" endAccessor="end" style={{height: "100%", width:"99%"}} />
                     </div>
                 </div>
             </div>

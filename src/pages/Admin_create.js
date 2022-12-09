@@ -58,14 +58,13 @@ function Admin_create() {
 
     return (
         <div className="page_admin">
-            <NavigationAdmin />
             <div className="Titre_Formulaire">
                 <p className="Titre">Admin</p>
                 <p className="Sous-titre">Création d'utilisateur</p>
                 <div className="Formulaire">
                     <form className="form" onSubmit={checkAdd}>
                         <table className="Formulaire_de_connexion">
-                            <tr>
+                            <tr className="one-2">
                                 <div className="texte_côté">
                                     <p>Nom :</p>
                                     <p>Prénom :</p>
@@ -76,7 +75,7 @@ function Admin_create() {
                                     <p>Mot de passe :</p>
                                 </div>
                             </tr>
-                            <tr>
+                            <tr className="two-2">
                                 <input id="nom" name='lastname' className="texte_zone" type="text" placeholder="Nom..." required/>
                                 <input id="prenom" name='firstname' className="texte_zone" type="text" placeholder="Prénom..." required/>
                                 <input id="phone" name='phone' className="texte_zone" type="tel" 

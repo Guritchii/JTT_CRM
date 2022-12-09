@@ -20,7 +20,12 @@ const NavigationAdmin = (props) => {
                     <button id="bouton_sup" className="bouton" type="button" value="Supprimer un utilisateur">Supprimer utilisateur</button>
                 </NavLink>
                 <NavLink className="list_devis" to="/Admin_devis">
-                    <button id="bouton_devis" className="bouton" type="button" value="Devis">Devis</button>
+                    <button id="bouton_devis" className="bouton" type="button" value="Devis">Importer Sales</button>
+                </NavLink>
+            </div>
+            <div className="BoutonDeco">
+                <NavLink className="déconnexion" to="/">
+                    <button id="bouton_deco" className="bouton" type="button" value="Déco">Déconnexion</button>
                 </NavLink>
             </div>
         </div>

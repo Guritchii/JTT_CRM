@@ -2,15 +2,15 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios'
 import NavigationAdmin from '../components/NavigationAdmin.js';
 import { NavLink, useLocation } from "react-router-dom";
-import { TableContainer,Table,TableHead,TableBody,TableRow,TableCell } from '@mui/material';
+import { TableContainer, Table, TableHead, TableBody, TableRow, TableCell } from '@mui/material';
 import { Paper } from '@mui/material';
 import { useNavigate } from "react-router-dom";
 
 const api = axios.create({
     baseURL: 'http://localhost:8080'
-  })
+})
 
-function Admin_supp(){
+function Admin_supp() {
 
     const location = useLocation();
     const { iduser } = location.state;
@@ -19,7 +19,7 @@ function Admin_supp(){
 
     const navigate = useNavigate();
 
-    useEffect(() =>{
+    useEffect(() => {
         const apiString = '/User/Id/' + iduser;
         api.get(apiString).then((response) => {
             console.log(response.data[0]);
@@ -27,8 +27,8 @@ function Admin_supp(){
         });
     }, []);
 
-    function checkDelete(event){
-        
+    function checkDelete(event) {
+
         event.preventDefault();
 
         const apiString = '/User/Delete/' + iduser;
@@ -42,7 +42,6 @@ function Admin_supp(){
     return (
         <div className="page_admin">
             <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"></link>
-            <NavigationAdmin />
             <div className="Titre_Formulaire_Rech">
                 <p className="Titre">Admin</p>
                 <p className="Sous-titre">Supression d'utilisateur</p>
@@ -51,11 +50,11 @@ function Admin_supp(){
                         <Table aria-label="simple table" size="small" stickyHeader>
                             <TableHead >
                                 <TableRow>
-                                    <TableCell sx={{ bgcolor: 'info.main'}} align="left">Nom</TableCell>
-                                    <TableCell sx={{ bgcolor: 'info.main'}} align="center">Prénom</TableCell>
-                                    <TableCell sx={{ bgcolor: 'info.main'}} align="center">Identifiant</TableCell>
-                                    <TableCell sx={{ bgcolor: 'info.main'}} align="center">Téléphone</TableCell>
-                                    <TableCell sx={{ bgcolor: 'info.main'}} align="center">Email</TableCell>
+                                    <TableCell sx={{ bgcolor: 'info.main' }} align="left">Nom</TableCell>
+                                    <TableCell sx={{ bgcolor: 'info.main' }} align="center">Prénom</TableCell>
+                                    <TableCell sx={{ bgcolor: 'info.main' }} align="center">Identifiant</TableCell>
+                                    <TableCell sx={{ bgcolor: 'info.main' }} align="center">Téléphone</TableCell>
+                                    <TableCell sx={{ bgcolor: 'info.main' }} align="center">Email</TableCell>
                                 </TableRow>
                             </TableHead>
                             <TableBody >
@@ -69,13 +68,13 @@ function Admin_supp(){
                             </TableBody>
                         </Table>
                     </TableContainer>
-                </div>
-                <div className="bouton_submit">
-                    <button onClick={checkDelete}>Valider</button>
-                    <NavLink className="bouton_ann" to="/Admin_list">Retour</NavLink>
+                    <div className="bouton_submit">
+                        <button className="bouton_val" onClick={checkDelete}>Valider</button>
+                        <NavLink className="bouton_ann" to="/Admin_list">Retour</NavLink>
+                    </div>
                 </div>
             </div>
-         </div>
+        </div>
     );
 };
 

@@ -76,7 +76,7 @@ app.get('/User/Auth/:login/:pwd', (req, res) => {
 
     const login = req.params.login;
     const pwd = req.params.pwd;
-    let sql = 'SELECT login, password = ? as result FROM users WHERE login = ?';
+    let sql = 'SELECT iduser,login, password = ? as result FROM users WHERE login = ?';
 
     db.query(sql, [pwd, login], (err, result) => {
         if (err) throw err;
@@ -122,6 +122,78 @@ app.get('/Role/All/', (req, res) => {
 
         console.log(result);
         res.send(result);
+    });
+});
+
+app.get('/Sale/Pie/:iduser/:month/:year', (req, res) => {
+    
+    const iduser = req.params.iduser;
+    const month = req.params.month;
+    const year = req.params.year;
+    let sql = 'SELECT DISTINCT SUM(s.amount) as total,cu.name FROM sales s,customers cu,contacts co WHERE co.iduser = ? AND co.idcustomer = cu.idcustomer AND cu.idcustomer = s.idcustomer AND ((s.month >= ? AND s.year = ?) OR s.year > ?) GROUP BY cu.name ORDER BY total DESC LIMIT 10';
+
+    db.query(sql, [iduser,month,year,year], (err, result) => {
+        if (err) throw err;
+
+        console.log(result);
+        res.send(result);
+    });
+});
+
+app.get('/Sale/Line/:iduser/:month/:year', (req, res) => {
+    
+    const iduser = req.params.iduser;
+    const month = req.params.month;
+    const year = req.params.year;
+    let sql = 'SELECT DISTINCT SUM(s.amount) as total,s.year,s.month FROM sales s,customers cu,contacts co WHERE co.iduser = 41 AND co.idcustomer = cu.idcustomer AND cu.idcustomer = s.idcustomer AND ((s.month >= 12 AND s.year = 2021) OR s.year > 2021) GROUP BY s.year,s.month ORDER BY s.year,s.month';
+
+    db.query(sql, [iduser,month,year,year], (err, result) => {
+        if (err) throw err;
+
+        console.log(result);
+        res.send(result);
+    });
+});
+
+app.get('/Sale/Verif/:month/:year/:idcustomer', (req, res) => {
+    
+    const month = req.params.month;
+    const year = req.params.year;
+    const idcustomer = req.params.idcustomer;
+    let sql = 'SELECT s.idsale FROM sales s WHERE s.month = ? AND s.year = ? AND s.idcustomer = ?';
+
+    db.query(sql, [month,year,idcustomer], (err, result) => {
+        if (err) throw err;
+
+        console.log(result);
+        res.send(result);
+    });
+});
+
+app.post('/Sale/Add', (req, res) => {
+    
+    let form = req.body;
+    
+    console.log(form);
+    
+    const sql = `INSERT INTO sales(amount, year, month, idcustomer) VALUES ('${form[0]}', '${form[1]}', '${form[2]}', '${form[3]}')`;
+     db.query(sql , (err, result) => { 
+        if (err) throw err;
+        console.log(result);
+        res.send('Post added...');
+    });
+});
+
+app.put('/Sale/Update/:id', (req, res) => {
+
+    const id = req.params.id;
+    let form = req.body;
+
+    const sql = `UPDATE sales SET amount = ?, year = ?, month = ?, idcustomer = ? WHERE (idsale = ?)`;
+    db.query(sql, [form[0],form[1],form[2],form[3], id], (err, result) => { 
+        if (err) throw err;
+        console.log(result);
+        res.send('Post update...');
     });
 });
 
@@ -247,5 +319,45 @@ app.post('/Contact/Add', (req, res) => {
         if (err) throw err;
         console.log(result);
         res.send('Post added...' + result.insertId);
+    });
+});
+
+app.get('/Contact/:iduser', (req, res) => {
+
+    const iduser = req.params.iduser;
+
+    let sql = 'SELECT c.idcontact,c.firstname,c.lastname,cu.name FROM contacts c,customers cu WHERE cu.idcustomer = c.idcustomer AND c.iduser = ?';
+    db.query(sql,[iduser], (err, result) => {
+        if (err) throw err;
+        console.log(result);
+        res.send(result);
+    });
+});
+
+app.post('/Event/Add', (req, res) => {
+    
+    let form = req.body;
+    
+    console.log(form);
+    
+    const sql = `INSERT INTO events(date,starttime,endtime,comment,idusersend,iduserreceive,idcontact) VALUES ('${form.date}', '${form.starttime}', '${form.endtime}', '${form.comment}', '${form.idusersend}', '${form.iduserreceive}', '${form.idcontact}')`;
+     db.query(sql , (err, result) => { 
+        if (err) throw err;
+        console.log(result);
+        res.send('Post added...');
+    });
+});
+
+app.get('/Event/:iduser', (req, res) => {
+
+    const iduser = req.params.iduser;
+
+    let sql = 'SELECT * FROM events e where e.iduserreceive = ?';
+
+    db.query(sql,[iduser], (err, result) => {
+        if (err) throw err;
+
+        console.log(result);
+        res.send(result);
     });
 });

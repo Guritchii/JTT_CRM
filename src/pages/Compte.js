@@ -4,11 +4,11 @@ import React, { useEffect, useState } from 'react';
 import NavigationDashboard from '../components/NavigationDashboard';
 import img1 from '../img/logo_personEntouré.svg';
 import axios from 'axios'
-
+import Session from 'react-session-api';
 
 const api = axios.create({
     baseURL: 'http://localhost:8080'
-  })
+})
 
 function Compte() {
     const [theme, setTheme] = useState("light");
@@ -28,6 +28,20 @@ function Compte() {
         console.log(modification)
     }
 
+    const [lastName, setLastName] = useState("");
+    const [firstName, setFirstName] = useState("");
+    const [phone, setPhone] = useState("");
+    const [mail, setMail] = useState("");
+
+    useEffect(() =>{
+        const apiString = '/User/Id/' + Session.get("idUser");
+        api.get(apiString).then((response) => {
+            setLastName(response.data[0].lastname);
+            setFirstName(response.data[0].firstname);
+            setPhone(response.data[0].phone);
+            setMail(response.data[0].mail);
+        });
+    }, []);
 
     return (
         <body className={theme}>
@@ -39,12 +53,6 @@ function Compte() {
                 <div className="haut_de_page">
                     <h2 className="titre">Mon Compte</h2>
                     <div className="rechLogo">
-                        <div className="input_box">
-                            <input type="search" placeholder="Rechercher..." />
-                            <span className="search">
-                                <i class="uil uil-search search-icon"></i>
-                            </span>
-                        </div>
                         <img className="logo" srcSet="./LogoApp.svg" />
                     </div>
                 </div>
@@ -69,7 +77,7 @@ function Compte() {
                                 <div className="presentationNom">
                                     <p id="texte" className="def">Nom Complet :</p>
                                     <p>{}</p>
-                                    <p id="texte" className="nom">Mateo Centeno</p>
+                                    <input id="texte" value={firstName +" "+ lastName} name="texte" className="texte" type="text" disabled/>
                                 </div>
                                 <div className='bouton_submit'>
                                     <button id="bouton" className="bouton_modifierNom" type="submit" onClick={modificationHandler}>{!modification ? "Modifier" : "Envoyer"}</button>
@@ -80,7 +88,7 @@ function Compte() {
                             <p className="description">Informations personnel</p>
                             <div className="parti_mail">
                                 <p className="def">Mail :</p>
-                                <p className="mail">coucou@gmail.com</p>
+                                <input id="mail" value={mail} name="mail" className="mail" type="text" disabled/>
                             </div>
                             <div className="parti_pays">
                                 <p className="def">Pays ou Région :</p>
@@ -88,7 +96,7 @@ function Compte() {
                             </div>
                             <div className="parti_tel">
                                 <p className="def">Tel :</p>
-                                <p className="tel">0745632114</p>
+                                <input id="tel" value={phone} name="tel" className="tel" type="text" disabled/>
                             </div>
                         </div>
                         <div className="infoEntreprise">

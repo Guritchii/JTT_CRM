@@ -17,12 +17,6 @@ const Dashboard = () => {
                 <div className="haut_de_page">
                     <h2 className="titre">Dashboard</h2>
                     <div className="rechLogo">
-                        <div className="input_box">
-                            <input type="search" placeholder="Rechercher..."/>
-                            <span className="search">
-                                <i class="uil uil-search search-icon"></i>
-                            </span>
-                        </div>
                         <img className="logo" srcSet="./LogoApp.svg"/>
                     </div>
                 </div>

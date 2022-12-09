@@ -1,10 +1,10 @@
-.dark{
+.dark {
     background-color: $xiketic;
     color: white;
 }
 
 body {
-    
+
     .page_admin {
         display: flex;
         flex-direction: row;
@@ -28,6 +28,7 @@ body {
                 flex-direction: column;
                 justify-content: space-around;
                 align-items: center;
+                height: 20%;
 
                 .logo {
                     max-width: 150px;
@@ -39,8 +40,7 @@ body {
                 display: flex;
                 flex-direction: column;
                 justify-content: space-evenly;
-                height: 450px;
-                margin-bottom: 180px;
+                height: 50%;
 
                 .create_user {
                     display: flex;
@@ -48,63 +48,73 @@ body {
                     text-decoration: none;
                     align-self: center;
                 }
-    
+
                 .modify_user {
                     display: flex;
                     padding: 5px;
                     text-decoration: none;
                     align-self: center;
                 }
-    
+
                 .delete_user {
                     display: flex;
                     padding: 5px;
                     text-decoration: none;
                     align-self: center;
                 }
-    
+
                 .list_devis {
                     display: flex;
                     padding: 5px;
                     text-decoration: none;
                     align-self: center;
                 }
-    
-                .bouton {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    width: 150px;
-                    height: 60px;
-                    font-size: 17px;
-                    font-weight: bold;
-                    transition: 1s box-shadow;
-                    border: none;
-                    cursor: pointer;
+            }
+
+            .BoutonDeco {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: 15%;
+
+                .déconnexion {
+                    text-decoration: none;
+                }
+            }
+
+            .bouton {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 150px;
+                height: 60px;
+                font-size: 17px;
+                font-weight: bold;
+                transition: 1s box-shadow;
+                border: none;
+                cursor: pointer;
+                color: white;
+                background-color: grey;
+                border-radius: 15px;
+
+                &:hover {
                     color: white;
-                    background-color: grey;
-                    border-radius: 15px;
+                    background-color: rgba(114, 114, 114, 0.371);
+                }
 
-                    &:hover {
-                        color: white;
-                        background-color: rgba(114, 114, 114, 0.371);
-                    }
-
-                    &:active {
-                        background-color: rgba(68, 68, 68, 0.972);
-                    }
+                &:active {
+                    background-color: rgba(68, 68, 68, 0.972);
                 }
             }
         }
 
-
-
-        .Titre_Formulaire{
+        .Titre_Formulaire {
             display: flex;
             flex-direction: column;
-            margin: 10px 10px 10px 0px;
+            margin: 10px;
             padding: 10px;
-            flex-basis: 100%;
+            width: 100%;
             background: rgba(255, 255, 255, 0.3);
             border-radius: 15px;
             box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
@@ -113,11 +123,6 @@ body {
 
             .Titre {
                 display: flex;
-                /*background: rgba(255, 255, 255, 0.3);
-                border-radius: 15px;
-                box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-                backdrop-filter: blur(3px);
-                -webkit-backdrop-filter: blur(15px);*/
                 margin: 10px;
                 font-size: 70px;
                 font-weight: bold;
@@ -125,78 +130,131 @@ body {
 
             .Sous-titre {
                 display: flex;
-                /*background: rgba(255, 255, 255, 0.3);
-                border-radius: 15px;
-                box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-                backdrop-filter: blur(3px);
-                -webkit-backdrop-filter: blur(15px);*/
                 margin: 10px;
                 font-size: 40px;
                 font-weight: bold;
             }
-            
 
-            .Formulaire{
+
+            .Formulaire {
                 display: flex;
-                flex-direction: column;
-                align-items: center;
-                /*background: rgba(255, 255, 255, 0.3);
-                border-radius: 15px;
-                box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-                backdrop-filter: blur(3px);
-                -webkit-backdrop-filter: blur(15px);*/
+                flex-direction: row;
+                justify-content: center;
                 margin-left: 10px;
                 margin-right: 10px;
 
-                .form{
+                .form {
                     display: flex;
                     flex-direction: column;
-                    align-self: center;
+                    margin-top: 60px;
                     font-size: 30px;
+                    width: 80%;
 
                     .Formulaire_de_connexion {
-
                         display: flex;
                         flex-direction: row;
-                        margin-top: 5%;
-                        /*background: rgba(255, 255, 255, 0.3);
-                        border-radius: 15px;
-                        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-                        backdrop-filter: blur(3px);
-                        -webkit-backdrop-filter: blur(15px);*/
-            
-                        .texte_côté {
-                            display:flex;
+                        justify-content: space-between;
+
+
+                        .one {
+                            display: flex;
                             flex-direction: column;
-                            justify-content: space-around;
-                            height: 100%;
+                            width: 24%;
+
+                            .texte_côté {
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: space-around;
+                                margin-left: 80px;
+                                height: 85%;
+                            }
+
                         }
-            
+
+                        .one-2 {
+                            display: flex;
+                            flex-direction: column;
+                            width: 60%;
+
+                            .texte_côté {
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: space-around;
+                                margin-left: 150px;
+                                height: 100%;
+                            }
+
+                        }
+
+                        .two {
+                            display: flex;
+                            flex-direction: column;
+                            width: 46%;
+                        }
+
+                        .two-2 {
+                            display: flex;
+                            flex-direction: column;
+                            width: 46%;
+                        }
+
+                        .three {
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: center;
+                            align-items: center;
+                            margin-top: 316px;
+                            width: 29%;
+                            font-size: 23px;
+                            bottom: auto;
+
+                            .button_submit {
+                                display: flex;
+                                background-color: grey;
+                                border: 1px solid rgba(255, 255, 255, 0.1);
+                                backdrop-filter: blur(30px);
+                                color: rgb(255, 255, 255);
+                                cursor: pointer;
+                                font-size: 25px;
+                                border-radius: 15px;
+                                width: 308px;
+                                text-decoration: none;
+
+                                &:hover {
+                                    box-shadow: 0, 5px, 35px, 0 rgba(0, 0, 0, 1);
+                                    color: white;
+                                    background-color: rgba(114, 114, 114, 0.371);
+                                }
+
+                                &:active {
+                                    background-color: rgba(68, 68, 68, 0.972);
+                                }
+                            }
+                        }
+
                         input {
                             display: flex;
                             flex-direction: column;
-                            margin: 10px;
                         }
-            
+
                         .button_submit {
                             display: flex;
-                            margin-top: 150%;
                             margin-bottom: 2%;
                             padding-left: 10px;
-                            
-                            .bouton_réini{
-                            background-color: rgb(190, 189, 189);
-                            border-radius: 5px;
-                            border: 1px solid black;
-                            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-                            cursor: pointer;
+
+                            .bouton_réini {
+                                background-color: rgb(190, 189, 189);
+                                border-radius: 5px;
+                                border: 1px solid black;
+                                box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+                                cursor: pointer;
                             }
                         }
                     }
                 }
             }
 
-            
+
 
             .texte {
                 align-self: center;
@@ -205,7 +263,7 @@ body {
             }
 
             .texte_zone {
-                width: 600px;
+                width: 550px;
                 height: 50px;
                 background-color: transparent;
                 border-radius: 5px;
@@ -225,7 +283,7 @@ body {
                 height: 30px;
                 margin-top: 5%;
 
-                .bouton_val{
+                .bouton_val {
                     display: flex;
                     flex-direction: column;
                     justify-content: center;
@@ -249,7 +307,7 @@ body {
                     }
                 }
 
-                .bouton_ann{
+                .bouton_ann {
                     display: flex;
                     flex-direction: column;
                     justify-content: center;
@@ -266,7 +324,7 @@ body {
                         color: white;
                         background-color: rgba(114, 114, 114, 0.371);
                     }
-        
+
                     &:active {
                         background-color: rgba(68, 68, 68, 0.972);
                     }
@@ -274,7 +332,7 @@ body {
             }
         }
 
-        .Titre_Formulaire_Rech{
+        .Titre_Formulaire_Rech {
             display: flex;
             flex-direction: column;
             margin: 10px 10px 10px 0px;
@@ -288,11 +346,6 @@ body {
 
             .Titre {
                 display: flex;
-                /*background: rgba(255, 255, 255, 0.3);
-                border-radius: 15px;
-                box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-                backdrop-filter: blur(3px);
-                -webkit-backdrop-filter: blur(15px);*/
                 margin: 10px;
                 font-size: 70px;
                 font-weight: bold;
@@ -300,11 +353,6 @@ body {
 
             .Sous-titre {
                 display: flex;
-                /*background: rgba(255, 255, 255, 0.3);
-                border-radius: 15px;
-                box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-                backdrop-filter: blur(3px);
-                -webkit-backdrop-filter: blur(15px);*/
                 margin: 10px;
                 font-size: 40px;
                 font-weight: bold;
@@ -313,14 +361,7 @@ body {
             .rechLogo {
                 display: flex;
                 flex-direction: column;
-                flex-basis: 100%;
-                /*background: rgba(255, 255, 255, 0.3);
-                border-radius: 15px;
-                box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-                backdrop-filter: blur(3px);
-                -webkit-backdrop-filter: blur(15px);*/
-                //margin: 10px;
-                //padding: 10px;
+                height: 50%;
                 align-items: center;
                 margin-top: 5%;
 
@@ -332,7 +373,6 @@ body {
                     height: 40px;
                     max-width: 350px;
                     width: 100%;
-                    //margin: 30px 30px;
                     border-radius: 25px;
                     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
 
@@ -366,17 +406,69 @@ body {
                         }
                     }
                 }
+
+                .bouton_submit {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-around;
+                    align-self: center;
+                    width: 600px;
+                    height: 30px;
+                    margin-top: 5%;
+
+                    .bouton_val {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        width: 150px;
+                        height: 40px;
+                        font-size: 20px;
+                        text-decoration: none;
+                        color: white;
+                        background-color: grey;
+                        border-radius: 15px;
+                        border: 0;
+
+                        &:hover {
+                            color: white;
+                            background-color: rgba(114, 114, 114, 0.371);
+                        }
+
+                        &:active {
+                            background-color: rgba(68, 68, 68, 0.972);
+                        }
+                    }
+
+                    .bouton_ann {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        width: 150px;
+                        height: 40px;
+                        font-size: 20px;
+                        text-decoration: none;
+                        color: white;
+                        background-color: grey;
+                        border-radius: 15px;
+
+                        &:hover {
+                            color: white;
+                            background-color: rgba(114, 114, 114, 0.371);
+                        }
+
+                        &:active {
+                            background-color: rgba(68, 68, 68, 0.972);
+                        }
+                    }
+                }
             }
 
             .formulaire {
                 display: flex;
                 flex-direction: column;
                 flex-basis: 100%;
-                /*background: rgba(255, 255, 255, 0.3);
-                border-radius: 15px;
-                box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-                backdrop-filter: blur(3px);
-                -webkit-backdrop-filter: blur(15px);*/
 
                 .bouton_personnes {
                     display: flex;
@@ -384,10 +476,7 @@ body {
                     justify-content: space-between;
                     width: 350px;
                     margin: 20px 0 0 0;
-                    /*background: rgba(255, 255, 255, 0.3);
-                    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-                    backdrop-filter: blur(3px);
-                    -webkit-backdrop-filter: blur(15px);*/
+
                 }
 
                 .bouton_submit {
@@ -396,7 +485,7 @@ body {
                     justify-content: space-between;
                     padding: 30px 0 0 0;
 
-                    .bouton_sup{
+                    .bouton_sup {
                         display: flex;
                         background-color: grey;
                         border: 1px solid rgba(255, 255, 255, 0.1);
@@ -408,36 +497,13 @@ body {
                         width: 30%;
                         align-items: center;
                         justify-content: center;
-        
-                        &:hover {
-                            box-shadow: 0, 5px, 35px, 0 rgba(0, 0, 0, 1);
-                            color: white;
-                            background-color: rgba(114, 114, 114, 0.371);
-                        }
-            
-                        &:active {
-                            background-color: rgba(68, 68, 68, 0.972);
-                        }
-                    }
 
-                    .bouton_ann{
-                        display: flex;
-                        background-color: grey;
-                        border: 1px solid rgba(255, 255, 255, 0.1);
-                        backdrop-filter: blur(30px);
-                        color: rgb(255, 255, 255);
-                        cursor: pointer;
-                        font-size: 15px;
-                        border-radius: 15px;
-                        width: 30%;
-                        align-items: center;
-        
                         &:hover {
                             box-shadow: 0, 5px, 35px, 0 rgba(0, 0, 0, 1);
                             color: white;
                             background-color: rgba(114, 114, 114, 0.371);
                         }
-            
+
                         &:active {
                             background-color: rgba(68, 68, 68, 0.972);
                         }
@@ -467,7 +533,7 @@ body {
                             color: white;
                             background-color: rgba(114, 114, 114, 0.371);
                         }
-            
+
                         &:active {
                             background-color: rgba(68, 68, 68, 0.972);
                         }
@@ -490,7 +556,7 @@ body {
                             color: white;
                             background-color: rgba(114, 114, 114, 0.371);
                         }
-            
+
                         &:active {
                             background-color: rgba(68, 68, 68, 0.972);
                         }
