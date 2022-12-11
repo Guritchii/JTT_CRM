@@ -8,7 +8,7 @@ body {
         justify-content: space-evenly;
         width: auto;
         height: 100vh;
-    
+
         .haut_de_page {
             display: flex;
             flex-direction: row;
@@ -18,7 +18,7 @@ body {
             height: 10%;
             align-items: center;
             margin: 10px 10px 5px 10px;
-            
+
             background: rgba(255, 255, 255, 0.3);
             border-radius: 15px;
             box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.25);
@@ -28,7 +28,7 @@ body {
             .titre {
                 font-size: 40px;
             }
-            
+
             .rechLogo {
                 display: flex;
                 flex-direction: row;
@@ -40,16 +40,16 @@ body {
                     width: 100px;
                     height: 100px;
                 }
-            }            
+            }
         }
-    
+
         .bas_de_page {
             display: flex;
             flex-direction: row;
             justify-content: space-between;
             width: auto;
             height: 86%;
-    
+
             .nav_bar_verticale {
                 display: flex;
                 flex-direction: column;
@@ -108,7 +108,7 @@ body {
                     border: none;
                     cursor: pointer;
 
-                    .logo_nav_bar{
+                    .logo_nav_bar {
                         display: flex;
                         margin: 10px;
                         height: 50px;
@@ -116,7 +116,7 @@ body {
                     }
                 }
             }
-    
+
             .Parametre {
                 display: flex;
                 flex-direction: column;
@@ -145,6 +145,11 @@ body {
                         justify-content: space-between;
                         height: 50%;
                         border-bottom: 1px solid black;
+
+                        .text_one_haut {
+                            font-size: 20px;
+                            font-weight: 700;
+                        }
                     }
 
                     .one_milieu {
@@ -161,21 +166,19 @@ body {
 
                         .bouton_submit {
                             display: flex;
-                            margin-left: 30px;
                             align-items: center;
                             cursor: pointer;
 
                             .bouton_signalerPB {
-                                width: 75px;
-                                height: 20px;
+                                width: 110px;
+                                height: 25px;
                                 background-color: rgb(190, 189, 189);
-                                border-radius: 5px;
-                                border-radius: 5px;
+                                border-radius: 20px;
                                 box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.25);
                                 cursor: pointer;
-    
-                                &:hover{
-                                    background-color: lightgrey; 
+
+                                &:hover {
+                                    background-color: lightgrey;
                                 }
                             }
                         }
@@ -194,22 +197,20 @@ body {
 
                         .bouton_submit {
                             display: flex;
-                            margin-left: 30px;
                             align-items: center;
                             text-decoration: none;
                             cursor: pointer;
 
                             .bouton_modifierMDP {
-                                width: 75px;
-                                height: 20px;
+                                width: 110px;
+                                height: 25px;
                                 background-color: rgb(190, 189, 189);
-                                border-radius: 5px;
-                                border-radius: 5px;
+                                border-radius: 20px;
                                 box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.25);
                                 cursor: pointer;
-    
-                                &:hover{
-                                    background-color: lightgrey; 
+
+                                &:hover {
+                                    background-color: lightgrey;
                                 }
                             }
                         }
@@ -233,8 +234,12 @@ body {
                     .two_haut {
                         display: flex;
                         height: 75%;
-                        
                         border-bottom: 1px solid black;
+
+                        .text_two_haut {
+                            font-size: 20px;
+                            font-weight: 700;
+                        }
                     }
 
                     .two_bas {
@@ -246,8 +251,8 @@ body {
                         .center {
                             position: absolute;
                             top: 84%;
-                            right: 0.5%;
-                            transform: translate(-50%,-50%);
+                            right: 2%;
+                            transform: translate(-50%, -50%);
 
                             input[type="checkbox"] {
                                 position: relative;
@@ -257,7 +262,7 @@ body {
                                 background-color: #e2e2e2;
                                 outline: none;
                                 border-radius: 20px;
-                                box-shadow: inset 0 0 5px rgba(0,0,0,.5);
+                                box-shadow: inset 0 0 5px rgba(0, 0, 0, .5);
                                 transition: .5s;
                                 cursor: pointer;
                             }
@@ -276,7 +281,7 @@ body {
                                 left: 10%;
                                 background-color: white;
                                 transform: scale(1.1);
-                                box-shadow: 0 2px 5px rgba(0,0,0,.2);
+                                box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
                                 transition: .5s;
                             }
 
@@ -302,6 +307,8 @@ body {
 
                     .text_three_haut {
                         display: flex;
+                        font-size: 20px;
+                        font-weight: 700;
                         margin: 10px;
                     }
 
@@ -312,7 +319,7 @@ body {
                         margin-left: 10px;
                         margin-right: 10px;
                         padding: 10px;
-                        
+
                         border-top: 1px solid black;
 
                         .text_three {
@@ -320,16 +327,15 @@ body {
                         }
 
                         .bouton {
-                            width: 100px;
-                            height: 20px;
+                            width: 110px;
+                            height: 25px;
                             background-color: rgb(190, 189, 189);
-                            border-radius: 5px;
-                            border-radius: 5px;
+                            border-radius: 20px;
                             box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.25);
                             cursor: pointer;
 
-                            &:hover{
-                                background-color: lightgrey; 
+                            &:hover {
+                                background-color: lightgrey;
                             }
                         }
                     }

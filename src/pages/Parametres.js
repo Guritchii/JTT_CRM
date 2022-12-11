@@ -32,7 +32,7 @@ const Parametre = () => {
                     <div className="Parametre">
                         <div className="one">
                             <div className="one_haut">
-                                sécurité
+                                <p className="text_one_haut">Sécurité</p>
                             </div>
                             <div className="one_milieu">
                                 <p className="text_one_milieu">Signaler un problème</p>
@@ -49,7 +49,7 @@ const Parametre = () => {
                         </div>
                         <div className="two">
                             <div className="two_haut">
-                                Général
+                                <p className="text_two_haut">Général</p>
                             </div>
                             <div className="two_bas">
                                 <p className="text_two_bas">Mode sombre</p>
