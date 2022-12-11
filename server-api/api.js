@@ -287,6 +287,41 @@ app.get('/Contact/AllWithCustomerName', (req, res) => {
     });
 });
 
+app.get('/Entreprise/All', (req, res) => {
+    let sql = 'SELECT idcustomer,name FROM customers ORDER BY name';
+    db.query(sql, (err, result) => {
+        if (err) throw err;
+        console.log(result);
+        res.send(result);
+    });
+});
+
+app.get('/Contact/Exist/:phone', (req, res) => {
+    const phone = req.params.phone
+    let sql = 'SELECT idcontact FROM contacts WHERE phone = ?';
+
+    db.query(sql, [phone], (err, result) => {
+        if (err) throw err;
+
+        console.log(result);
+        res.send(result);
+    });
+});
+
+app.post('/Contact/Add', (req, res) => {
+    
+    let form = req.body;
+
+    console.log("on est dans le form",form);
+
+    const sql = `INSERT INTO contacts(firstname,lastname, mail, phone, iduser, idcustomer) VALUES ('${form.firstname}', '${form.lastname}', '${form.mail}',  '${form.phone}', '${form.iduser}', '${form.idcustomer}' )`;
+    db.query(sql , (err, result) => { 
+        if (err) throw err;
+        console.log(result);
+        res.send('Post added...' + result.insertId);
+    });
+});
+
 app.get('/Contact/:iduser', (req, res) => {
 
     const iduser = req.params.iduser;
@@ -303,7 +338,7 @@ app.post('/Event/Add', (req, res) => {
     
     let form = req.body;
     
-    console.log(form);
+    console.log("on est dans le form d'un event ",form);
     
     const sql = `INSERT INTO events(date,starttime,endtime,comment,idusersend,iduserreceive,idcontact) VALUES ('${form.date}', '${form.starttime}', '${form.endtime}', '${form.comment}', '${form.idusersend}', '${form.iduserreceive}', '${form.idcontact}')`;
      db.query(sql , (err, result) => { 
@@ -317,7 +352,7 @@ app.get('/Event/:iduser', (req, res) => {
 
     const iduser = req.params.iduser;
 
-    let sql = 'SELECT * FROM events e where e.iduserreceive = ?';
+    let sql = 'SELECT e.date,e.starttime,e.endtime,e.comment FROM events e where e.iduserreceive = ?';
 
     db.query(sql,[iduser], (err, result) => {
         if (err) throw err;

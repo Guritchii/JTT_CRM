@@ -28,6 +28,7 @@ function Admin_create() {
 
     function handleChangeRole(event){
         setSelectedIdRole(event.target.value);
+        console.log(event.target.value);
     };
 
     function checkAdd(event){

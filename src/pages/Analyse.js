@@ -132,7 +132,6 @@ const Analyse = () => {
 
     for(let i = 0; i < lineDatas.length; i++)
     {
-        console.log(lineDatas);
         dataH.labels[i] = lineDatas[i].month +"/" +lineDatas[i].year;
         dataH.datasets[0].data[i] = lineDatas[i].total;
     }
