@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios'
+import axios from 'axios';
 import NavigationAdmin from '../components/NavigationAdmin.js';
 import CryptoJS from 'crypto-js';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
@@ -37,7 +37,6 @@ function Admin_create() {
 
         const formData = new FormData(event.currentTarget);
         const values = Object.fromEntries(formData.entries());
-        console.log(values.firstname);
         api.get('/User/Exist/'+ values.login).then((response) => {
             const login = response.data;
             if (login.length > 0){

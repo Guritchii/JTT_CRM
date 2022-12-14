@@ -140,6 +140,36 @@ app.get('/Sale/Pie/:iduser/:month/:year', (req, res) => {
     });
 });
 
+app.get('/Sale/KeyNumber/:iduser/:month/:year', (req, res) => {
+    
+    const iduser = req.params.iduser;
+    const month = req.params.month;
+    const year = req.params.year;
+    let sql = 'SELECT SUM(s.amount) as total,COUNT(co.firstname) as totalcontact FROM sales s,customers cu,contacts co WHERE co.iduser = ? AND co.idcustomer = cu.idcustomer AND cu.idcustomer = s.idcustomer AND ((s.month >= ? AND s.year = ?))';
+
+    db.query(sql, [iduser,month,year], (err, result) => {
+        if (err) throw err;
+
+        console.log(result);
+        res.send(result);
+    });
+});
+
+app.get('/Sale/BestCustomer/:iduser', (req, res) => {
+    
+    const iduser = req.params.iduser;
+    const month = req.params.month;
+    const year = req.params.year;
+    let sql = 'SELECT SUM(s.amount) as total, cu.name FROM sales s,customers cu,contacts co WHERE co.iduser = ? AND co.idcustomer = cu.idcustomer AND cu.idcustomer = s.idcustomer GROUP BY cu.name ORDER BY cu.name LIMIT 1';
+
+    db.query(sql, [iduser], (err, result) => {
+        if (err) throw err;
+
+        console.log(result);
+        res.send(result);
+    });
+});
+
 app.get('/Sale/Line/:iduser/:month/:year', (req, res) => {
     
     const iduser = req.params.iduser;
@@ -277,6 +307,18 @@ app.delete('/User/Delete/:id', (req, res) => {
 });
 
 //Api pour les contacts de la page repertoire
+
+app.get('/Contact/LastAdd3/:iduser', (req, res) => {
+
+    const iduser = req.params.iduser;
+
+    let sql = 'SELECT c.firstname,c.lastname FROM contacts c WHERE c.iduser = ? ORDER BY c.idcontact LIMIT 3';
+    db.query(sql,[iduser], (err, result) => {
+        if (err) throw err;
+        console.log(result);
+        res.send(result);
+    });
+});
 
 app.get('/Contact/AllWithCustomerName', (req, res) => {
     let sql = 'SELECT c.*, cu.name FROM contacts c, customers cu WHERE cu.idCustomer = c.idCustomer ORDER BY idcontact';
