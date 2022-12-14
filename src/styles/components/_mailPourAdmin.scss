@@ -1,0 +1,201 @@
+
+
+body {
+
+    .page_mailAdmin {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        width: auto;
+        height: 100vh;
+    
+        .haut_de_page {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 50px;
+            width: auto;
+            height: 10%;
+            align-items: center;
+            margin: 10px 10px 5px 10px;
+            
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 15px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(3px);
+            -webkit-backdrop-filter: blur(15px);
+
+            .titre {
+                font-size: 40px;
+            }
+            
+            .rechLogo {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+
+
+                .logo {
+                    display: flex;
+                    width: 100px;
+                    height: 100px;
+                }
+            }            
+        }
+    
+        .bas_de_page {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: auto;
+            height: 86%;
+    
+            .nav_bar_verticale {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                align-items: center;
+                width: 5%;
+                margin: 5px 5px 10px 10px;
+
+                background: rgba(255, 255, 255, 0.3);
+                border-radius: 15px;
+                box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+                backdrop-filter: blur(3px);
+                -webkit-backdrop-filter: blur(15px);
+
+                .parti_one {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-around;
+                    align-items: center;
+                    width: 100%;
+                    height: 18%;
+                }
+
+                .parti_two {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-around;
+                    align-items: center;
+                    width: 100%;
+                    height: 35%;
+                }
+
+                .parti_three {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-around;
+                    align-items: center;
+                    margin-top: 15px;
+                    width: 100%;
+                    height: 18%;
+                }
+
+                .parti_four {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-around;
+                    align-items: center;
+                    width: 100%;
+                    height: 18%;
+                }
+
+                .button {
+                    display: flex;
+                    object-fit: cover;
+                    background-color: transparent;
+                    border: none;
+                    cursor: pointer;
+
+                    .logo_nav_bar{
+                        display: flex;
+                        margin: 10px;
+                        height: 50px;
+                        width: 50px;
+                    }
+                }
+            }
+            
+    
+            .Mail {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                width: 94.3%;
+                height: auto;
+                margin: 5px 10px 10px 5px;
+
+                background: rgba(255, 255, 255, 0.3);
+                border-radius: 15px;
+                box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+                backdrop-filter: blur(3px);
+                -webkit-backdrop-filter: blur(15px);
+
+                .object {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-evenly;
+                    margin: 13px;
+                    width: auto;
+                    height: 40%;
+
+                    background: rgba(255, 255, 255, 0.1);
+                    border-radius: 15px;
+                    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+                    backdrop-filter: blur(3px);
+                    -webkit-backdrop-filter: blur(15px);
+
+                    .input {
+                        margin: 13px;
+                        width: 65%;
+                    }
+
+                }
+
+
+                .value {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-evenly;
+                    margin-left: 13px;
+                    margin-right: 13px;
+                    width: auto;
+                    height: 40%;
+
+                    background: rgba(255, 255, 255, 0.1);
+                    border-radius: 15px;
+                    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+                    backdrop-filter: blur(3px);
+                    -webkit-backdrop-filter: blur(15px);
+
+                    .textArea {
+                        resize: none;
+                        margin: 13px;
+
+                    }
+                }
+
+                .submit {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-evenly;    
+                    margin: 13px;
+                    width: auto;
+                    height: 15%;
+
+                    background: rgba(255, 255, 255, 0.1);
+                    border-radius: 15px;
+                    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+                    backdrop-filter: blur(3px);
+                    -webkit-backdrop-filter: blur(15px);
+                    
+                    .button {
+                        width: 20%;
+                        margin: 13px;
+                    }
+                }
+            }
+        }
+    }
+}

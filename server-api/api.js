@@ -3,6 +3,19 @@ const express = require('express');
 const cors=require("cors");
 const bodyparser = require('body-parser');
 
+const nodemailer = require('nodemailer');
+
+// Créer un transporteur de mail
+let transporter = nodemailer.createTransport({
+  host: 'smtp.gmail.com',
+  port: 587,
+//   secure: true, // utiliser SSL
+  auth: {
+    user: 'stageodinnonoffi@gmail.com',
+    pass: 'pjjlofjkpnfpwkiz'
+  }
+});
+
 const db = mysql.createConnection({
     host: 'lfbn-cle-1-568-58.w92-157.abo.wanadoo.fr',
     user: 'crmuser',
@@ -360,4 +373,27 @@ app.get('/Event/:iduser', (req, res) => {
         console.log(result);
         res.send(result);
     });
+});
+
+app.post('/Mail/Avertir', (req, res) => {
+    // Définir les options du mail
+    let form = req.body;
+    console.log(form)
+    let mailOptions = {
+        from: '"JTT CRM" <JTT@CRM.fr>',
+        to: 'Jeremy.DUCOURTHIALE@etu.uca.fr',
+        subject: form.objet,
+        text: form.raison
+    };
+
+    transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+            console.log(error);
+            res.send(false)
+        } else {
+            console.log('Email sent: ' + info.response);
+            res.send(true)
+        }
+      });
+
 });
