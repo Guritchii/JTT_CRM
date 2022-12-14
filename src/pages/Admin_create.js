@@ -44,7 +44,6 @@ function Admin_create() {
             }
             else {
                 setLoginError(false);
-                values.password = CryptoJS.SHA256(values.password).toString(CryptoJS.enc.Hex);
 
                 api.post('/User/Add', values).then (function(response) {
                     console.log(response.data);
@@ -71,7 +70,6 @@ function Admin_create() {
                                     <p>Email :</p>
                                     <p>Rôle :</p>
                                     <p>Identifiant :</p>
-                                    <p>Mot de passe :</p>
                                 </div>
                             </tr>
                             <tr className="two-2">
@@ -90,7 +88,6 @@ function Admin_create() {
                                     ))}
                                 </Select>
                                 <input id="identifiant" name='login' className="texte_zone" type="text" placeholder="Identifiant..." required/>
-                                <input id="password" name='password' className="texte_zone" type="password" placeholder="Mot de passe..." required/>
                             </tr>
                         </table>
                         <p>{loginError === true?"L'identifiant existe déja":''}</p>

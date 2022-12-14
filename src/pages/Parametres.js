@@ -37,7 +37,9 @@ const Parametre = () => {
                             <div className="one_milieu">
                                 <p className="text_one_milieu">Signaler un problème</p>
                                 <div className='bouton_submit'>
-                                    <button className="bouton_signalerPB" type="submit">Signaler</button>
+                                <NavLink to="/MailPourAdmin">
+                                    <button className="bouton_signalerPB" >Signaler</button>
+                                </NavLink>
                                 </div>
                             </div>
                             <div className="one_bas">

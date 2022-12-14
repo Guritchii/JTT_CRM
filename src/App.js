@@ -13,6 +13,7 @@ import Calendrier from './pages/Calendrier';
 import Repertoire from './pages/Repertoire';
 import Parametres from './pages/Parametres';
 import Chargement from './pages/Chargement';
+import MailPourAdmin from './pages/MailPourAdmin';
 import AddContact from './components/Contact/AddContact'
 import { Component } from 'fullcalendar';
 import RestartPassword from './pages/RestartPassword';
@@ -41,6 +42,7 @@ const App = () => {
         <Route path="/Repertoire" element={<Repertoire />} />
         <Route path="/Parametres" element={<Parametres />} />
         <Route path="/Chargement" element={<Chargement />} />
+        <Route path="/MailPourAdmin" element={<MailPourAdmin />} />
         <Route path="/Repertoire/add" element={<AddContact />} />
         </Routes>
       </BrowserRouter>
