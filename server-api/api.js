@@ -3,7 +3,10 @@ const express = require('express');
 const cors=require("cors");
 const bodyparser = require('body-parser');
 
+
 const nodemailer = require('nodemailer');
+const CryptoJS = require('crypto-js');
+
 
 // Créer un transporteur de mail
 let transporter = nodemailer.createTransport({
@@ -240,13 +243,37 @@ app.post('/User/Add', (req, res) => {
     let form = req.body;
 
     console.log(form);
+    
+    let rand_pass = "";
+    const carac="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789&*#-+@!$%?/()[]{}0123456789&*#-+@!$%?/()[]{}";
+    for(var i=0;i<10;i++)
+    {
+        rand_pass += carac[Math.floor(Math.random()*carac.length)];
+    }
 
-    const sql = `INSERT INTO users(lastname, firstname, idrole, login, password, phone, mail) VALUES ('${form.lastname}', '${form.firstname}', '${form.idrole}', '${form.login}', '${form.password}', '${form.phone}', '${form.mail}')`;
+    const sql = `INSERT INTO users(lastname, firstname, idrole, login, password, phone, mail) VALUES ('${form.lastname}', '${form.firstname}', '${form.idrole}', '${form.login}', '${CryptoJS.SHA256(rand_pass).toString(CryptoJS.enc.Hex)}', '${form.phone}', '${form.mail}')`;
     db.query(sql , (err, result) => { 
         if (err) throw err;
         console.log(result);
         res.send('Post added...' + result.insertId);
     });
+
+    let mailOptions = {
+        from: '"JTT CRM" <JTT@CRM.fr>',
+        to: form.mail,
+        subject: "Connexion a JTTCRM",
+        text: "Voici ton mot de passe : " + rand_pass,
+    };
+
+    transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+            console.log(error);
+        } else {
+            console.log('Email sent with mdp: ' + info.response);
+        }
+      });
+
+
 });
 
 app.put('/User/Update/:id', (req, res) => {
