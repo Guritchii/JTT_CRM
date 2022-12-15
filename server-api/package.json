@@ -15,6 +15,7 @@
     "@mui/material": "^5.10.13",
     "body": "^5.1.0",
     "body-parser": "^1.20.1",
+    "bootstrap": "^5.2.3",
     "corps": "^0.1.0",
     "cors": "^2.8.5",
     "crypto-js": "^4.1.1",
@@ -23,7 +24,8 @@
     "googleapis": "^105.0.0",
     "mysql": "^2.18.1",
     "nodemailer": "^6.8.0",
-    "parser": "^0.1.4"
+    "parser": "^0.1.4",
+    "react-bootstrap": "^2.7.0"
   },
   "description": "",
   "devDependencies": {

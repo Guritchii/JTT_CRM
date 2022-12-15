@@ -65,7 +65,7 @@ function Compte() {
                                     <img src={img1} srcSet={file} id="img" className="img"></img>
                                 </div>
                                 <div className='bouton_submit'>
-                                    <input type="file" name="fileUpload" id="input" accept="image/" onChange={handleChange} />
+                                    <input type="file" name="fileUpload" id="input" class="bouton_ajoutPhoto" accept="image/" onChange={handleChange} />
                                     <div className="label">
                                         <label className="fileUpload" htmlFor="input">
                                             Ajoutez votre photo

@@ -27,7 +27,7 @@ function Repertoire() {
     useEffect(() => {
         const apiString = '/Contact/' + Session.get("idUser");
         api.get(apiString).then((response) => {
-            
+
             setContacts(response.data);
             console.log("response.data", response.data);
             setSearchTerm(response.data[0].idcontact);
@@ -41,53 +41,54 @@ function Repertoire() {
     }, []);
 
     return (
-        <div className={theme} id="page_repertoire">
-            {/* Create an account page */}
-            <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"></link>
-            <div className="haut_de_page">
-                <h2 className="titre">Repertoire</h2>
-                <div className="rechLogo">
-                    <img className="logo" srcSet="./LogoApp.svg" />
+        <body className={theme}>
+            <div className="page_repertoire">
+                {/* Create an account page */}
+                <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"></link>
+                <div className="haut_de_page">
+                    <h2 className="titre">Repertoire</h2>
+                    <div className="rechLogo">
+                        <img className="logo" srcSet="./LogoApp.svg" />
+                    </div>
                 </div>
-            </div>
-            <div className="bas_de_page">
-                <NavigationDashboard />
-                <div className="contenu">
-                    <span className="searchAndAddButton">
-                        <div className="input_box">
-                            <input type="search" placeholder="Rechercher..." />
-                            <span className="search">
-                                <i class="uil uil-search search-icon"></i>
-                            </span>
-                        </div>
-                        <NavLink to="/Repertoire/add">
-                            <button className="boutonAddContact">Ajouter</button>
-                        </NavLink>
-                    </span>
-                    <TableContainer component={Paper} className="tabListContact">
-                        <Table>
-                            <TableHead>
-                                <TableRow>
-                                    <TableCell>Photo</TableCell>
-                                    <TableCell>Nom</TableCell>
-                                    <TableCell>Prénom</TableCell>
-                                    <TableCell>Entreprise</TableCell>
-                                </TableRow>
-                            </TableHead>
-                            <TableBody>
-                                {contacts.map((contact) => (
-                                    <TableRow key={contact.idcontact}>
-                                        <TableCell><img className="photoContact" src={user} /></TableCell>
-                                        <TableCell>{contact.lastname}</TableCell>
-                                        <TableCell>{contact.firstname}</TableCell>
-                                        <TableCell>{contact.name}</TableCell>
+                <div className="bas_de_page">
+                    <NavigationDashboard />
+                    <div className="contenu">
+                        <span className="searchAndAddButton">
+                            <div className="input_box">
+                                <input type="search" placeholder="Rechercher..." />
+                                <span className="search">
+                                    <i class="uil uil-search search-icon"></i>
+                                </span>
+                            </div>
+                            <NavLink to="/Repertoire/add">
+                                <button className="boutonAddContact">Ajouter</button>
+                            </NavLink>
+                        </span>
+                        <TableContainer component={Paper} className="tabListContact">
+                            <Table>
+                                <TableHead>
+                                    <TableRow>
+                                        <TableCell>Photo</TableCell>
+                                        <TableCell>Nom</TableCell>
+                                        <TableCell>Prénom</TableCell>
+                                        <TableCell>Entreprise</TableCell>
                                     </TableRow>
-                                ))}
-                            </TableBody>
-                        </Table>
-                    </TableContainer>
-                </div>
-                {/* <TableContainer component={Paper} sx={{ maxHeight: 0.8 }} className="tabListContact">
+                                </TableHead>
+                                <TableBody>
+                                    {contacts.map((contact) => (
+                                        <TableRow key={contact.idcontact}>
+                                            <TableCell><img className="photoContact" src={user} /></TableCell>
+                                            <TableCell>{contact.lastname}</TableCell>
+                                            <TableCell>{contact.firstname}</TableCell>
+                                            <TableCell>{contact.name}</TableCell>
+                                        </TableRow>
+                                    ))}
+                                </TableBody>
+                            </Table>
+                        </TableContainer>
+                    </div>
+                    {/* <TableContainer component={Paper} sx={{ maxHeight: 0.8 }} className="tabListContact">
                                 <Table aria-label="simple table" size="small" stickyHeader>
                                     <TableHead >
                                         <TableRow>
@@ -114,8 +115,9 @@ function Repertoire() {
                                     </TableBody>
                                 </Table>
                             </TableContainer> */}
+                </div>
             </div>
-        </div>
+        </body>
     );
 };
 
@@ -137,22 +139,22 @@ function AddContact(props) {
         //console.log(props);
         navigate('/');
     }
-        return (
-            <div className='ui main'>
-                <h2>Add Contact</h2>
-                <form className='ui form' onSubmit={add}>
-                    <div className='field'>
-                        <label>Name</label>
-                        <input type="text" name="Name" placeholder='Name' value={User.name} onChange={e => setUser({ ...User, name: e.target.value })} />
-                    </div>
-                    <div className='field'>
-                        <label>Email</label>
-                        <input type="text" name="Email" placeholder='Email' value={User.email} onChange={e => setUser({ ...User, email: e.target.value })} />
-                    </div>
-                    <button className='ui secondary button'>Add</button>
-                </form>
-            </div>
-        );
+    return (
+        <div className='ui main'>
+            <h2>Add Contact</h2>
+            <form className='ui form' onSubmit={add}>
+                <div className='field'>
+                    <label>Name</label>
+                    <input type="text" name="Name" placeholder='Name' value={User.name} onChange={e => setUser({ ...User, name: e.target.value })} />
+                </div>
+                <div className='field'>
+                    <label>Email</label>
+                    <input type="text" name="Email" placeholder='Email' value={User.email} onChange={e => setUser({ ...User, email: e.target.value })} />
+                </div>
+                <button className='ui secondary button'>Add</button>
+            </form>
+        </div>
+    );
 };
 
 

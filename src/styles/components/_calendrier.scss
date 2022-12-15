@@ -1,5 +1,5 @@
 body {
-    
+
     .page_calendrier {
         display: flex;
         flex-direction: column;
@@ -16,17 +16,16 @@ body {
             height: 10%;
             align-items: center;
             margin: 10px 10px 5px 10px;
-            
+
             background: rgba(255, 255, 255, 0.3);
-            border-radius: 15px;
-            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            border-radius: 5px;
             backdrop-filter: blur(3px);
             -webkit-backdrop-filter: blur(15px);
 
             .titre {
                 font-size: 40px;
             }
-            
+
             .rechLogo {
                 display: flex;
                 flex-direction: row;
@@ -38,7 +37,7 @@ body {
                     width: 100px;
                     height: 100px;
                 }
-            }            
+            }
         }
 
         .bas_de_page {
@@ -57,8 +56,7 @@ body {
                 margin: 5px 5px 10px 10px;
 
                 background: rgba(255, 255, 255, 0.3);
-                border-radius: 15px;
-                box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+                border-radius: 5px;
                 backdrop-filter: blur(3px);
                 -webkit-backdrop-filter: blur(15px);
 
@@ -106,7 +104,7 @@ body {
                     border: none;
                     cursor: pointer;
 
-                    .logo_nav_bar{
+                    .logo_nav_bar {
                         display: flex;
                         margin: 10px;
                         height: 50px;
@@ -120,7 +118,6 @@ body {
                 flex-direction: row;
                 background: rgba(255, 255, 255, 0.3);
                 border-radius: 5px;
-                box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
                 backdrop-filter: blur(3px);
                 -webkit-backdrop-filter: blur(15px);
                 width: 94.3%;
@@ -130,21 +127,39 @@ body {
                 .Titre {
                     display: flex;
                     flex-direction: column;
-                    justify-content: space-around;
-                    width: 175px;
-                    margin: 30px;
+                    justify-content: space-between;
+                    width: 200px;
+                    height: 100%;
+                    -webkit-backdrop-filter: blur(15px);
+                    padding-top: 10px;
+                    padding-bottom: 10px;
 
-                    border-radius: 15px;
-                    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-                    backdrop-filter: blur(3px);
-                    -webkit-backdrop-filter: blur(15px);                 
-                
                     .mini_formulaire_evenement {
                         display: flex;
                         flex-direction: column;
-                        margin-top: 10px;
-                        height: 100px;
+                        height: 100%;
+                        justify-content: space-around;
 
+                        .ajout_input {
+                            position: relative;
+                            width: 100%;
+                            height: 100%;
+                            outline: none;
+                            border: none;
+                            border-radius: .375rem;
+                            font-size: 16px;
+                            font-weight: 400;
+                            color: rgb(90, 90, 90);
+                            border: 1px solid rgba(50, 55, 72, 1);
+                            padding: 1rem 1rem;
+                            margin-right: 10px;
+                        }
+                        .select {
+                            border: 1px solid rgba(50, 55, 72, 1);
+                            border-radius: 10px;
+                            margin-left: 10px;
+                            margin-right: 8px;
+                        }
                     }
 
                     .bouton_ajout {
@@ -158,16 +173,18 @@ body {
                         height: 50px;
                         border-radius: 10px;
                         background-color: rgba(163, 163, 163, 0.371);
-                        border: 1px solid rgba(255,255,255,0.1);
+                        border: 1px solid rgba(255, 255, 255, 0.1);
                         backdrop-filter: blur(30px);
                         color: rgb(255, 255, 255);
                         cursor: pointer;
                         font-size: 15px;
-                        &:hover{
-                            background-color: rgba(114, 114, 114, 0.371);   
+
+                        &:hover {
+                            background-color: rgba(114, 114, 114, 0.371);
                         }
-                        &:active{
-                            background-color:rgba(68, 68, 68, 0.972);   
+
+                        &:active {
+                            background-color: rgba(68, 68, 68, 0.972);
                         }
                     }
                 }
@@ -175,12 +192,16 @@ body {
 
             .rbc-calendar {
                 border-radius: 5px;
-                border: 1px solid black;
+                margin-top: 20px;
+                margin-right: 20px;
+                margin-left: 20px;
+
 
                 .rbc-day-bg {
                     border-radius: 5px;
                     border-color: black;
                 }
+
                 .rbc-month-view {
                     border-radius: 10px;
                     border-color: black;

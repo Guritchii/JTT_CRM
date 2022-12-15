@@ -96,15 +96,16 @@ function Calendrier(){
                     <div className="Calendrier">
                         <h2 className="Titre">Ajouter un évènement
                             <div className="mini_formulaire_evenement">
-                                <input className="ajout_input" type="text" placeholder="Ajoutez un titre" style={{height: "20px", width: "100%", marginRight: "10px"}} 
+                                <input className="ajout_input" type="text" placeholder="Ajoutez un titre" style={{height: "20px", width: "100%", marginRight: "10px", marginLeft: "10px",marginBottom: "10px"}} 
                                 onChange={(e) => setTitre(e.target.value)} />
-                                <input className='date' type="date" placeholder="Ajoutez un jour" style={{height: "20px", width: "100%", marginRight: "10px"}} 
+                                <input className='date' type="date" placeholder="Ajoutez un jour" style={{height: "70%", width: "90%", marginRight: "10px", marginLeft: "10px", marginBottom: "10px", borderRadius: "10px"}} 
                                 onChange={(e) => setJour(e.target.value)} />
-                                <input className='date' type="time" placeholder="Ajoutez une heure de début" style={{height: "20px", width: "100%", marginRight: "10px"}}
+                                <input className='date' type="time" placeholder="Ajoutez une heure de début" style={{height: "70%", width: "90%", marginRight: "10px" , marginLeft: "10px",marginBottom: "10px", borderRadius: "10px"}}
                                 onChange={(e) => setHeureDebut(e.target.value)} />
-                                <input className='date' type="time" placeholder="Ajoutez une heure de fin" style={{height: "20px", width: "100%", marginRight: "10px"}}
+                                <input className='date' type="time" placeholder="Ajoutez une heure de fin" style={{height: "70%", width: "90%", marginRight: "10px", marginLeft: "10px", marginBottom: "10px", borderRadius: "10px"}}
                                 onChange={(e) => setHeureFin(e.target.value)} />
                                 <Select
+                                    className="select"
                                     name='idcontact'
                                     value={selectedContact}
                                     onChange={handleChangeContact}
@@ -115,7 +116,7 @@ function Calendrier(){
                                 </Select>
                             </div>
                             <button className="bouton_ajout" onClick={handleAddEvent}>
-                                <p>Ajouter l'évènement</p>
+                                Ajouter l'évènement
                             </button>
                         </h2>
                         <Calendar localizer={localizer} events={allEvents} defaultView="week"
