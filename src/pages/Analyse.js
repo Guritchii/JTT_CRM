@@ -145,7 +145,7 @@ const Analyse = () => {
                 <div className="haut_de_page">
                     <h2 className="titre">Analyse</h2>
                     <div className="rechLogo">
-                        <img className="logo" srcSet="./LogoApp.svg"/>
+                        <img className="logo" srcSet={theme === "light" ? './LogoApp.svg' : './LogoApp_light.svg'}/>
                     </div>
                 </div>
 

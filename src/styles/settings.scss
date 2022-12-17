@@ -50,18 +50,24 @@ li {
 
 .dark {
     background-color: $xiketic;
-    color: white;
+    color: rgb(159, 166, 188);
 
     .page_analyse {
         .haut_de_page {
             background: rgba(21, 24, 35, 1);
             border: 1px solid rgba(50, 55, 72, 1);
+            .titre {
+                color: rgb(159, 166, 188);
+            }
         }
 
         .bas_de_page {
             .nav_bar_verticale {
                 background: rgba(21, 24, 35, 1);
                 border: 1px solid rgba(50, 55, 72, 1);
+                .svgImage {
+                    fill: rgb(159, 166, 188);
+                }
             }
 
             .Analyse {
@@ -72,6 +78,10 @@ li {
                     .Stat-1_titre p {
                         background-color: rgba(21, 24, 35, 1);
                         border: 1px solid rgba(50, 55, 72, 1);
+                        color: rgb(159, 166, 188);
+                    }
+                    canvas {
+                        color: rgb(159, 166, 188);
                     }
                 }
 
@@ -82,6 +92,7 @@ li {
                     .Stat-2_titre p {
                         background-color: rgba(21, 24, 35, 1);
                         border: 1px solid rgba(50, 55, 72, 1);
+                        color: rgb(159, 166, 188);
                     }
                 }
             }
@@ -93,19 +104,30 @@ li {
         .haut_de_page {
             background: rgba(21, 24, 35, 1);
             border: 1px solid rgba(50, 55, 72, 1);
+            .titre{
+                color: rgb(159, 166, 188);
+            }
         }
 
         .bas_de_page {
             .nav_bar_verticale {
                 background: rgba(21, 24, 35, 1);
                 border: 1px solid rgba(50, 55, 72, 1);
+                .svgImage {
+                    fill: rgb(159, 166, 188);
+                }
             }
 
             .Parametre {
                 .one {
                     background: rgba(21, 24, 35, 1);
                     border: 1px solid rgba(50, 55, 72, 1);
+                    color: rgb(159, 166, 188);
+                    .one_haut {
+                        border-color: rgba(50, 55, 72, 1);
+                    }
                     .one_milieu{
+                        border-color: rgba(50, 55, 72, 1);
                         .bouton_submit{
                             .bouton_signalerPB{
                                 color: #cbd0dd;
@@ -173,12 +195,18 @@ li {
                 .two {
                     background: rgba(21, 24, 35, 1);
                     border: 1px solid rgba(50, 55, 72, 1);
+                    color: rgb(159, 166, 188);
+                    .two_haut {
+                        border-color: rgba(50, 55, 72, 1);
+                    }
                 }
 
                 .three {
                     background: rgba(21, 24, 35, 1);
                     border: 1px solid rgba(50, 55, 72, 1);
+                    color: rgb(159, 166, 188);
                     .déconnexion{
+                        border-color: rgba(50, 55, 72, 1);
                         .bouton{
                             color: #cbd0dd;
                                 background: rgba(49, 55, 74, 0.5);
@@ -216,12 +244,18 @@ li {
         .haut_de_page {
             background: rgba(21, 24, 35, 1);
             border: 1px solid rgba(50, 55, 72, 1);
+            .titre{
+                color: rgb(159, 166, 188);
+            }
         }
 
         .bas_de_page {
             .nav_bar_verticale {
                 background: rgba(21, 24, 35, 1);
                 border: 1px solid rgba(50, 55, 72, 1);
+                .svgImage {
+                    fill: rgb(159, 166, 188);
+                }
             }
 
             .Compte {
@@ -231,8 +265,10 @@ li {
                 .name_picture {
                     background: rgba(21, 24, 35, 1);
                     border: 1px solid rgba(50, 55, 72, 1);
+                    color: rgb(159, 166, 188);
 
                     .picture {
+                        border-color: rgba(50, 55, 72, 1);
                         #display_image {
                             border: 1px solid rgba(50, 55, 72, 1);
                         }
@@ -273,11 +309,19 @@ li {
                 .infoPerso {
                     background: rgba(21, 24, 35, 1);
                     border: 1px solid rgba(50, 55, 72, 1);
+                    color: rgb(159, 166, 188);
+                    .description, .parti_pays,.parti_mail { 
+                        border-color: rgba(50, 55, 72, 1);
+                    }
                 }
 
                 .infoEntreprise {
                     background: rgba(21, 24, 35, 1);
                     border: 1px solid rgba(50, 55, 72, 1);
+                    color: rgb(159, 166, 188);
+                    .description, .parti_name,.parti_secteurAct { 
+                        border-color: rgba(50, 55, 72, 1);
+                    }
                 }
             }
         }
@@ -288,12 +332,18 @@ li {
         .haut_de_page {
             background: rgba(21, 24, 35, 1);
             border: 1px solid rgba(50, 55, 72, 1);
+            .titre{
+                color: rgb(159, 166, 188);
+            }
         }
 
         .bas_de_page {
             .nav_bar_verticale {
                 background: rgba(21, 24, 35, 1);
                 border: 1px solid rgba(50, 55, 72, 1);
+                .svgImage {
+                    fill: rgb(159, 166, 188);
+                }
             }
 
         }
@@ -354,6 +404,19 @@ li {
             .tabListContact {
                 background: rgba(21, 24, 35, 1);
                 border: 1px solid rgba(50, 55, 72, 1);
+                color: rgb(159, 166, 188);
+                th {
+                    color: rgb(159, 166, 188);
+                }
+                td {
+                    color: rgb(159, 166, 188);
+                }
+                tr {
+                    border-color: rgba(50, 55, 72, 1);
+                    &:hover {
+                        background-color: rgba(49, 55, 74, 0.5);
+                    }
+                }
             }
         }
     }
@@ -362,12 +425,18 @@ li {
         .haut_de_page {
             background: rgba(21, 24, 35, 1);
             border: 1px solid rgba(50, 55, 72, 1);
+            .titre{
+                color: rgb(159, 166, 188);
+            }
         }
 
         .bas_de_page {
             .nav_bar_verticale {
                 background: rgba(21, 24, 35, 1);
                 border: 1px solid rgba(50, 55, 72, 1);
+                .svgImage {
+                    fill: rgb(159, 166, 188);
+                }
             }
 
             .Calendrier {
@@ -377,6 +446,7 @@ li {
                 .Titre {
                     background: rgba(21, 24, 35, 1);
                     border-right: 1px solid rgba(50, 55, 72, 1);
+                    color: rgb(159, 166, 188);
 
                     .mini_formulaire_evenement {
                         .ajout_input {
@@ -391,19 +461,6 @@ li {
                             color: #fff;
                         }
 
-                    }
-
-                    .bouton_ajout {
-                        margin-top: 10px;
-                        color: #90d67f;
-                        background: rgba(37, 176, 3, 0.14);
-                        border-color: rgba(37, 176, 3, 0.14);
-
-                        &:hover {
-                            color: #90d67f;
-                            background: rgba(37, 176, 3, 0.2);
-                            border-color: rgba(167, 223, 153, 0.226);
-                        }
                     }
                 }
             }
@@ -420,6 +477,9 @@ li {
             .nav_bar_verticale {
                 background: rgba(21, 24, 35, 1);
                 border: 1px solid rgba(50, 55, 72, 1);
+                .svgImage {
+                    fill: rgb(159, 166, 188);
+                }
             }
 
             .Dashboard {

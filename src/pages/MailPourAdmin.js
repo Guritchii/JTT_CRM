@@ -62,7 +62,7 @@ const MailPourAdmin = () => {
 
             <div className="page_mailAdmin">
                 <div className="haut_de_page">
-                    <h2 className="titre">Avertir un administrateur</h2>
+                    <h2 className="titre">Signaler un problème</h2>
                     <div className="rechLogo">
                         <img className="logo" srcSet="./LogoApp.svg" />
                     </div>
@@ -72,12 +72,12 @@ const MailPourAdmin = () => {
                     <form className="form" onSubmit={sendMail}>
                         <div className="Mail">
                             <div className="object">
-                                <p className="name">Objet</p>
-                                <input name="objet" type="text" placeholder="Objet de l'alerte" />
+                                <h3 className="name">Objet</h3>
+                                <input name="objet" type="text" placeholder="Objet de l'alerte" className="inputObjet"/>
                             </div>
                             <div className="value">
-                                <p className="name">Raison</p>
-                                <textarea name="raison" placeholder="Raison de l'alerte" rows="10" cols="180" />
+                                <h3 className="name">Raison</h3>
+                                <textarea name="raison" placeholder="Raison de l'alerte" rows="10" cols="180" className="inputArea"/>
 
                             </div>
                             <p>{mailError === true?"Le mail n'a pas pu être envoyé":''}</p>

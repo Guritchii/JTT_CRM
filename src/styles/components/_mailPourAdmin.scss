@@ -19,9 +19,9 @@ body {
             align-items: center;
             margin: 10px 10px 5px 10px;
             
-            background: rgba(255, 255, 255, 0.3);
-            border-radius: 15px;
-            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            background: rgba(255, 255, 255, 1);
+            border: 1px solid #cbd0dd;
+            border-radius: 5px;
             backdrop-filter: blur(3px);
             -webkit-backdrop-filter: blur(15px);
 
@@ -58,9 +58,9 @@ body {
                 width: 5%;
                 margin: 5px 5px 10px 10px;
 
-                background: rgba(255, 255, 255, 0.3);
-                border-radius: 15px;
-                box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+                background: rgba(255, 255, 255, 1);
+                border: 1px solid #cbd0dd;
+                border-radius: 5px;
                 backdrop-filter: blur(3px);
                 -webkit-backdrop-filter: blur(15px);
 
@@ -122,13 +122,12 @@ body {
                 display: flex;
                 flex-direction: column;
                 justify-content: space-evenly;
-                width: 94.3%;
                 height: auto;
                 margin: 5px 10px 10px 5px;
 
-                background: rgba(255, 255, 255, 0.3);
-                border-radius: 15px;
-                box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+                background: rgba(255, 255, 255, 1);
+                border: 1px solid #cbd0dd;
+                border-radius: 5px;
                 backdrop-filter: blur(3px);
                 -webkit-backdrop-filter: blur(15px);
 
@@ -141,14 +140,23 @@ body {
                     height: 40%;
 
                     background: rgba(255, 255, 255, 0.1);
-                    border-radius: 15px;
-                    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+                    border-radius: 5px;
                     backdrop-filter: blur(3px);
                     -webkit-backdrop-filter: blur(15px);
 
-                    .input {
-                        margin: 13px;
-                        width: 65%;
+                    .inputObjet{
+                        width: 100%;
+                        height: 100%;
+                        padding: 10px;
+                        outline: none;
+                        border: none;
+                        border-radius: .375rem;
+                        font-size: 16px;
+                        font-weight: 400;
+                        color: #333;
+                        border: 1px solid #cbd0dd;
+                        height: 30px;
+                        margin-top: 13px;
                     }
 
                 }
@@ -164,15 +172,23 @@ body {
                     height: 40%;
 
                     background: rgba(255, 255, 255, 0.1);
-                    border-radius: 15px;
-                    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+                    border-radius: 5px;
                     backdrop-filter: blur(3px);
                     -webkit-backdrop-filter: blur(15px);
 
-                    .textArea {
+                    .inputArea {
                         resize: none;
-                        margin: 13px;
-
+                        width: 100%;
+                        height: 100%;
+                        padding: 10px;
+                        outline: none;
+                        border: none;
+                        border-radius: .375rem;
+                        font-size: 16px;
+                        font-weight: 400;
+                        color: #333;
+                        border: 1px solid #cbd0dd;
+                        margin-top: 13px;
                     }
                 }
 
@@ -185,14 +201,40 @@ body {
                     height: 15%;
 
                     background: rgba(255, 255, 255, 0.1);
-                    border-radius: 15px;
-                    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+                    border-radius: 5px;
                     backdrop-filter: blur(3px);
                     -webkit-backdrop-filter: blur(15px);
                     
                     .button {
-                        width: 20%;
-                        margin: 13px;
+                        cursor: pointer;
+                        color: #141824;
+                        background: #f5f7fa;
+                        border-radius: 0.375rem;
+                        padding: 0.5rem 1rem;
+                        border: 1px solid #cbd0dd;
+
+                        &:hover {
+                            color: #141824;
+                            background: #e3e6ed;
+                            border-color: #cbd0dd;
+                        }
+
+                        &:focus {
+                            box-shadow: 0 0 0 0.2rem rgba(211, 214, 218, 0.5);
+                        }
+
+                        &:active {
+                            color: #000000;
+                            background: #f7f9fb;
+                            border-color: #f6f8fb;
+                            box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0);
+                        }
+
+                        &:disabled {
+                            color: #000000;
+                            background: #f5f7fa;
+                            border-color: #f5f7fa;
+                        }
                     }
                 }
             }

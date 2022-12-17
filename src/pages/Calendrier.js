@@ -87,7 +87,7 @@ function Calendrier(){
                     <h2 className="titre">Calendrier</h2>
                     <link href='fullcalendar/main.css' rel='stylesheet' />
                     <div className="rechLogo">
-                        <img className="logo" srcSet="./LogoApp.svg"/>
+                        <img className="logo" srcSet={theme === "light" ? './LogoApp.svg' : './LogoApp_light.svg'}/>
                     </div>
                 </div>
 
@@ -96,7 +96,7 @@ function Calendrier(){
                     <div className="Calendrier">
                         <h2 className="Titre">Ajouter un évènement
                             <div className="mini_formulaire_evenement">
-                                <input className="ajout_input" type="text" placeholder="Ajoutez un titre" style={{height: "20px", width: "100%", marginRight: "10px", marginLeft: "10px",marginBottom: "10px"}} 
+                                <input className="ajout_input" type="text" placeholder="Ajoutez un titre" style={{height: "20px", marginRight: "10px", marginLeft: "10px",marginBottom: "10px"}} 
                                 onChange={(e) => setTitre(e.target.value)} />
                                 <input className='date' type="date" placeholder="Ajoutez un jour" style={{height: "70%", width: "90%", marginRight: "10px", marginLeft: "10px", marginBottom: "10px", borderRadius: "10px"}} 
                                 onChange={(e) => setJour(e.target.value)} />

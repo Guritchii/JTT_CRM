@@ -48,7 +48,7 @@ function Repertoire() {
                 <div className="haut_de_page">
                     <h2 className="titre">Repertoire</h2>
                     <div className="rechLogo">
-                        <img className="logo" srcSet="./LogoApp.svg" />
+                        <img className="logo" srcSet={theme === "light" ? './LogoApp.svg' : './LogoApp_light.svg'}/>
                     </div>
                 </div>
                 <div className="bas_de_page">
@@ -65,10 +65,10 @@ function Repertoire() {
                                 <button className="boutonAddContact">Ajouter</button>
                             </NavLink>
                         </span>
-                        <TableContainer component={Paper} className="tabListContact">
+                        <TableContainer component={Paper} className="tabListContact" style={{color: '#fff'}}>
                             <Table>
                                 <TableHead>
-                                    <TableRow>
+                                    <TableRow className="headerListe">
                                         <TableCell>Photo</TableCell>
                                         <TableCell>Nom</TableCell>
                                         <TableCell>Prénom</TableCell>

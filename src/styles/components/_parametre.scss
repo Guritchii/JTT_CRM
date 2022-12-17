@@ -19,7 +19,8 @@ body {
             align-items: center;
             margin: 10px 10px 5px 10px;
 
-            background: rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 1);
+            border: 1px solid #cbd0dd;
             border-radius: 5px;
             backdrop-filter: blur(3px);
             -webkit-backdrop-filter: blur(15px);
@@ -57,7 +58,9 @@ body {
                 width: 5%;
                 margin: 5px 5px 10px 10px;
 
-                background: rgba(255, 255, 255, 0.3);
+                background: rgba(255, 255, 255, 1);
+                border: 1px solid #cbd0dd;
+
                 border-radius: 5px;
                 backdrop-filter: blur(3px);
                 -webkit-backdrop-filter: blur(15px);
@@ -131,7 +134,9 @@ body {
                     height: 28.5%;
                     padding: 10px;
 
-                    background: rgba(255, 255, 255, 0.3);
+                    background: rgba(255, 255, 255, 1);
+                    border: 1px solid #cbd0dd;
+
                     border-radius: 5px;
                     backdrop-filter: blur(3px);
                     -webkit-backdrop-filter: blur(15px);
@@ -141,7 +146,7 @@ body {
                         flex-direction: row;
                         justify-content: space-between;
                         height: 50%;
-                        border-bottom: 1px solid black;
+                        border-bottom: 1px solid #cbd0dd;
 
                         .text_one_haut {
                             font-size: 20px;
@@ -155,7 +160,7 @@ body {
                         justify-content: space-between;
                         padding: 9px;
                         height: 25%;
-                        border-bottom: 1px solid black;
+                        border-bottom: 1px solid #cbd0dd;
 
                         .text_one_milieu {
                             margin-top: 8px;
@@ -262,7 +267,9 @@ body {
                     height: 28.5%;
                     padding: 10px;
 
-                    background: rgba(255, 255, 255, 0.3);
+                    background: rgba(255, 255, 255, 1);
+                    border: 1px solid #cbd0dd;
+
                     border-radius: 5px;
                     backdrop-filter: blur(3px);
                     -webkit-backdrop-filter: blur(15px);
@@ -270,7 +277,7 @@ body {
                     .two_haut {
                         display: flex;
                         height: 75%;
-                        border-bottom: 1px solid black;
+                        border-bottom: 1px solid #cbd0dd;
 
                         .text_two_haut {
                             font-size: 20px;
@@ -335,8 +342,9 @@ body {
                     width: auto;
                     height: 40%;
 
-                    background: rgba(255, 255, 255, 0.3);
+                    background: rgba(255, 255, 255, 1);
                     border-radius: 5px;
+                    border: 1px solid #cbd0dd;
                     backdrop-filter: blur(3px);
                     -webkit-backdrop-filter: blur(15px);
 
@@ -355,7 +363,7 @@ body {
                         margin-right: 10px;
                         padding: 10px;
 
-                        border-top: 1px solid black;
+                        border-top: 1px solid #cbd0dd;
 
                         .text_three {
                             display: flex;

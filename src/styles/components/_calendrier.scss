@@ -17,7 +17,9 @@ body {
             align-items: center;
             margin: 10px 10px 5px 10px;
 
-            background: rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 1);
+            border: 1px solid #cbd0dd;
+
             border-radius: 5px;
             backdrop-filter: blur(3px);
             -webkit-backdrop-filter: blur(15px);
@@ -55,7 +57,9 @@ body {
                 width: 5%;
                 margin: 5px 5px 10px 10px;
 
-                background: rgba(255, 255, 255, 0.3);
+                background: rgba(255, 255, 255, 1);
+                border: 1px solid #cbd0dd;
+
                 border-radius: 5px;
                 backdrop-filter: blur(3px);
                 -webkit-backdrop-filter: blur(15px);
@@ -116,7 +120,9 @@ body {
             .Calendrier {
                 display: flex;
                 flex-direction: row;
-                background: rgba(255, 255, 255, 0.3);
+                background: rgba(255, 255, 255, 1);
+                border: 1px solid #cbd0dd;
+
                 border-radius: 5px;
                 backdrop-filter: blur(3px);
                 -webkit-backdrop-filter: blur(15px);
@@ -133,6 +139,8 @@ body {
                     -webkit-backdrop-filter: blur(15px);
                     padding-top: 10px;
                     padding-bottom: 10px;
+                    border-right: 1px solid #cbd0dd;
+
 
                     .mini_formulaire_evenement {
                         display: flex;
@@ -142,7 +150,6 @@ body {
 
                         .ajout_input {
                             position: relative;
-                            width: 100%;
                             height: 100%;
                             outline: none;
                             border: none;
@@ -150,12 +157,18 @@ body {
                             font-size: 16px;
                             font-weight: 400;
                             color: rgb(90, 90, 90);
-                            border: 1px solid rgba(50, 55, 72, 1);
+                            border: 1px solid #cbd0dd;
                             padding: 1rem 1rem;
-                            margin-right: 10px;
+                            font-size: 13px;
+                            margin: 10px;
+                        }
+                        .date {
+                            border: 1px solid #cbd0dd;
+
                         }
                         .select {
-                            border: 1px solid rgba(50, 55, 72, 1);
+                            all: none;
+                            border: 1px solid #cbd0dd;
                             border-radius: 10px;
                             margin-left: 10px;
                             margin-right: 8px;
@@ -172,16 +185,20 @@ body {
                         width: 75%;
                         height: 50px;
                         border-radius: 10px;
-                        background-color: rgba(163, 163, 163, 0.371);
-                        border: 1px solid rgba(255, 255, 255, 0.1);
+                        background: rgba(37, 176, 3, 0.14);
+                        border: 1px solid;
                         backdrop-filter: blur(30px);
-                        color: rgb(255, 255, 255);
+                        color: #90d67f;
+                        margin-top: 10px;
+                        border-color: rgba(37, 176, 3, 0.14);
+
                         cursor: pointer;
                         font-size: 15px;
 
                         &:hover {
-                            background-color: rgba(114, 114, 114, 0.371);
-                        }
+                            color: #90d67f;
+                            background: rgba(37, 176, 3, 0.2);
+                            border-color: rgba(167, 223, 153, 0.226);                        }
 
                         &:active {
                             background-color: rgba(68, 68, 68, 0.972);
