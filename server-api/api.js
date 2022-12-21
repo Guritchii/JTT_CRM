@@ -352,7 +352,7 @@ app.get('/Contact/LastAdd3/:iduser', (req, res) => {
 
     const iduser = req.params.iduser;
 
-    let sql = 'SELECT c.firstname,c.lastname FROM contacts c WHERE c.iduser = ? ORDER BY c.idcontact LIMIT 3';
+    let sql = 'SELECT c.firstname,c.lastname FROM contacts c WHERE c.iduser = ? ORDER BY c.idcontact DESC LIMIT 3';
     db.query(sql,[iduser], (err, result) => {
         if (err) throw err;
         console.log(result);
