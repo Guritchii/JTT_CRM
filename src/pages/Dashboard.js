@@ -10,7 +10,7 @@ const api = axios.create({
 function Dashboard() {
 
     const [infoContactRecent, setInfoContactRecent] = useState([]);
-    const [datakey, setDataKey] = useState([]);
+    const [dataKey, setDataKey] = useState([]);
     const [infoBestCustomer, setinfoBestCustomer] = useState([]);
 
     const [theme, setTheme] = useState("light");
@@ -28,17 +28,22 @@ function Dashboard() {
 
         const apiString = '/Contact/LastAdd3/' + Session.get("idUser");
         api.get(apiString).then((response) => {
-            setInfoContactRecent(response.data);
+            if (response.data.length > 0)
+                setInfoContactRecent(response.data);
         });
 
         const apiStringKey = '/Sale/KeyNumber/' + Session.get("idUser") + "/" + month + "/" + year;
         api.get(apiStringKey).then((response) => {
-            setDataKey(response.data[0]);
-        });
+            if (response.data.length > 0)
+                setDataKey(response.data[0]);
+        }); 
 
         const apiStringBestCustomer = '/Sale/BestCustomer/' + Session.get("idUser");
         api.get(apiStringBestCustomer).then((response) => {
-            setinfoBestCustomer(response.data[0]);
+            if (response.data.length > 0)
+                setinfoBestCustomer(response.data[0]);
+            else
+                setinfoBestCustomer({name :"Aucun client",total: "0"});
         });
     }, []);
 
@@ -75,11 +80,11 @@ function Dashboard() {
                                     <div className="Ch_Clé_gauche">
                                         <div className="Ch_Clé_gauche_haut">
                                             Chiffre_clés
-                                            <div>{datakey.total}</div>
+                                            <div>{dataKey.total}</div>
                                         </div>
                                         <div className="Ch_Clé_gauche_bas">
                                             Chiffre_clés
-                                            <div>{datakey.totalcontact}</div>
+                                            <div>{dataKey.totalcontact}</div>
                                         </div>
                                     </div>
                                     <div className="Ch_Clé_droite">
